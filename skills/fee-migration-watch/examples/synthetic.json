@@ -1,0 +1,53 @@
+{
+  "schema": "lp-research.v1",
+  "mode": "fee-migration-watch",
+  "chain_id": 4663,
+  "pair": [
+    "synthetic:meme",
+    "synthetic:quote"
+  ],
+  "denomination": "synthetic:quote",
+  "evidence_kind": "synthetic",
+  "source_refs": [
+    "bundled synthetic arithmetic case; not an observed market"
+  ],
+  "coverage_complete": true,
+  "windows": [
+    {
+      "end": 300,
+      "pools": [
+        {
+          "id": "pool-a",
+          "lp_fees": "27",
+          "volume": "900"
+        },
+        {
+          "id": "pool-b",
+          "lp_fees": "1",
+          "volume": "100"
+        }
+      ],
+      "start": 0
+    },
+    {
+      "end": 600,
+      "pools": [
+        {
+          "id": "pool-a",
+          "lp_fees": "6",
+          "volume": "200"
+        },
+        {
+          "id": "pool-b",
+          "lp_fees": "8",
+          "volume": "800"
+        }
+      ],
+      "start": 300
+    }
+  ],
+  "period": {
+    "start": 0,
+    "end": 600
+  }
+}

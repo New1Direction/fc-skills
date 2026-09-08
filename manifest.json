@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -550,6 +550,216 @@
           "path": "skills/lp-edge/scripts/test_quant.py",
           "sha256": "c9a95da71f80eb2d93995b6bff1cb42cbf0cab35ce78ac8d569a1a749c308167",
           "bytes": 13944
+        }
+      ]
+    },
+    {
+      "name": "fee-migration-watch",
+      "path": "skills/fee-migration-watch",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/fee-migration-watch/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+          "bytes": 19
+        },
+        {
+          "path": "skills/fee-migration-watch/SKILL.md",
+          "sha256": "75d2166ec923b2c3fa679dc5a86d3fdd3113e05e33a662bd4228ec5db0ddca34",
+          "bytes": 3467
+        },
+        {
+          "path": "skills/fee-migration-watch/agents/openai.yaml",
+          "sha256": "5d25ab887b06e396a90936e1e97b73717f318af979bc2714ad48196b0d6b7e04",
+          "bytes": 252
+        },
+        {
+          "path": "skills/fee-migration-watch/examples/synthetic.json",
+          "sha256": "639e615844f11b26ca48a13485d918cc60cc41ebbfb021168d643bc5c966b098",
+          "bytes": 947
+        },
+        {
+          "path": "skills/fee-migration-watch/references/evidence.md",
+          "sha256": "8be798bdd66f4f2d107062f0bdf73b8279725af5fe06623e10640b68a0a7d320",
+          "bytes": 4854
+        },
+        {
+          "path": "skills/fee-migration-watch/scripts/analyze.py",
+          "sha256": "61a8782bb480d846eb6d5176e2e34cf149daafab2b7a573f8c6de723dcc39f34",
+          "bytes": 10100
+        },
+        {
+          "path": "skills/fee-migration-watch/tests/test_analyze.py",
+          "sha256": "4f4844f65de4764eadff37946d9cc8c58e04f167c00c7bfdb48baa680b3f5676",
+          "bytes": 2245
+        }
+      ]
+    },
+    {
+      "name": "fee-quality-check",
+      "path": "skills/fee-quality-check",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/fee-quality-check/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+          "bytes": 19
+        },
+        {
+          "path": "skills/fee-quality-check/SKILL.md",
+          "sha256": "42e9f5baadb48428bada35e24175f4d6b7b0a023655fa97cb78f2b54f80ff5af",
+          "bytes": 3380
+        },
+        {
+          "path": "skills/fee-quality-check/agents/openai.yaml",
+          "sha256": "f2102508484fc4343a9d69207bea0a1b241cf35d64c2f0b3c71f83105b53600d",
+          "bytes": 246
+        },
+        {
+          "path": "skills/fee-quality-check/examples/synthetic.json",
+          "sha256": "0816a39e220e9140fe49df1787b4bb4d64b193e9345c29a36b8b9dcd94f61968",
+          "bytes": 737
+        },
+        {
+          "path": "skills/fee-quality-check/references/evidence.md",
+          "sha256": "09fae9df39990ab58fc3dac6df26fd16d8af8692293e48c3f4bba3601821e653",
+          "bytes": 4478
+        },
+        {
+          "path": "skills/fee-quality-check/scripts/analyze.py",
+          "sha256": "3a80ffa899aec14804829229c2d07d9bf02099eea20dd4546fec27b592160e3f",
+          "bytes": 10098
+        },
+        {
+          "path": "skills/fee-quality-check/tests/test_analyze.py",
+          "sha256": "72d1c701f169ef0efdde6758751a363648e8ff840471be29c0cde8bac55af3d8",
+          "bytes": 2440
+        }
+      ]
+    },
+    {
+      "name": "lp-flow-decay",
+      "path": "skills/lp-flow-decay",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/lp-flow-decay/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+          "bytes": 19
+        },
+        {
+          "path": "skills/lp-flow-decay/SKILL.md",
+          "sha256": "f3ac20b684284b686b172623d4b15c2b92cd01625e144b56d4e9f09c2ab3ad5f",
+          "bytes": 3124
+        },
+        {
+          "path": "skills/lp-flow-decay/agents/openai.yaml",
+          "sha256": "08f903665be60892b5bdae0ae4db42e060019882b78e5e7daf609a883d58d084",
+          "bytes": 234
+        },
+        {
+          "path": "skills/lp-flow-decay/examples/synthetic.json",
+          "sha256": "12b4d26b107db7019ed4ce4a710dcc159bf77815025a3e4fab7f1476b74f2964",
+          "bytes": 744
+        },
+        {
+          "path": "skills/lp-flow-decay/references/evidence.md",
+          "sha256": "e834542cfbcd5fe10e5739373fb0b858163cc02879ac1b99247d5e93ad2ebb7e",
+          "bytes": 4243
+        },
+        {
+          "path": "skills/lp-flow-decay/scripts/analyze.py",
+          "sha256": "c48c44e8d996b2dc3ab8dd2d6e03d0302551f1792cc96341b6d39911267f9380",
+          "bytes": 10094
+        },
+        {
+          "path": "skills/lp-flow-decay/tests/test_analyze.py",
+          "sha256": "a61be1c86393989aa24a31839f4878daa081fdeee3d0796158179cfa4ee49a15",
+          "bytes": 2194
+        }
+      ]
+    },
+    {
+      "name": "lp-wallet-autopsy",
+      "path": "skills/lp-wallet-autopsy",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/lp-wallet-autopsy/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+          "bytes": 19
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/SKILL.md",
+          "sha256": "a1f1de9cb1efaca8b6984d7654147ccf869759458bcb7235cc6b011a8c38276f",
+          "bytes": 3678
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/agents/openai.yaml",
+          "sha256": "287d062567633439d1bdf04fffd2156f340003214432ed9cb3a74b9765bef38f",
+          "bytes": 246
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/examples/synthetic.json",
+          "sha256": "c881967384442b10347ccc0d4c33f3c07269ec5e570c346add3db6783d947886",
+          "bytes": 746
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/references/evidence.md",
+          "sha256": "6e2865ce2e9b9116a351b292bcfa300f7d5c10f458e538eb863de9e137f7a3c6",
+          "bytes": 4561
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/scripts/analyze.py",
+          "sha256": "829fb08d16fd45570e4fcfff553347031697534486e4f09b7ef64d9e6ad8ba2c",
+          "bytes": 10098
+        },
+        {
+          "path": "skills/lp-wallet-autopsy/tests/test_analyze.py",
+          "sha256": "7841c005eb6a29047660e8802dd465ae8686566968680a69e4e4d384bf028c43",
+          "bytes": 2169
+        }
+      ]
+    },
+    {
+      "name": "range-replay",
+      "path": "skills/range-replay",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/range-replay/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+          "bytes": 19
+        },
+        {
+          "path": "skills/range-replay/SKILL.md",
+          "sha256": "0800a52c83d0b48323b52a4574d1e1304711520ec3b9a620b57f9459624a4efb",
+          "bytes": 3687
+        },
+        {
+          "path": "skills/range-replay/agents/openai.yaml",
+          "sha256": "606b4efb9c67f8b54ea637c2920a74b1bc4bd7cead50b3dae3ccfa8566639d2c",
+          "bytes": 231
+        },
+        {
+          "path": "skills/range-replay/examples/synthetic.json",
+          "sha256": "2bf0a17a88aae07d5ce11c9c91ac42f8bf3627d8c44c7fc7173d11af73ebce97",
+          "bytes": 873
+        },
+        {
+          "path": "skills/range-replay/references/evidence.md",
+          "sha256": "4abcbfa7bf46287d33e3b799643a0e6fa2643d0455cf6865984daebea8385ada",
+          "bytes": 4664
+        },
+        {
+          "path": "skills/range-replay/scripts/analyze.py",
+          "sha256": "4ad59538cf59d75f39c463b0c998da90354390c83b8e61f4eb4ca7c7776902ff",
+          "bytes": 10093
+        },
+        {
+          "path": "skills/range-replay/tests/test_analyze.py",
+          "sha256": "4f758505354323857d5b239fda30c46bd067bb5b62112ff26c005e1699561635",
+          "bytes": 2294
         }
       ]
     }

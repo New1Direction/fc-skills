@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fee Quality Check"
+  short_description: "Evidence-based fee quality check research"
+  default_prompt: "Use $fee-quality-check on my supplied pool or wallet evidence and explain coverage, calculations and limitations."

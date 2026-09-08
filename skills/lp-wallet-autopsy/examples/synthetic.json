@@ -1,0 +1,38 @@
+{
+  "schema": "lp-research.v1",
+  "mode": "lp-wallet-autopsy",
+  "chain_id": 4663,
+  "pair": [
+    "synthetic:meme",
+    "synthetic:quote"
+  ],
+  "denomination": "synthetic:quote",
+  "evidence_kind": "synthetic",
+  "source_refs": [
+    "bundled synthetic arithmetic case; not an observed market"
+  ],
+  "coverage_complete": true,
+  "closing_equity": "1200",
+  "contributions": "500",
+  "costs_complete": true,
+  "episodes": [
+    {
+      "closed": true,
+      "id": "winner",
+      "pnl": "200"
+    },
+    {
+      "closed": false,
+      "id": "open-loss",
+      "pnl": "-500"
+    }
+  ],
+  "external_costs": "10",
+  "opening_equity": "1000",
+  "positions_complete": true,
+  "withdrawals": "0",
+  "period": {
+    "start": 100,
+    "end": 200
+  }
+}

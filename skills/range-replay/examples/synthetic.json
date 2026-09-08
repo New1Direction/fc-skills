@@ -1,0 +1,42 @@
+{
+  "schema": "lp-research.v1",
+  "mode": "range-replay",
+  "chain_id": 4663,
+  "pair": [
+    "synthetic:meme",
+    "synthetic:quote"
+  ],
+  "denomination": "synthetic:quote",
+  "evidence_kind": "synthetic",
+  "source_refs": [
+    "bundled synthetic arithmetic case; not an observed market"
+  ],
+  "coverage_complete": true,
+  "budget": "1000",
+  "costs_complete": true,
+  "decision_time": 100,
+  "policies": [
+    {
+      "available_at": 100,
+      "capital": "1000",
+      "costs": "10",
+      "hold_terminal": "1060",
+      "id": "wide",
+      "model": "scenario",
+      "terminal_before_costs": "1050"
+    },
+    {
+      "available_at": 90,
+      "capital": "1000",
+      "costs": "40",
+      "hold_terminal": "1060",
+      "id": "ladder",
+      "model": "scenario",
+      "terminal_before_costs": "1070"
+    }
+  ],
+  "period": {
+    "start": 100,
+    "end": 200
+  }
+}

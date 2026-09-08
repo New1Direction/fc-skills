@@ -1,0 +1,4 @@
+interface:
+  display_name: "Range Replay"
+  short_description: "Evidence-based range replay research"
+  default_prompt: "Use $range-replay on my supplied pool or wallet evidence and explain coverage, calculations and limitations."

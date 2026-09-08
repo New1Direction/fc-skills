@@ -1,0 +1,4 @@
+interface:
+  display_name: "LP Flow Decay"
+  short_description: "Evidence-based lp flow decay research"
+  default_prompt: "Use $lp-flow-decay on my supplied pool or wallet evidence and explain coverage, calculations and limitations."

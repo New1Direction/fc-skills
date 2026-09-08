@@ -1,6 +1,6 @@
 # MSK
 
-Seven crypto and memecoin research skills, packaged together for a private `New1Direction/MSK` repository.
+Twelve crypto, memecoin and LP research skills, packaged together for a private `New1Direction/MSK` repository.
 
 Each skill includes its instructions, deterministic Python helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs research and read-only simulations; it does not sign or broadcast trades.
 
@@ -15,6 +15,12 @@ Each skill includes its instructions, deterministic Python helpers, references, 
 | [Scout Network](skills/scout-network/SKILL.md) | Were a discovery wallet's historical finds realistically followable? | Supplied point-in-time cohorts and follower execution evidence. |
 | [Second Wind](skills/second-wind/SKILL.md) | Is a dormant token attracting new participation? | Supplied historical windows and coverage. |
 | [LP Edge](skills/lp-edge/SKILL.md) | Do fees compensate for inventory changes and costs versus holding? | Canonical V3 accounting, range scenarios and read-only wallet calls. |
+
+| [Fee Migration Watch](skills/fee-migration-watch/SKILL.md) | Is trading flow moving between pools? | Comparable supplied volume and LP-fee windows. |
+| [LP Flow Decay](skills/lp-flow-decay/SKILL.md) | Is a pool's fee-producing activity fading? | Supplied equal-duration windows; no automatic exit rule. |
+| [LP Wallet Autopsy](skills/lp-wallet-autopsy/SKILL.md) | Does claimed LP performance survive full account reconciliation? | Supplied equity, funding, cost and episode summaries. |
+| [Range Replay](skills/range-replay/SKILL.md) | Are range comparisons fair after costs and information timing? | Audits supplied scenario/replay summaries; no bundled full replay engine. |
+| [Fee Quality Check](skills/fee-quality-check/SKILL.md) | How concentrated and attributable is fee-paying activity? | Supplied normalized swaps and LP-fee allocation. |
 
 ## Use
 
@@ -39,13 +45,19 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-This export passed all 285 offline tests across the seven suites. All 100 original skill files match the saved source versions byte for byte.
+The original seven suites passed 285 offline tests at export. The five LP additions passed 55 offline tests plus skill metadata validation and example CLI checks. The original 100 skill files are unchanged; the five additions contain 35 files. These checks establish offline behavior, not source authenticity or live performance.
 
 ## Evidence and coverage
 
 Keep synthetic, observed, published illustrative, modeled, simulated and executed results distinct. Unknown costs, unavailable provider data and incomplete history stay unknown. A successful offline test or internally consistent RPC transcript does not establish profitable signals or trustworthy external data.
 
 Autopsy's collector handles transfers, not native swap decoding. Exit Doctor's V2 adapter and LP Edge's V3 adapter do not establish support for Robinhood V4 or arbitrary hooks. The discovery skills require retained normalized inputs or available external providers. LP Edge's published Uniswap example checks arithmetic but lacks the block data needed for authenticated historical replay. Live performance remains unproven; see each skill's coverage notes.
+
+## LP research workflow
+
+Use Fee Quality Check and Fee Migration Watch for pool research, LP Flow Decay for activity reviews, Range Replay for controlled strategy comparisons, and LP Wallet Autopsy for performance claims. FYNCH can present their evidence and results. Ape can consume discovery findings, but its execution and profit gates remain independent.
+
+The five additions use exact rational arithmetic on normalized supplied evidence. They do not bundle new live collectors, continuous monitoring, a full historical swap replay engine, or signing. V4 hooks require verified external adapters. Missing evidence remains missing; synthetic examples are explicitly labeled.
 
 ## Next development priority
 
