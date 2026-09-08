@@ -1,0 +1,95 @@
+{
+  "schema_version": "circuit-deployment-candidate/1",
+  "chain_id": 4663,
+  "observed_on": "2026-09-08",
+  "status": "PUBLISHED_CANDIDATE_RUNTIME_UNVERIFIED",
+  "router_family": "uniswap-universal-router-2.1.1-v4-exact-input",
+  "router": "0x06afba43fd06227fa663b0daecf536f6eaa6bf99",
+  "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+  "permit2": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+  "quoter": "0x8dc178efb8111bb0973dd9d722ebeff267c98f94",
+  "state_view": "0xf3334192d15450cdd385c8b70e03f9a6bd9e673b",
+  "weth": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+  "published_deployment": {
+    "address": "0x06afBA43fd06227fA663b0dAeCF536F6eaA6BF99",
+    "proxy": false,
+    "deploymentTxn": "0xdfb76494e158d8dea4376160315239271636a18515207fd4526e574bc7eeb456",
+    "initcodeHash": "6dba80c0116a490d48657845492bb38374489ed49c296ac50614265f97221510",
+    "timestamp": 1783375279000,
+    "commitHash": "023196a",
+    "note": "UR v2.1.1 (non-permissioned; v2.2.0 introduces permissioned pools). Redeploy of the v2.1.1 briefcase bytecode (commit 023196a) wired to the production Across SpokePool. CREATE2 salt 0x00; address differs from the prior 0x8876...0904 instance because spokePool is an immutable constructor arg.",
+    "input": {
+      "constructor": {
+        "params": {
+          "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+          "weth9": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+          "v2Factory": "0x8bcEaA40B9AcdfAedF85AdF4FF01F5Ad6517937f",
+          "v3Factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "pairInitCodeHash": "0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f",
+          "poolInitCodeHash": "0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54",
+          "v4PoolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "v3NFTPositionManager": "0x73991a25C818Bf1f1128dEAaB1492D45638DE0D3",
+          "v4PositionManager": "0x58daec3116aae6D93017bAAea7749052E8a04fA7",
+          "spokePool": "0xD29C85F15DF544bA632C9E25829fd29d767d7978"
+        }
+      }
+    }
+  },
+  "source_pins": {
+    "creation_bytecode_commit": "023196a13735232e6a7e69c1ea03b2225480b9dc",
+    "creation_bytecode_core_gitlink": "46c6834698c48bc4a463a86d8420f4eb1d7f3b75",
+    "creation_bytecode_permit2_gitlink": "cc56ad0f3439c502c246fc5cfcc3db92bb8b7219",
+    "creation_bytecode_repository": "Uniswap/contracts",
+    "creation_bytecode_standalone_periphery_gitlink": "9dafaaecc1e2e1e824eda9d941085f96517d827b",
+    "deployment_record_commit": "37936185dee7decf681360ec799c124e0e034672",
+    "deployment_record_repository": "Uniswap/contracts",
+    "router_v4_periphery": "3231810e39b8c4d569b9d66907fa4ef8cd2cec22",
+    "universal_router": "999d561c3ad58fb5cab91b602911f3c75591a9c7"
+  },
+  "sources": [
+    {
+      "url": "https://github.com/Uniswap/contracts/blob/37936185dee7decf681360ec799c124e0e034672/deployments/json/4663.json",
+      "blob_sha": "6d5cc3e096ef2990c1f50403342cf45f20dfb8b0",
+      "kind": "pinned_primary_deployment_record"
+    },
+    {
+      "url": "https://developers.uniswap.org/deployments.json",
+      "kind": "primary_machine_readable_index",
+      "generated_at": "2026-07-15T22:25:40.000Z"
+    },
+    {
+      "url": "https://developers.uniswap.org/docs/protocols/v4/deployments",
+      "kind": "primary_rendered_reference",
+      "note": "Still lists predecessor 0x8876789976decbfcbbbe364623c63652db8c0904; pinned deployment history explains it was replaced because Across SpokePool immutable changed."
+    }
+  ],
+  "prior_router": {
+    "address": "0x8876789976decbfcbbbe364623c63652db8c0904",
+    "status": "PUBLISHED_ORPHANED_REPLACED",
+    "reason": "Same URv2.1.1 briefcase bytecode deployed with placeholder Across SpokePool; replaced by production-spoke constructor variant."
+  },
+  "verification": {
+    "runtime_observed": false,
+    "runtime_source_matched": false,
+    "wallet_route_simulated": false,
+    "public_rpc_probe": {
+      "url": "https://rpc.mainnet.chain.robinhood.com",
+      "method": "eth_chainId",
+      "timeout_seconds": 12,
+      "error_type": "TimeoutError",
+      "error": "The read operation timed out",
+      "retained": "public-rpc-probe.json"
+    }
+  },
+  "abi": {
+    "execute": "execute(bytes,bytes[],uint256)",
+    "exact_input": "(address,(address,uint24,int24,address,bytes)[],uint256[],uint128,uint128)",
+    "v4_command": "0x10",
+    "settle_action": "0x0b",
+    "swap_exact_input_action": "0x07",
+    "take_all_action": "0x0f",
+    "payer": "Initial router caller; ERC20 via Permit2",
+    "recipient": "Initial router caller via TAKE_ALL",
+    "min_hop_price_x36": "Required ABI field; empty array disables per-hop ratio bounds"
+  }
+}

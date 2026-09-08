@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -1487,7 +1487,225 @@
           "bytes": 15560
         }
       ]
+    },
+    {
+      "name": "circuit",
+      "path": "skills/circuit",
+      "tests": "scripts",
+      "test_runner": "node",
+      "files": [
+        {
+          "path": "skills/circuit/SKILL.md",
+          "sha256": "ab231f9915a6abd9345752571db5a2137a6c9fe1b772896d2d9ec7a2d52fe21e",
+          "bytes": 6600
+        },
+        {
+          "path": "skills/circuit/agents/openai.yaml",
+          "sha256": "c02cb426283ae8d6f6dc31e894acd2857acfc3ea7b8b4ed550b112c3328b5b9b",
+          "bytes": 409
+        },
+        {
+          "path": "skills/circuit/assets/contracts/Fixture.sol",
+          "sha256": "f043ba56518176b21070865fac94b2373a9fe51f6f13fd4dd7c1bc3c2d880fd9",
+          "bytes": 5102
+        },
+        {
+          "path": "skills/circuit/assets/contracts/Permit2-LICENSE",
+          "sha256": "e0e163f93b3c53b5af417ba2395506ecc7c043b50481a15017f3a6b0875a5e78",
+          "bytes": 1069
+        },
+        {
+          "path": "skills/circuit/assets/contracts/Permit2.creation.hex",
+          "sha256": "a175b4157b33bc7a2369c12668dcba6e58269fa85a8d82400b79c471d8bd5d4b",
+          "bytes": 18693
+        },
+        {
+          "path": "skills/circuit/assets/contracts/Permit2.deployer.sol",
+          "sha256": "3cfa5fffbff32bea226703e9f430bdd2592f1d97de3ca54e6984cc3cd40e27c9",
+          "bytes": 19544
+        },
+        {
+          "path": "skills/circuit/assets/contracts/PoolManager-LICENSE",
+          "sha256": "cd5241d8e1afe7098fa0f21059f7153348fdd25dbae5a8383a5f1dd2eb590321",
+          "bytes": 4392
+        },
+        {
+          "path": "skills/circuit/assets/contracts/PoolManager-MIT-LICENSE",
+          "sha256": "66eb4bd7506d0a33cc953ed77c1fee2fe6a34d8c0ac40d4e852e6bfbf754f80e",
+          "bytes": 1074
+        },
+        {
+          "path": "skills/circuit/assets/contracts/PoolManager.creation.hex",
+          "sha256": "cb75c883a168d3ca1fb325dc19f5c09f028b760614255d79bee39fb005620c40",
+          "bytes": 48391
+        },
+        {
+          "path": "skills/circuit/assets/contracts/PoolManager.deployer.sol",
+          "sha256": "17953a21575e96162439cd442ca573563e08d6991cc11ede4fa24d5942eadffe",
+          "bytes": 49348
+        },
+        {
+          "path": "skills/circuit/assets/contracts/UniversalRouter-LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149
+        },
+        {
+          "path": "skills/circuit/assets/contracts/UniversalRouter.creation.hex",
+          "sha256": "1e2722b27bb351366c705c4c652ad8af051a7f21689b88927c58bcd5b429b5d8",
+          "bytes": 52811
+        },
+        {
+          "path": "skills/circuit/assets/contracts/UniversalRouter.deployer.sol",
+          "sha256": "8239137b07a466a92e3de371424d8bf9baba0e9f13488268c6e06d443addf8a2",
+          "bytes": 54642
+        },
+        {
+          "path": "skills/circuit/assets/contracts/source-lock.json",
+          "sha256": "44d24d4e1762e11dee280b86478971751c8b1a1a83cb31e6f6cb98ccf3193719",
+          "bytes": 4440
+        },
+        {
+          "path": "skills/circuit/assets/icon.svg",
+          "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+          "bytes": 1738
+        },
+        {
+          "path": "skills/circuit/assets/robinhood-deployment-candidate.json",
+          "sha256": "5428cdebb1dc48950fe5a164b476a8baee4ea0124879d928e88993b5244e4bf8",
+          "bytes": 4708
+        },
+        {
+          "path": "skills/circuit/assets/route-example.json",
+          "sha256": "96bec372fed30cf31bcb8e4b5c88233192647ce13d606fafcfb64543357e8dbd",
+          "bytes": 1338
+        },
+        {
+          "path": "skills/circuit/assets/validation/evm-smoke.json",
+          "sha256": "8bb896e81a6d32b00c7cce78f1129cad469d3ddbbaf017b08cdffc4a94004b6d",
+          "bytes": 718514
+        },
+        {
+          "path": "skills/circuit/references/accounting.md",
+          "sha256": "502384d1bc19e9d7cfe017bb71d8e6952a66c5ad867dbadbbf535fcfde54ee75",
+          "bytes": 2564
+        },
+        {
+          "path": "skills/circuit/references/adapter.md",
+          "sha256": "05c7244c9b78759f83813cf53f23dbb7b67221c15031939e0f09e20e70841753",
+          "bytes": 3614
+        },
+        {
+          "path": "skills/circuit/references/evm-validation.md",
+          "sha256": "b1dff9dd23aa98b61276a41bffe7951ee15e830523db7aa42e6ea3298fbd3a5d",
+          "bytes": 6365
+        },
+        {
+          "path": "skills/circuit/references/integration.md",
+          "sha256": "d7054083413e1cef79daf94805100b7d862e26f77f8eb0c0a928506f0793e4e7",
+          "bytes": 1725
+        },
+        {
+          "path": "skills/circuit/references/interfaces.md",
+          "sha256": "fc03a5c158070199d3e638af3f22a6fd03dda04b1337e6146135988528007cb9",
+          "bytes": 3498
+        },
+        {
+          "path": "skills/circuit/references/preflight.md",
+          "sha256": "ba2cc27b9bfbad3ee45b9b2b2de26071419e68e62a23b35a6365c4ef4f45311f",
+          "bytes": 4109
+        },
+        {
+          "path": "skills/circuit/references/public-rpc-probe.json",
+          "sha256": "b1d92b29ae71d3efe1719b9b4a2d6f5ab72892de6c4c3832ccd3b98604b6f63a",
+          "bytes": 196
+        },
+        {
+          "path": "skills/circuit/references/source-manifest.json",
+          "sha256": "f1256292c9083621538a2e0aaf42a270cdb0d6fb772b70992b579aca991e7950",
+          "bytes": 5887
+        },
+        {
+          "path": "skills/circuit/scripts/abi.mjs",
+          "sha256": "cd2a05c489aaf8ea5ff0def6d7974cb2c1a11aec5401f5e5bfbbb42b1ee34caf",
+          "bytes": 5651
+        },
+        {
+          "path": "skills/circuit/scripts/circuit.mjs",
+          "sha256": "fddaba526a205bd3011868c477f60402c1dae0ba97494eee7c108aee8467a25f",
+          "bytes": 10862
+        },
+        {
+          "path": "skills/circuit/scripts/costs.mjs",
+          "sha256": "d3044683ae9180413726af22f81e9ba16b682ce6ac59c00b03edfa0764fd291c",
+          "bytes": 7839
+        },
+        {
+          "path": "skills/circuit/scripts/economics.mjs",
+          "sha256": "8aa8a7c48e413b518555fa04affb2ea6cf041be6c3605159f52d1dbdfbe5ed6a",
+          "bytes": 13511
+        },
+        {
+          "path": "skills/circuit/scripts/evm-smoke.mjs",
+          "sha256": "f51294aee6eee1217ea8f14ea1e43f7793d7698d3224f06a1148e4d8cb73bc6f",
+          "bytes": 20707
+        },
+        {
+          "path": "skills/circuit/scripts/fork.mjs",
+          "sha256": "71fac3dfd014038285281089af5f771c7ed26c997fc7f3d787077c0c1c057c16",
+          "bytes": 26222
+        },
+        {
+          "path": "skills/circuit/scripts/keccak.mjs",
+          "sha256": "664e0bca8c9b47c1d84f4f0505bc71b7dab9403429abffe0e748fadf5cffe871",
+          "bytes": 1828
+        },
+        {
+          "path": "skills/circuit/scripts/preflight.mjs",
+          "sha256": "3edc9a3a28e2c54fe44915d7c41ed0f4af98d39aece8a910a748119c066cee60",
+          "bytes": 16203
+        },
+        {
+          "path": "skills/circuit/scripts/routes.mjs",
+          "sha256": "564cc299bab2f6f7e922e829e3ee2a127ab9388391e18dff6f14ce3c4cff0d6c",
+          "bytes": 11618
+        },
+        {
+          "path": "skills/circuit/scripts/rpc.mjs",
+          "sha256": "ca4344c736fcb1121a1d7b8a6e5dcedfecba26aaa715eacbf85e649a7a48d2ed",
+          "bytes": 2744
+        },
+        {
+          "path": "skills/circuit/scripts/simulation.mjs",
+          "sha256": "c42bec7700df06cb9b7b49bf10b6efede4aa90c71757901bb4650a570bd6ad4b",
+          "bytes": 15440
+        },
+        {
+          "path": "skills/circuit/scripts/test_cli.mjs",
+          "sha256": "2bcdc6cec85bc9838f9f7622d72aba669498a718374999035eadc9764ab59ca8",
+          "bytes": 3030
+        },
+        {
+          "path": "skills/circuit/scripts/test_costs.mjs",
+          "sha256": "c5e2928424869d14d534bb09a66273555cbdcb62ec5f9dfb622ec12f2a8bb3c1",
+          "bytes": 6586
+        },
+        {
+          "path": "skills/circuit/scripts/test_economics.mjs",
+          "sha256": "8fa9870cf151b2975f6c176f3806c47266f594110fba53ca1f1074ae1cd2abfa",
+          "bytes": 21831
+        },
+        {
+          "path": "skills/circuit/scripts/test_preflight.mjs",
+          "sha256": "d7e9895fd229e2eafe2d321a7d060b61d3c201382e077bb0ecf5d37c85c73c71",
+          "bytes": 11223
+        },
+        {
+          "path": "skills/circuit/scripts/test_routes.mjs",
+          "sha256": "127dfba955dce79f49e5c5ade1869990aecdd9701ca9254a20dad31f74401b44",
+          "bytes": 17899
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T16:47:38.516993+00:00"
+  "updated_at": "2026-09-08T18:06:25.231695+00:00"
 }

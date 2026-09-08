@@ -1,0 +1,113 @@
+{
+  "schema_version": "circuit-source-manifest/1",
+  "observed_on": "2026-09-08",
+  "status": "SOURCE_AND_PUBLISHED_DEPLOYMENT_RECORDS_RETAINED_RUNTIME_UNVERIFIED",
+  "source_pins": {
+    "universal_router": "999d561c3ad58fb5cab91b602911f3c75591a9c7",
+    "router_v4_periphery": "3231810e39b8c4d569b9d66907fa4ef8cd2cec22",
+    "creation_bytecode_repository": "Uniswap/contracts",
+    "creation_bytecode_commit": "023196a13735232e6a7e69c1ea03b2225480b9dc",
+    "creation_bytecode_core_gitlink": "46c6834698c48bc4a463a86d8420f4eb1d7f3b75",
+    "creation_bytecode_standalone_periphery_gitlink": "9dafaaecc1e2e1e824eda9d941085f96517d827b",
+    "creation_bytecode_permit2_gitlink": "cc56ad0f3439c502c246fc5cfcc3db92bb8b7219",
+    "deployment_record_repository": "Uniswap/contracts",
+    "deployment_record_commit": "37936185dee7decf681360ec799c124e0e034672"
+  },
+  "files": [
+    {
+      "file": "UniversalRouter.v211.sol",
+      "source_url": "https://github.com/Uniswap/universal-router/blob/999d561c3ad58fb5cab91b602911f3c75591a9c7/contracts/UniversalRouter.sol",
+      "git_blob_sha": "ff3d7f746a28bf9a8e1cb14c74d002ad7749b073"
+    },
+    {
+      "file": "Dispatcher.v211.sol",
+      "source_url": "https://github.com/Uniswap/universal-router/blob/999d561c3ad58fb5cab91b602911f3c75591a9c7/contracts/base/Dispatcher.sol",
+      "git_blob_sha": "cb2748125232d433c47af781d9103a1f3a777169"
+    },
+    {
+      "file": "RouterParameters.v211.sol",
+      "source_url": "https://github.com/Uniswap/universal-router/blob/999d561c3ad58fb5cab91b602911f3c75591a9c7/contracts/types/RouterParameters.sol",
+      "git_blob_sha": "4af25c7788d87cfd0bf02f4aa1c6fe46fff621bf"
+    },
+    {
+      "file": "Commands.v211.sol",
+      "source_url": "https://github.com/Uniswap/universal-router/blob/999d561c3ad58fb5cab91b602911f3c75591a9c7/contracts/libraries/Commands.sol",
+      "git_blob_sha": "7861feaccad2432950451a09c0322e2ce596491b"
+    },
+    {
+      "file": "V4SwapRouter.v211.sol",
+      "source_url": "https://github.com/Uniswap/universal-router/blob/999d561c3ad58fb5cab91b602911f3c75591a9c7/contracts/modules/uniswap/v4/V4SwapRouter.sol",
+      "git_blob_sha": "9cbe285d26c8c96e187fd8ac20aeedf86f27e707"
+    },
+    {
+      "file": "IV4Router.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/interfaces/IV4Router.sol",
+      "git_blob_sha": "b89f96beb4ff82df33fd6c80c0833ce9f3848cba"
+    },
+    {
+      "file": "V4Router.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/V4Router.sol",
+      "git_blob_sha": "88dffec5a976f5bace7a57f5a0ffd192162d75a1"
+    },
+    {
+      "file": "PathKey.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/libraries/PathKey.sol",
+      "git_blob_sha": "b6902db3d31de6803133f340ed22b449a9776e39"
+    },
+    {
+      "file": "Actions.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/libraries/Actions.sol",
+      "git_blob_sha": "62ac44c0e1892e90636c840ae1bcbe084ec34350"
+    },
+    {
+      "file": "ActionConstants.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/libraries/ActionConstants.sol",
+      "git_blob_sha": "4c84e11a1c6985551de7c332d1d3fa689c2b28c0"
+    },
+    {
+      "file": "DeltaResolver.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/base/DeltaResolver.sol",
+      "git_blob_sha": "bd0d39bf0c07487775627dbfea92296027e89bfc"
+    },
+    {
+      "file": "BaseActionsRouter.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/base/BaseActionsRouter.sol",
+      "git_blob_sha": "7adcd20865d870fbef9af1df40504e4f7f1aff0a"
+    },
+    {
+      "file": "ImmutableState.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/base/ImmutableState.sol",
+      "git_blob_sha": "4b35794f3c4ba5982b06d2a17e56e3416c3e9d18"
+    },
+    {
+      "file": "CalldataDecoder.v211.sol",
+      "source_url": "https://github.com/Uniswap/v4-periphery/blob/3231810e39b8c4d569b9d66907fa4ef8cd2cec22/src/libraries/CalldataDecoder.sol",
+      "git_blob_sha": "5e667bb14a71745e2b384f7fe016b53891aeae0d"
+    },
+    {
+      "file": "UniversalRouterDeployer.v211.pinned.sol",
+      "source_url": "https://github.com/Uniswap/contracts/blob/023196a13735232e6a7e69c1ea03b2225480b9dc/src/briefcase/deployers/universal-router/UniversalRouterDeployer.sol",
+      "git_blob_sha": "b87b898407a23cdf7eadbf50cc3c28ea07c0a45c"
+    },
+    {
+      "file": "Permit2Deployer.sol",
+      "source_url": "https://github.com/Uniswap/contracts/blob/023196a13735232e6a7e69c1ea03b2225480b9dc/src/briefcase/deployers/permit2/Permit2Deployer.sol",
+      "git_blob_sha": "5d85c711ab999cfcb15db9796d58f66bc2bb82f3"
+    },
+    {
+      "file": "PoolManagerDeployer.sol",
+      "source_url": "https://github.com/Uniswap/contracts/blob/023196a13735232e6a7e69c1ea03b2225480b9dc/src/briefcase/deployers/v4-core/PoolManagerDeployer.sol",
+      "git_blob_sha": "66523e30607b427043942087837ff5ce61a2cb6b"
+    },
+    {
+      "file": "V4QuoterDeployer.sol",
+      "source_url": "https://github.com/Uniswap/contracts/blob/023196a13735232e6a7e69c1ea03b2225480b9dc/src/briefcase/deployers/v4-periphery/V4QuoterDeployer.sol",
+      "git_blob_sha": "f4e4643d620821631f9598f98479a0a778828bf4"
+    },
+    {
+      "file": "deployments-4663.pinned.json",
+      "source_url": "https://github.com/Uniswap/contracts/blob/37936185dee7decf681360ec799c124e0e034672/deployments/json/4663.json",
+      "git_blob_sha": "6d5cc3e096ef2990c1f50403342cf45f20dfb8b0"
+    }
+  ]
+}

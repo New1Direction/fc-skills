@@ -1,0 +1,7 @@
+{
+  "url": "https://rpc.mainnet.chain.robinhood.com",
+  "method": "eth_chainId",
+  "observedAt": "2026-09-08T17:05:34Z",
+  "errorType": "TimeoutError",
+  "error": "The read operation timed out"
+}

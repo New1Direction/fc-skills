@@ -1,6 +1,6 @@
 # MSK
 
-Fifteen crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
+Sixteen crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
 
 Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. The optional EVM harnesses operate inside their own isolated local Anvil processes.
 
@@ -23,6 +23,7 @@ Each skill includes its instructions, deterministic Python or Node.js helpers, r
 | [CATALYST](skills/catalyst/SKILL.md) | Which newly disclosed company events relate to these exact Robinhood assets and pools? | Bounded SEC submissions/document collection, structured Form 4 parsing, durable evidence and retained pool-response analysis. |
 | [Night Desk](skills/night-desk/SKILL.md) | How do stock reference value, onchain price and position-size exit evidence differ? | Robinhood REST references, multiplier accounting, retained exact-asset prices and wallet/size/route-specific quote or simulation evidence. |
 | [Agent Arena](skills/agent-arena/SKILL.md) | What did the agent earn after external funding, costs and open inventory? | Supplied portfolio accounting, exact bracketed TWR, observed drawdowns and append-only SQLite evidence journals. |
+| [CIRCUIT](skills/circuit/SKILL.md) | Can this exact V4 route settle, what returns to the wallet, and how do sampled sizes compare after estimated costs? | Pinned Universal Router 2.1.1 calldata, bounded path/cycle enumeration, Permit2 preflight, isolated fork balances and conditional Nitro cost estimates. |
 
 ## Use
 
@@ -30,6 +31,7 @@ Start with a skill's `SKILL.md`. Give an agent that folder and a concrete pool, 
 
 Example requests:
 
+- Use CIRCUIT to construct this exact Robinhood V4 route, simulate the whole wallet call and compare supplied sizes with explicit costs and refunds.
 - Use CATALYST to retain newly disclosed company events, map exact stock-token identities, and measure qualified pool responses.
 - Use Night Desk to compare a position's stock reference, onchain mark and supported retained exit evidence without mixing units.
 - Use Agent Arena to audit a complete declared performance window, including external flows, open inventory and failed attempts.
@@ -47,7 +49,7 @@ The installed ChatGPT originals remain separate from this export; changing this 
 
 ## Verify the package
 
-Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE, HOOK LAB, PRESSURE and WATCHTOWER require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
+Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE, HOOK LAB, PRESSURE, WATCHTOWER and CIRCUIT require Node.js24+ and use built-in modules for normal operation. HOOK LAB and CIRCUIT fork collectors require an Anvil binary; their optional actual-EVM smoke harnesses also require solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
 
 ```sh
 python3 scripts/check_package.py
@@ -56,7 +58,22 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-Version 0.7.0 adds CATALYST, Night Desk and Agent Arena plus an offline event-to-valuation interchange. All twelve earlier skill inventories remain byte for byte identical to version 0.6.0. The release passes **1,247 offline tests**, including 61 CATALYST tests, 40 Night Desk tests, 37 Agent Arena tests and nine package composition checks. Independent skill-use exercises and the combined native demo also passed.
+Version 0.8.0 adds CIRCUIT. All fifteen earlier skill inventories remain byte for byte identical to version 0.7.0. The release passes **1,422 offline tests**, including CIRCUIT's 175 checks and the prior 1,247 package tests. CIRCUIT also passes eight isolated scenarios against actual upstream Uniswap protocol bytecode, plus independent skill-use exercises.
+
+## CIRCUIT route construction and simulation
+
+CIRCUIT compiles exact Universal Router 2.1.1 V4 calldata for one to four hops, including same-asset cycles. It prepays input, executes the complete path and returns all positive route-currency credits, covering partial-fill refunds. Its registry helper enumerates bounded supplied paths; its size sweep measures up to eight independent forks of the same parent state.
+
+Preflight reads code, manager wiring, balances and both Permit2 approval layers at an exact canonical block. The fork collector retains complete wallet/router balances and local receipt evidence. The accounting distinguishes settled return, refunds, residuals, hook charges already present in balances, and local gas. Optional Nitro NodeInterface collection estimates total source fees including L1 once. Missing fees or required token conversion remain unknown.
+
+```sh
+node skills/circuit/scripts/circuit.mjs demo --out /tmp/circuit-demo-new
+node skills/circuit/scripts/circuit.mjs build --in skills/circuit/assets/route-example.json --out /tmp/circuit-built-new.json
+```
+
+The example is synthetic. See CIRCUIT's [instructions](skills/circuit/SKILL.md), [interfaces](skills/circuit/references/interfaces.md) and [EVM validation](skills/circuit/references/evm-validation.md) for actual-wallet inputs and reproducible checks. The retained EVM evidence covers open routes, negative/positive spread cycles, minimum and allowance failures, a synthetic fee hook, and native/ERC20 partial-fill refunds. It establishes local protocol behavior with zero source writes, not an actual Robinhood opportunity.
+
+**Deployment status:** the first adapter follows the pinned 2.1.1 ABI and published deployment history. Live runtime correspondence and a real wallet route remain unverified; the public mainnet probe timed out. No production FYNCH/Ape integration, permanent route worker or live trade executor is deployed. Full reports preserve this distinction even when simulated arithmetic is positive.
 
 ## Disclosure, valuation and agent performance
 

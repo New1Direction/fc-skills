@@ -1,0 +1,14 @@
+interface:
+  display_name: CIRCUIT
+  short_description: Build and simulate exact Robinhood V4 routes
+  default_prompt: Use $circuit to construct a supported Robinhood V4 route, simulate
+    the exact wallet call, and measure resulting balances and costs.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
