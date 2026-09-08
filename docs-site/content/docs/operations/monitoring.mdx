@@ -1,0 +1,53 @@
+---
+title: Operate PULSE and WATCHTOWER
+description: Understand source collection, transaction coverage, recovery, and durable research workers.
+---
+
+## Two services with different responsibilities
+
+| Component | Responsibility | What it does not establish |
+| --- | --- | --- |
+| PULSE RPC Race | Compare first arrivals of the same object under an explicit run and clock | A universal fastest-provider ranking |
+| PULSE Collector | Retain heads/logs and optional raw feed observations, reconnect, and replay | Independent sequencer-feed verification |
+| PULSE Pool State Engine | Maintain provisional and complete-block V4 observations | An arbitrary-hook trade-size quote |
+| PULSE Node Operator | Generate Nitro configuration and inspect sync/freshness | A provisioned or already synced production host |
+| WATCHTOWER Capture | Retain full RPC-reported included transactions and reconcile receipts | Internal-call traces or transactions never reported by the source |
+| WATCHTOWER Workers | Classify stored transactions and emit configured research dispatch records | Automatic skill invocation or live trading |
+
+## What “every transaction” means
+
+WATCHTOWER starts at an explicit first block and takes full blocks without a token filter. This includes successful and reverted transactions, contract creation, and unknown transaction types reported by the RPC source.
+
+Fresh tail capture and older-gap recovery progress independently. Receipt completeness has its own cursor. A highest-seen block is not proof that every preceding block and receipt has been retained.
+
+SQLite WAL storage, bounded queues, restart recovery, reorg invalidation, and outbox retractions preserve the reported interval's evidence state. Internal tracing and independent source authenticity are outside native coverage.
+
+## Run the offline examples
+
+From the repository root, use a fresh output directory:
+
+```sh
+node skills/watchtower/scripts/watchtower.mjs demo --out /tmp/msk-watchtower-demo
+node skills/watchtower/scripts/watchtower.mjs bench --out /tmp/msk-watchtower-bench.json --blocks 100 --transactions 100
+```
+
+The benchmark measures a synthetic local workload. It excludes live network and Nitro latency and cannot establish mainnet throughput.
+
+## Prepare continuous operation
+
+1. Establish a working, synchronized Robinhood Chain source and independently check chain identity and freshness.
+2. Configure exact source references, monitored start block, storage bounds, and recovery policy using the supplied examples.
+3. Run capture and research workers as separate processes with retained logs and health evidence.
+4. Compare matching source arrivals; keep live, recovered, and replay observations separate.
+5. Connect an explicit downstream consumer, monitor gaps and outbox retractions, and define retention/export ownership.
+
+Do not publish secret RPC URLs or provider credentials into reports or Git. The package includes Linux service templates; installation alone does not activate them.
+
+## Operator references
+
+- [WATCHTOWER operations](https://github.com/New1Direction/MSK/blob/main/skills/watchtower/references/operations.md)
+- [WATCHTOWER validation and limits](https://github.com/New1Direction/MSK/blob/main/skills/watchtower/references/validation.md)
+- [PULSE operator instructions](https://github.com/New1Direction/MSK/blob/main/skills/pulse/SKILL.md)
+- [Release runbook](/docs/reference/release-runbook/) for retained deployment status and prior probes
+
+No deployed host, sustained live capacity, complete internal tracing, or fastest-provider result is established by the v0.8.0 package.

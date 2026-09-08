@@ -1,0 +1,14 @@
+{
+  "name": "msk",
+  "version": "0.8.0",
+  "private": true,
+  "workspaces": ["docs-site"],
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "npm run dev --workspace=docs-site",
+    "build": "npm run build --workspace=docs-site",
+    "postbuild": "node scripts/stage_docs.mjs",
+    "check:docs": "node scripts/check_docs.mjs",
+    "typecheck": "npm run typecheck --workspace=docs-site"
+  }
+}

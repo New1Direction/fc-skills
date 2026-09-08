@@ -1,0 +1,78 @@
+---
+title: Quickstart
+description: Verify the package and produce your first research report without live credentials.
+---
+
+## Requirements
+
+Use Python 3.12 or newer and Node.js 24 or newer. The Python helpers use the standard library and SQLite. Normal Node helpers use built-in modules. Anvil and solc are optional tools for the separate EVM validation paths; they are not needed for this quickstart.
+
+## 1. Clone and verify
+
+MSK is private. Authenticate with a GitHub account that has access, then run:
+
+```sh
+git clone https://github.com/New1Direction/MSK.git
+cd MSK
+python3 scripts/check_package.py
+```
+
+This checks the skill files against the package manifest. To run all offline package tests:
+
+```sh
+python3 scripts/check_package.py --tests
+```
+
+The v0.8.0 release contains 1,422 offline tests. A passing suite verifies local behavior against its fixtures; it does not establish live source availability.
+
+## 2. Run a complete offline handoff
+
+Run from the repository root. Output directories must be new: change the suffix if you have already run the example.
+
+```sh
+python3 scripts/research_demo.py --out /tmp/msk-first-research
+```
+
+The demo collects a synthetic Form 4 through an injected transport, creates Night Desk valuation views, verifies an Agent Arena journal, and joins the disclosure to the exact stock-token identity.
+
+| Output | What to inspect |
+| --- | --- |
+| `catalyst/events.json` | The disclosure and supplied security mapping |
+| `night-desk.json` | Separate reference, mark, and exit-evidence views |
+| `agent-arena.json` | Portfolio performance with funding and inventory |
+| `arena-integrity.json` | Journal verification results |
+| `research-bundle.json` | Exact-asset links and time-qualified exclusions |
+
+The command reports `SYNTHETIC_DEMO_COMPLETE`, zero network requests, and zero live trades. No credentials or wallet keys are needed.
+
+## 3. Give an agent a complete skill
+
+Open the chosen skill's `SKILL.md` and keep its entire folder together. Scripts, fixtures, and references use paths inside that folder. Use your agent's supported skill installer or a user-controlled skill location; do not overwrite an existing installation without reviewing it.
+
+Example request:
+
+```text
+Use Ignition on my retained normalized swaps. Compare participation,
+spending, concentration, and suspected activity across the declared
+windows. Return a research shortlist with missing data and coverage.
+```
+
+The [skill catalog](/docs/skills/) has a runnable offline example for every package. Installing the folder does not start collectors, workers, or a trading bot. Changes to this repository also do not update separately installed copies automatically.
+
+## 4. Build the documentation
+
+The docs use Fumadocs and Next.js. From the repository root:
+
+```sh
+npm ci
+npm run dev
+```
+
+For a production static export:
+
+```sh
+npm run build
+npm run check:docs
+```
+
+The export is staged in `out/`. Search is included in the build and runs in the browser. See [maintaining the docs](/docs/development/) for content structure and validation.

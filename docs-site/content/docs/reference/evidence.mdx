@@ -1,0 +1,38 @@
+---
+title: Evidence and coverage
+description: Read a report without turning a local observation into a claim the data cannot support.
+---
+
+## Label what happened
+
+| Evidence label | Meaning | Appropriate use |
+| --- | --- | --- |
+| Synthetic | Fabricated identities or observations for teaching and validation | Check interfaces and expected behavior |
+| Retained observation | Stored data with declared provenance, time, and coverage | Reproduce an analysis within its observed scope |
+| Published illustrative | A documented external example with potentially incomplete history | Check supplied arithmetic, not authenticated replay |
+| Modeled | A calculation under explicit assumptions | Compare scenarios and sensitivity |
+| Simulated | A call or state transition measured in a declared environment | Assess that wallet call at that state and context |
+| Executed | A real submitted transaction with retained execution evidence | Reconcile what actually happened and what it cost |
+
+A retained RPC transcript checks reproducibility and consistency. It does not independently authenticate the provider. A file hash identifies content. It does not prove completeness or authorship.
+
+## Carry identity and time together
+
+For onchain research, preserve chain ID, exact contract and pool identity, block number and hash, observation time, and data source. For wallet-call evidence, also preserve wallet, calldata, trade size, route, and relevant approvals.
+
+For disclosures, distinguish filing time, first observation, download completion, detail readiness, and the time an asset mapping became known. Do not use later mappings to manufacture a historical signal.
+
+## Treat unknown values as unknown
+
+- Missing costs are not zero costs.
+- Custody balances do not establish sellable float or economic backing.
+- Pool turnover is not independently attributed wallet participation.
+- A quote or displayed mark is not a completed sale.
+- A positive fork result is not realized profit or evidence that the route is currently available.
+- A configured source is not evidence of complete or continuous collection.
+
+## Preserve the comparison set
+
+Keep complete candidate universes, failed attempts, missing outcomes, observation windows, external flows, and open inventory. Freeze point-in-time selection rules before evaluating outcomes. Compare like-for-like assets, state, timing, and costs.
+
+Use [Agent Arena](/docs/skills/agent-arena/) for supplied portfolio evidence and each discovery skill's outcome journal where supported. See [capabilities](/docs/reference/capabilities/) before joining outputs from different adapters.

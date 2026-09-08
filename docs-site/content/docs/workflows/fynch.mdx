@@ -1,0 +1,36 @@
+---
+title: FYNCH stock-token research
+description: Keep disclosures, issuance, equity references, onchain marks, and exits in their correct units.
+---
+
+## Build around exact assets
+
+Use chain ID, stock-token contract, exact pool identity, and the time at which the mapping was known. Joining records by ticker alone can mix different assets or apply information that was unavailable at the time.
+
+| Question | Skill | Handoff |
+| --- | --- | --- |
+| What company event was newly disclosed? | [CATALYST](/docs/skills/catalyst/) | Original filing, processing times, structured facts, and exact supplied security mapping |
+| Did raw stock-token supply change? | [PRESSURE](/docs/skills/pressure/) | Pinned mint/burn reconciliation, initial destinations, and multiplier context |
+| What explains a stock-paired meme's return? | [Undertow](/docs/skills/undertow/) | Meme-relative move, quote-stock move, local premium, and corporate-action components |
+| What is the position worth under different references? | [Night Desk](/docs/skills/night-desk/) | Equity reference, adjusted token reference, onchain mark, and retained exit evidence |
+| What did the whole strategy earn? | [Agent Arena](/docs/skills/agent-arena/) | Portfolio snapshots, external flows, costs, and open inventory |
+
+## Run the existing handoff
+
+From the repository root, choose a new output directory:
+
+```sh
+python3 scripts/research_demo.py --out /tmp/msk-fynch-research
+```
+
+The result includes `research-bundle.json` in the `MSKResearchBundle@1` format. The composer joins CATALYST disclosures to Night Desk valuations by exact chain and token address. It preserves original valuation reports, excludes evidence available after the view's cutoff, and labels retrospective mappings.
+
+This is an offline synthetic example. It does not write to FYNCH or start continuous services.
+
+## Display the missing states
+
+An application consumer should show stale quotes, unknown FX, missing costs, late mappings, incomplete coverage, and unavailable exits directly. Do not replace those states with zero, a current price, or a retroactively matched asset.
+
+Equity references and adjusted token references have different units. Pool prices may contain local premiums. Exit evidence belongs to a particular wallet, route, size, and time. Keep all three valuation views visible.
+
+Read the [exact-asset application handoff](https://github.com/New1Direction/MSK/blob/main/references/research-integration.md) for the schema and point-in-time consumer rules.

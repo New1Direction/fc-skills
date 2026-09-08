@@ -1,0 +1,56 @@
+---
+title: "PULSE"
+description: "Collect live data, compare source arrival, maintain V4 state views, and prepare private Nitro nodes."
+---
+
+Use it to build and inspect the Robinhood data path that feeds research applications.
+
+**Runtime:** Node.js 24+.
+
+## How it works
+
+1. Configure simultaneous WS/HTTP sources with endpoint environment-variable names and explicit log scope.
+2. Persist heads/logs, optional raw feed messages, reconnect recovery, and live-versus-replayed observations.
+3. Build immediate provisional V4 state and a separate complete-block view from exact pool registry evidence.
+4. Compare exact event arrivals and prepare or inspect a private Nitro deployment from pinned assets.
+
+## What to provide
+
+- Source configuration and privately supplied endpoint variables.
+- Exact V4 pool registry, supported identity evidence, and retained block bundles for replay.
+- For node operations: owned host context, pinned official assets, image, and explicit deployment configuration.
+
+## What you get
+
+- Recoverable event journal and bounded spool/read API.
+- Source-arrival comparisons with missing observations and tail percentiles.
+- Provisional/reconciled pool state, affected-route invalidations, and node plans/probe reports.
+
+## Run the offline example
+
+Run from the repository root. This uses invented fixtures, makes no live network requests, and needs a fresh output path.
+
+```sh
+node skills/pulse/scripts/pulse.mjs pools --registry skills/pulse/assets/pools.synthetic.json --blocks skills/pulse/assets/blocks.synthetic.json --out /tmp/msk-pulse-report-new.json
+```
+
+This command was run successfully while preparing the documentation. Inspect the resulting file before replacing the example inputs with your own evidence.
+
+## Coverage and limits
+
+- Filtered logs do not capture every included transaction; WATCHTOWER handles full-block intake.
+- Raw sequencer-feed capture does not execute Nitro, verify signatures, or reveal an unsequenced private queue.
+- V4 state marks are not trade-size quotes or arbitrary-hook execution models.
+- Software and templates do not establish a running synced node, production capacity, or the fastest source; actual host measurement is required.
+
+## Source and reference
+
+- [Skill instructions](https://github.com/New1Direction/MSK/blob/main/skills/pulse/SKILL.md)
+- [Collector](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/collector.md)
+- [Runtime operations](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/runtime.md)
+- [RPC Race](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/race.md)
+- [Pool state](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/pools.md)
+- [Node operations](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/node-ops.md)
+- [Integration](https://github.com/New1Direction/MSK/blob/main/skills/pulse/references/integration.md)
+
+See the [capability matrix](/docs/reference/capabilities/) for venue support and the [workflow guides](/docs/workflows/) for related skills.

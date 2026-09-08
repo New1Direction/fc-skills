@@ -1,0 +1,54 @@
+---
+title: "Meme Scout"
+description: "Separate original narrative participation from amplification in a retained social sample."
+---
+
+Use it to investigate emerging memes, cross-community spread, origin claims, and exact token associations.
+
+**Runtime:** Python 3.12+.
+
+## How it works
+
+1. Define the narrative, platforms/languages, sample window, and knowledge cutoff.
+2. Retain public posts from available search tools or supplied observations, including event and availability times.
+3. Count original candidates, amplification, exact normalized copies, and documented community assignments.
+4. Resolve exact chain/address identities separately from names and tickers.
+
+## What to provide
+
+- Strict JSON observations with source URLs, post text, event times, availability times, and selection notes.
+- Documented community and promotion evidence when available.
+- Primary identity evidence for any proposed meme-to-token association.
+
+## What you get
+
+- Original-candidate and amplification counts for the retained sample.
+- First-observed evidence, copy flags, community assignments, and unresolved token copies.
+- A report with provenance, exclusions, source hash, and optional exact-identity handoff.
+
+## Run the offline example
+
+Run from the repository root. This uses invented fixtures, makes no live network requests, and needs a fresh output path.
+
+```sh
+python3 skills/meme-scout/scripts/analyze.py skills/meme-scout/examples/synthetic-observations.json --out /tmp/msk-meme-scout-report-new.json
+```
+
+This command was run successfully while preparing the documentation. Inspect the resulting file before replacing the example inputs with your own evidence.
+
+## Coverage and limits
+
+- No native X collector, authenticated Grok client, credentials, or background social monitor is bundled.
+- The helper does not infer sentiment, semantic near-copies, or independent people behind accounts.
+- Sample counts are not an all-X census, bullishness score, or profit forecast.
+- First observed in a sample is not first ever.
+
+## Source and reference
+
+- [Skill instructions](https://github.com/New1Direction/MSK/blob/main/skills/meme-scout/SKILL.md)
+- [Research and query design](https://github.com/New1Direction/MSK/blob/main/skills/meme-scout/references/research.md)
+- [Input schema](https://github.com/New1Direction/MSK/blob/main/skills/meme-scout/references/schema.md)
+- [Adoption evidence](https://github.com/New1Direction/MSK/blob/main/skills/meme-scout/references/adoption.md)
+- [Token identity](https://github.com/New1Direction/MSK/blob/main/skills/meme-scout/references/token-identity.md)
+
+See the [capability matrix](/docs/reference/capabilities/) for venue support and the [workflow guides](/docs/workflows/) for related skills.

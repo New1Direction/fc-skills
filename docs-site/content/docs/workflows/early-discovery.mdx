@@ -1,0 +1,47 @@
+---
+title: Early memecoin discovery
+description: Find research candidates through narratives, participation, wallet history, and usable liquidity.
+---
+
+## 1. Define the observed universe
+
+Declare the tokens, venues, wallets, social sources, and time window you can actually observe. Retain unsuccessful candidates and missing outcomes so later evaluation does not only contain winners.
+
+For Robinhood Chain intake, [WATCHTOWER](/docs/skills/watchtower/) can retain included transactions while [PULSE](/docs/skills/pulse/) compares data sources and maintains provisional pool observations. Those records still need decoding and attribution into the discovery skills' input schemas.
+
+## 2. Find independent signs of adoption
+
+- **[Meme Scout](/docs/skills/meme-scout/)** traces retained social posts and separates original adoption from amplification. Supply verifiable source posts; native live X or Grok collection is not included.
+- **[Scout Network](/docs/skills/scout-network/)** evaluates discovery wallets using their complete historical picks and realistic follower delays and costs.
+- **[Ignition](/docs/skills/ignition/)** compares normalized swap windows for participation, spend, and concentration. Use it to test whether attention is accompanied by broader buying.
+- **[Second Wind](/docs/skills/second-wind/)** compares a dormant token with its own earlier windows to investigate renewed participation and incumbent selling.
+
+These are complementary observations. Agreement is a reason to investigate further; it is not a calibrated probability of profit.
+
+## 3. Investigate the launch
+
+Use [Autopsy](/docs/skills/autopsy/) to reconstruct supply recipients, early transfers, funding evidence, liquidity changes, and exits. Its native EVM collector handles standard ERC-20 transfers. Supply independently retained swap, liquidity, and attribution evidence where required.
+
+Keep wallet relationships as hypotheses unless supported. A shared funding source may have competing explanations.
+
+## 4. Check the route and position size
+
+Choose the adapter that matches the actual venue:
+
+| Venue | Research path |
+| --- | --- |
+| Supported canonical 30-bps V2 route | [Exit Doctor](/docs/skills/exit-doctor/) |
+| Robinhood V4 route | [HOOK LAB](/docs/skills/hook-lab/) deployment evidence, then [CIRCUIT](/docs/skills/circuit/) wallet-call construction and fork measurement |
+| Unsupported venue or token behavior | Retain the gap and obtain a verified adapter before interpreting execution |
+
+Freeze the candidate, observation time, decision rule, and follow-up window. Keep losses, unavailable observations, failed attempts, and costs in the outcome journal.
+
+## Example agent request
+
+```text
+Review this declared candidate universe using Meme Scout, Scout Network,
+and Ignition. Investigate the shortlisted launches with Autopsy.
+For each candidate, show evidence provenance, identity confidence,
+participation concentration, missing inputs, and the supported exit
+research path. Preserve every candidate for later outcome evaluation.
+```

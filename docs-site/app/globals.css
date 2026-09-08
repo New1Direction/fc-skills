@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+:root {
+  --color-fd-background: hsl(150, 18%, 98%);
+  --color-fd-foreground: hsl(160, 26%, 12%);
+  --color-fd-primary: hsl(156, 85%, 24%);
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-ring: hsl(156, 70%, 30%);
+  --color-fd-accent: hsl(150, 35%, 93%);
+  --color-fd-accent-foreground: hsl(157, 66%, 20%);
+  --color-fd-muted-foreground: hsl(160, 9%, 37%);
+  --color-fd-border: hsl(155, 15%, 87%);
+  --color-fd-card: hsl(0, 0%, 100%);
+}
+.dark {
+  --color-fd-background: hsl(160, 12%, 6%);
+  --color-fd-foreground: hsl(150, 14%, 92%);
+  --color-fd-primary: hsl(151, 83%, 61%);
+  --color-fd-primary-foreground: hsl(160, 28%, 8%);
+  --color-fd-ring: hsl(151, 65%, 48%);
+  --color-fd-muted: hsl(156, 10%, 12%);
+  --color-fd-muted-foreground: hsl(150, 7%, 65%);
+  --color-fd-accent: hsl(155, 23%, 13%);
+  --color-fd-accent-foreground: hsl(151, 78%, 73%);
+  --color-fd-border: hsl(155, 10%, 18%);
+  --color-fd-card: hsl(155, 12%, 9%);
+  --color-fd-popover: hsl(155, 12%, 9%);
+  --color-fd-secondary: hsl(156, 10%, 12%);
+}
+body { font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.65; }
+::selection { background: #54eea344; }
+.msk-wordmark { display: inline-flex; align-items: center; gap: .6rem; white-space: nowrap; }
+.msk-wordmark strong { font-size: 1.15rem; letter-spacing: -.045em; }
+.msk-mark { display: grid; place-items: center; width: 1.65rem; height: 1.65rem; border-radius: .3rem; background: var(--color-fd-primary); color: var(--color-fd-primary-foreground); font: 800 1rem ui-monospace, monospace; }
+.msk-label { color: var(--color-fd-muted-foreground); font: .75rem ui-monospace, monospace; letter-spacing: .04em; padding-left: .4rem; }
+.msk-page-label { color: var(--color-fd-primary); font: .75rem ui-monospace, monospace; letter-spacing: .12em; margin-bottom: .5rem; }
+#nd-sidebar { background: var(--color-fd-background); font-size: .875rem; }
+#nd-page h1 { font-weight: 650; letter-spacing: -.045em; }
+.prose { font-size: 1rem; }
+.prose h2 { letter-spacing: -.025em; }
+.prose code, pre code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; }
+.prose :is(table, pre) { font-size: .875rem; }
+.prose a { text-underline-offset: .22em; }
+.msk-facts { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; border-block: 1px solid var(--color-fd-border); padding: 1rem 0; margin: 1.5rem 0 2rem; font-size: .875rem; color: var(--color-fd-muted-foreground); }
+.msk-facts strong { color: var(--color-fd-foreground); }
+@media (max-width: 640px) { .msk-label { display: none; } .msk-page-label { letter-spacing: .06em; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

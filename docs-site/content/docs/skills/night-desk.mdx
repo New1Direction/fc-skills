@@ -1,0 +1,52 @@
+---
+title: "Night Desk"
+description: "Keep stock reference value, onchain mark, and size-specific exit evidence separate."
+---
+
+Use it to inspect stock-token premiums, overnight valuation, stale references, and supported portfolio exit-value comparisons.
+
+**Runtime:** Python 3.12+.
+
+## How it works
+
+1. Resolve exact chain 4663 contracts and raw position units.
+2. Optionally collect bounded Robinhood metadata, raw equity quotes, and corporate actions.
+3. Apply the contemporaneous shares-per-token multiplier once to a raw equity reference.
+4. Compare reference value with supplied onchain marks and exact wallet/size/route quote or simulation evidence.
+
+## What to provide
+
+- Exact token identity, raw position amount, and source timestamps.
+- Raw equity or already-adjusted reference evidence and point-in-time multiplier semantics.
+- Optional onchain marks, retained execution evidence, USD conversion evidence, and cost completeness.
+
+## What you get
+
+- Separate reference bid/ask and adjusted stock-token position value.
+- Observed onchain mark and premium/discount where supported.
+- Retained exit amounts with quote-versus-simulation status, freshness, identity, FX, and cost gaps.
+
+## Run the offline example
+
+Run from the repository root. This uses invented fixtures, makes no live network requests, and needs a fresh output path.
+
+```sh
+python3 skills/night-desk/scripts/night_desk.py analyze --input skills/night-desk/assets/example-input.json --out /tmp/msk-night-desk-report-new.json
+```
+
+This command was run successfully while preparing the documentation. Inspect the resulting file before replacing the example inputs with your own evidence.
+
+## Coverage and limits
+
+- The collector makes at most four read-only Robinhood REST requests and creates reference evidence only.
+- It does not collect wallet balances, build DEX routes, generate native quotes, or simulate arbitrary hooks.
+- A reference midpoint is not a redeemable or executable price; API generation time is not exchange-tick freshness.
+- Current multipliers cannot establish historical values, and USDG is not silently assumed to equal USD.
+
+## Source and reference
+
+- [Skill instructions](https://github.com/New1Direction/MSK/blob/main/skills/night-desk/SKILL.md)
+- [Input and report schema](https://github.com/New1Direction/MSK/blob/main/skills/night-desk/references/schema.md)
+- [Operations and source assumptions](https://github.com/New1Direction/MSK/blob/main/skills/night-desk/references/operations.md)
+
+See the [capability matrix](/docs/reference/capabilities/) for venue support and the [workflow guides](/docs/workflows/) for related skills.

@@ -10,3 +10,10 @@ __pycache__/
 cases/
 outputs/
 *.bundle
+node_modules/
+.next/
+.source/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
