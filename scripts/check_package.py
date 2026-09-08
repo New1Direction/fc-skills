@@ -77,6 +77,16 @@ def main():
                     raise ValueError('suite failed or had no tests: ' + skill['name'])
                 total += int(count[1])
                 print(f"{skill['name']}: {count[1]} tests passed", flush=True)
+            result = subprocess.run([sys.executable, '-m', 'unittest', 'discover',
+                '-s', 'scripts', '-p', 'test_*.py'], cwd=ROOT, env=env,
+                capture_output=True, text=True, timeout=60)
+            output = result.stdout + result.stderr
+            count = re.search(r'Ran (\d+) tests?\b', output)
+            if result.returncode or count is None or int(count[1]) == 0:
+                print(output, file=sys.stderr)
+                raise ValueError('package integration suite failed or had no tests')
+            total += int(count[1])
+            print(f'package integration: {count[1]} tests passed', flush=True)
             print(f'Total: {total} offline tests passed; live performance is unverified.')
     except (OSError, ValueError, KeyError, TypeError, subprocess.TimeoutExpired) as exc:
         parser.exit(1, f'Package verification failed: {exc}\n')

@@ -1,0 +1,329 @@
+{
+  "schema": "arena-input@1",
+  "scope": {
+    "chainId": 4663,
+    "wallets": [
+      "0x1111111111111111111111111111111111111111"
+    ],
+    "currency": "USD"
+  },
+  "window": {
+    "start": "2026-09-07T00:00:00Z",
+    "end": "2026-09-07T06:00:00Z",
+    "asOf": "2026-09-07T06:01:00Z",
+    "maxMarkAgeSeconds": 60
+  },
+  "coverage": {
+    "start": "2026-09-07T00:00:00Z",
+    "end": "2026-09-07T06:00:00Z",
+    "transactionsComplete": true,
+    "externalFlowsComplete": true,
+    "positionsComplete": true,
+    "liabilitiesComplete": true,
+    "costsIncludedInNAV": true,
+    "attemptsComplete": true,
+    "sourceRefs": [
+      "synthetic://arena/complete-fixture"
+    ]
+  },
+  "events": [
+    {
+      "id": "opening",
+      "type": "snapshot",
+      "at": "2026-09-07T00:00:00Z",
+      "observedAt": "2026-09-07T00:00:00Z",
+      "evidenceRef": "synthetic://arena/opening",
+      "phase": "regular",
+      "complete": true,
+      "cash": "900",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "10",
+            "at": "2026-09-07T00:00:00Z",
+            "observedAt": "2026-09-07T00:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T00:00:00Z",
+          "observedAt": "2026-09-07T00:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "decision-1",
+      "type": "decision",
+      "at": "2026-09-07T01:00:00Z",
+      "observedAt": "2026-09-07T01:00:00Z",
+      "evidenceRef": "synthetic://arena/decision-1",
+      "agentId": "ape-demo",
+      "action": "Attempt a retained example route"
+    },
+    {
+      "id": "attempt-1-pending",
+      "type": "attempt",
+      "at": "2026-09-07T01:00:00Z",
+      "observedAt": "2026-09-07T01:00:00Z",
+      "evidenceRef": "synthetic://arena/attempt-1-pending",
+      "attemptId": "route-1",
+      "status": "pending",
+      "txHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "decisionId": "decision-1",
+      "feeAmount": null,
+      "feesIncludedInNAV": true
+    },
+    {
+      "id": "attempt-1-failed",
+      "type": "attempt",
+      "at": "2026-09-07T02:00:00Z",
+      "observedAt": "2026-09-07T02:00:00Z",
+      "evidenceRef": "synthetic://arena/attempt-1-failed",
+      "attemptId": "route-1",
+      "status": "failed",
+      "txHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "decisionId": "decision-1",
+      "feeAmount": "2",
+      "feesIncludedInNAV": true
+    },
+    {
+      "id": "before-deposit",
+      "type": "snapshot",
+      "at": "2026-09-07T02:00:00Z",
+      "observedAt": "2026-09-07T02:00:00Z",
+      "evidenceRef": "synthetic://arena/before-deposit",
+      "phase": "before-flow",
+      "complete": true,
+      "cash": "898",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "10",
+            "at": "2026-09-07T02:00:00Z",
+            "observedAt": "2026-09-07T02:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T02:00:00Z",
+          "observedAt": "2026-09-07T02:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "deposit",
+      "type": "flow",
+      "at": "2026-09-07T02:00:00Z",
+      "observedAt": "2026-09-07T02:00:00Z",
+      "evidenceRef": "synthetic://arena/deposit",
+      "kind": "deposit",
+      "amount": "1000",
+      "beforeSnapshotId": "before-deposit",
+      "afterSnapshotId": "after-deposit"
+    },
+    {
+      "id": "after-deposit",
+      "type": "snapshot",
+      "at": "2026-09-07T02:00:00Z",
+      "observedAt": "2026-09-07T02:00:00Z",
+      "evidenceRef": "synthetic://arena/after-deposit",
+      "phase": "after-flow",
+      "complete": true,
+      "cash": "1898",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "10",
+            "at": "2026-09-07T02:00:00Z",
+            "observedAt": "2026-09-07T02:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T02:00:00Z",
+          "observedAt": "2026-09-07T02:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "market-loss",
+      "type": "snapshot",
+      "at": "2026-09-07T03:00:00Z",
+      "observedAt": "2026-09-07T03:00:00Z",
+      "evidenceRef": "synthetic://arena/market-loss",
+      "phase": "regular",
+      "complete": true,
+      "cash": "1898",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "8",
+            "at": "2026-09-07T03:00:00Z",
+            "observedAt": "2026-09-07T03:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T03:00:00Z",
+          "observedAt": "2026-09-07T03:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "before-withdrawal",
+      "type": "snapshot",
+      "at": "2026-09-07T04:00:00Z",
+      "observedAt": "2026-09-07T04:00:00Z",
+      "evidenceRef": "synthetic://arena/before-withdrawal",
+      "phase": "before-flow",
+      "complete": true,
+      "cash": "1898",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "8",
+            "at": "2026-09-07T04:00:00Z",
+            "observedAt": "2026-09-07T04:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T04:00:00Z",
+          "observedAt": "2026-09-07T04:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "withdrawal",
+      "type": "flow",
+      "at": "2026-09-07T04:00:00Z",
+      "observedAt": "2026-09-07T04:00:00Z",
+      "evidenceRef": "synthetic://arena/withdrawal",
+      "kind": "withdrawal",
+      "amount": "-400",
+      "beforeSnapshotId": "before-withdrawal",
+      "afterSnapshotId": "after-withdrawal"
+    },
+    {
+      "id": "after-withdrawal",
+      "type": "snapshot",
+      "at": "2026-09-07T04:00:00Z",
+      "observedAt": "2026-09-07T04:00:00Z",
+      "evidenceRef": "synthetic://arena/after-withdrawal",
+      "phase": "after-flow",
+      "complete": true,
+      "cash": "1498",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "8",
+            "at": "2026-09-07T04:00:00Z",
+            "observedAt": "2026-09-07T04:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T04:00:00Z",
+          "observedAt": "2026-09-07T04:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    },
+    {
+      "id": "unattributed-success",
+      "type": "attempt",
+      "at": "2026-09-07T05:00:00Z",
+      "observedAt": "2026-09-07T05:00:00Z",
+      "evidenceRef": "synthetic://arena/unattributed-success",
+      "attemptId": "route-2",
+      "status": "succeeded",
+      "txHash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "feeAmount": "1",
+      "feesIncludedInNAV": true
+    },
+    {
+      "id": "still-pending",
+      "type": "attempt",
+      "at": "2026-09-07T05:00:00Z",
+      "observedAt": "2026-09-07T05:00:00Z",
+      "evidenceRef": "synthetic://arena/still-pending",
+      "attemptId": "route-3",
+      "status": "pending",
+      "txHash": null,
+      "feeAmount": null,
+      "feesIncludedInNAV": true
+    },
+    {
+      "id": "closing",
+      "type": "snapshot",
+      "at": "2026-09-07T06:00:00Z",
+      "observedAt": "2026-09-07T06:00:00Z",
+      "evidenceRef": "synthetic://arena/closing",
+      "phase": "regular",
+      "complete": true,
+      "cash": "1497",
+      "positions": [
+        {
+          "assetId": "eip155:4663/erc20:0x2222222222222222222222222222222222222222",
+          "quantity": "10",
+          "mark": {
+            "price": "8.5",
+            "at": "2026-09-07T06:00:00Z",
+            "observedAt": "2026-09-07T06:00:00Z",
+            "sourceRef": "synthetic://arena/mark"
+          }
+        }
+      ],
+      "liabilities": [
+        {
+          "id": "loan",
+          "value": "0",
+          "at": "2026-09-07T06:00:00Z",
+          "observedAt": "2026-09-07T06:00:00Z",
+          "sourceRef": "synthetic://arena/debt"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # MSK
 
-Twelve crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
+Fifteen crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
 
 Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. The optional EVM harnesses operate inside their own isolated local Anvil processes.
 
@@ -20,12 +20,19 @@ Each skill includes its instructions, deterministic Python or Node.js helpers, r
 | [HOOK LAB](skills/hook-lab/SKILL.md) | What does this Robinhood V4 hook do, and what evidence supports this exact wallet call? | Exact deployment identity, Pons V2 source-derived fees, pinned calls/traces, isolated Anvil fork balances, evidence consistency and drift checks. |
 | [PRESSURE](skills/pressure/SKILL.md) | Is stock-token supply changing, where are balances moving, and what do measured liquidity observations support? | Bounded full-receipt collection, raw supply/multiplier reconciliation, custody observations, retained trade-size comparisons and prospective outcome journals. |
 | [WATCHTOWER](skills/watchtower/SKILL.md) | Can we retain every included Robinhood transaction promptly and verify the reported monitored interval has no gaps? | Full RPC blocks and receipts, fresh-tail priority, durable recovery, research workers and source latency comparisons. |
+| [CATALYST](skills/catalyst/SKILL.md) | Which newly disclosed company events relate to these exact Robinhood assets and pools? | Bounded SEC submissions/document collection, structured Form 4 parsing, durable evidence and retained pool-response analysis. |
+| [Night Desk](skills/night-desk/SKILL.md) | How do stock reference value, onchain price and position-size exit evidence differ? | Robinhood REST references, multiplier accounting, retained exact-asset prices and wallet/size/route-specific quote or simulation evidence. |
+| [Agent Arena](skills/agent-arena/SKILL.md) | What did the agent earn after external funding, costs and open inventory? | Supplied portfolio accounting, exact bracketed TWR, observed drawdowns and append-only SQLite evidence journals. |
 
 ## Use
 
 Start with a skill's `SKILL.md`. Give an agent that folder and a concrete pool, token, wallet, retained dataset or question. Keep the entire folder together: scripts and references use paths within the skill. If your agent supports installed skills, use its supported installer or copy selected folders into a user-controlled skill location without overwriting an existing installation.
 
 Example requests:
+
+- Use CATALYST to retain newly disclosed company events, map exact stock-token identities, and measure qualified pool responses.
+- Use Night Desk to compare a position's stock reference, onchain mark and supported retained exit evidence without mixing units.
+- Use Agent Arena to audit a complete declared performance window, including external flows, open inventory and failed attempts.
 
 - Use WATCHTOWER to capture all included transactions, reconcile receipt coverage, operate bounded workers and measure actual source arrival.
 - Use PRESSURE to reconcile a stock-token issuance window and compare supported liquidity measurements while retaining missing outcomes.
@@ -49,7 +56,25 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-The version 0.6.0 export passes **1,100 tests across twelve skill suites**, including 114 WATCHTOWER tests. WATCHTOWER also passed an actual isolated Anvil transaction/receipt collection check, a 10,000-transaction synthetic workload and independent operator use. All eleven earlier skill inventories are preserved byte for byte.
+Version 0.7.0 adds CATALYST, Night Desk and Agent Arena plus an offline event-to-valuation interchange. All twelve earlier skill inventories remain byte for byte identical to version 0.6.0. The release passes **1,247 offline tests**, including 61 CATALYST tests, 40 Night Desk tests, 37 Agent Arena tests and nine package composition checks. Independent skill-use exercises and the combined native demo also passed.
+
+## Disclosure, valuation and agent performance
+
+Run the three native examples and an exact-asset handoff in a fresh output directory:
+
+```sh
+python3 scripts/research_demo.py --out /tmp/msk-research-demo-new
+```
+
+This collects a synthetic Form 4 through CATALYST's injected transport, writes a durable disclosure journal, measures a retained local pool response, generates Night Desk's three distinct valuation views, and imports/verifies Agent Arena's portfolio journal. It then creates `research-bundle.json` by matching the filing's stock-token association to the valuation's exact chain/address. All example identities and observations are synthetic; this command makes no live network requests or trades.
+
+CATALYST stores original documents and processing times, preserves amendments and derivative/non-derivative rows, and labels late identity mappings. Its native discovery scope is the configured SEC issuer universe and bounded filings interval. Configure an actual declared SEC contact User-Agent before live collection. Coverage, failed downloads and scan limits remain visible. No LLM service, onchain publisher or automatic trade executor is bundled.
+
+Night Desk's collector retains Robinhood metadata, raw-equity REST quotes and corporate actions. Analysis keeps the corporate-action-adjusted reference, observed onchain price and size-specific retained quote/simulation separate. It preserves freshness, market-state, identity, FX and cost gaps. Native DEX quoting and arbitrary hook simulation are supplied adapters, not inferred from displayed market values.
+
+Agent Arena values complete declared portfolio snapshots, separates external flows from investment PnL, links exact time-weighted returns only across qualified flow brackets, and reports snapshot-observed drawdowns. Failed and pending attempts remain visible. The SQLite journal detects conflicts and content changes relative to an anchor; it does not prove history completeness or agent authorship. Live wallet collection, realized cost-basis accounting and public leaderboard publication are outside native scope.
+
+The [application handoff guide](references/research-integration.md) documents exact-address joins and point-in-time display rules. These skills and the JSON handoff are built independently of the production applications; continuous hosting and FYNCH/Ape consumers are not automatically deployed.
 
 ## WATCHTOWER chain-wide transaction monitoring
 

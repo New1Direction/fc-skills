@@ -1,0 +1,14 @@
+interface:
+  display_name: Night Desk
+  short_description: Inspect stock-token valuation and exit evidence
+  default_prompt: Use $night-desk to compare timestamped stock references, onchain
+    prices, and wallet-specific exit evidence for Robinhood stock tokens.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

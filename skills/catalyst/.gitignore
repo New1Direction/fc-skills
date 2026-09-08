@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+*.sqlite
+*.sqlite3
+*.db
+*.collector.lock
+outputs/

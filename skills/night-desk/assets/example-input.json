@@ -1,0 +1,93 @@
+{
+  "schema": "NightDeskInput@1",
+  "synthetic": true,
+  "as_of": "2026-09-08T16:00:00Z",
+  "asset": {
+    "chain_id": 4663,
+    "token": "0x1111111111111111111111111111111111111111",
+    "symbol": "DEMO",
+    "decimals": 18
+  },
+  "position": {
+    "wallet": "0x2222222222222222222222222222222222222222",
+    "amount_raw": "10000000000000000000",
+    "route_id": "synthetic-route-1"
+  },
+  "reference": {
+    "chain_id": 4663,
+    "token": "0x1111111111111111111111111111111111111111",
+    "source": "synthetic-fixture",
+    "source_at": "2026-09-08T15:59:55Z",
+    "observed_at": "2026-09-08T15:59:55Z",
+    "basis": "RAW_EQUITY_USD",
+    "bid": "99",
+    "ask": "101",
+    "currency": "USD",
+    "halted": false,
+    "market_state": "OPEN",
+    "time_basis": "MARKET_OBSERVATION",
+    "multiplier": {
+      "chain_id": 4663,
+      "token": "0x1111111111111111111111111111111111111111",
+      "source": "synthetic-fixture",
+      "source_at": "2026-09-08T15:59:55Z",
+      "observed_at": "2026-09-08T15:59:55Z",
+      "value": "2",
+      "basis": "CURRENT_REST_METADATA"
+    }
+  },
+  "onchain": {
+    "chain_id": 4663,
+    "token": "0x1111111111111111111111111111111111111111",
+    "source": "synthetic-fixture",
+    "source_at": "2026-09-08T15:59:55Z",
+    "observed_at": "2026-09-08T15:59:55Z",
+    "block_number": 123456,
+    "block_hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "block_timestamp": "2026-09-08T15:59:55Z",
+    "canonical": true,
+    "unit": "USD_PER_RAW_TOKEN",
+    "price_usd_per_token": "210",
+    "venue_id": "synthetic-pool",
+    "usd_conversion_basis": "DIRECT_USD"
+  },
+  "execution": {
+    "chain_id": 4663,
+    "token": "0x1111111111111111111111111111111111111111",
+    "source": "synthetic-fixture",
+    "source_at": "2026-09-08T15:59:55Z",
+    "observed_at": "2026-09-08T15:59:55Z",
+    "block_number": 123456,
+    "block_hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "block_timestamp": "2026-09-08T15:59:55Z",
+    "canonical": true,
+    "wallet": "0x2222222222222222222222222222222222222222",
+    "amount_in_raw": "10000000000000000000",
+    "route_id": "synthetic-route-1",
+    "kind": "QUOTE",
+    "expires_at": "2026-09-08T16:00:10Z",
+    "output_semantics": "NET_OF_ROUTE_FEES",
+    "output": {
+      "chain_id": 4663,
+      "token": "0x3333333333333333333333333333333333333333",
+      "decimals": 6,
+      "amount_raw": "2050000000"
+    },
+    "output_fx": {
+      "source": "synthetic-fixture",
+      "source_at": "2026-09-08T15:59:55Z",
+      "observed_at": "2026-09-08T15:59:55Z",
+      "chain_id": 4663,
+      "token": "0x3333333333333333333333333333333333333333",
+      "usd_per_token": "0.999"
+    },
+    "additional_costs_usd": {
+      "source": "synthetic-fixture",
+      "source_at": "2026-09-08T15:59:55Z",
+      "observed_at": "2026-09-08T15:59:55Z",
+      "gas": "1.5",
+      "approval": "0",
+      "other": "0.5"
+    }
+  }
+}

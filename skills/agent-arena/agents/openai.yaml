@@ -1,0 +1,14 @@
+interface:
+  display_name: Agent Arena
+  short_description: Audit complete agent performance and provenance
+  default_prompt: Use $agent-arena to produce a reproducible trading-agent scorecard
+    with funding-adjusted returns, costs, open inventory, and evidence limitations.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

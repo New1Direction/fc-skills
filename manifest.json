@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -1301,7 +1301,193 @@
           "bytes": 25696
         }
       ]
+    },
+    {
+      "name": "catalyst",
+      "path": "skills/catalyst",
+      "tests": "scripts",
+      "files": [
+        {
+          "path": "skills/catalyst/.gitignore",
+          "sha256": "6ce073fc4eb91d010be8f547a6bbf567e3efcc18a33b7e45c79bc35de3647bdb",
+          "bytes": 73
+        },
+        {
+          "path": "skills/catalyst/SKILL.md",
+          "sha256": "a028774fd9629d54880190260f022fa0e762d6368a53c2478ee401d05336a0ac",
+          "bytes": 4152
+        },
+        {
+          "path": "skills/catalyst/agents/openai.yaml",
+          "sha256": "fa6befec477bf454cbf3b4417d2cbb53750ed622ab7a41725f6bc952838fc55b",
+          "bytes": 409
+        },
+        {
+          "path": "skills/catalyst/assets/form4-synthetic.xml",
+          "sha256": "24538d491968613d872ed421938e08f4937afc373cc2e450563ffbd3a9b8e100",
+          "bytes": 9262
+        },
+        {
+          "path": "skills/catalyst/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/catalyst/references/operations.md",
+          "sha256": "262ba83ae00f692099f444cb3013df88b8fc7ebc3be66bc5ce094030aa6cb519",
+          "bytes": 6429
+        },
+        {
+          "path": "skills/catalyst/references/schema.md",
+          "sha256": "1f01491fcc3dd7f112451d9b5b7a5b0052c3f04502a1091a3ff85b0c1e1e5ab3",
+          "bytes": 6800
+        },
+        {
+          "path": "skills/catalyst/references/sources.md",
+          "sha256": "8e2d3a2a9c20003040f9108bf1ab6d583b161f31ccad589f8f94dc02c66b7709",
+          "bytes": 2321
+        },
+        {
+          "path": "skills/catalyst/scripts/catalyst.py",
+          "sha256": "99661a8d98b0423547dc0ae81d7789ad43f1d325dcc79531cafd102727091104",
+          "bytes": 43285
+        },
+        {
+          "path": "skills/catalyst/scripts/form4.py",
+          "sha256": "36be461da828fe540b8aa5e73e1b7512f36ae3dba16a3f834ea00b37dd84c3a9",
+          "bytes": 14721
+        },
+        {
+          "path": "skills/catalyst/scripts/test_catalyst.py",
+          "sha256": "e7274dfb05b286d37ac6768ccf3be4eb41cd8dee031846d243e7332761c029f7",
+          "bytes": 16761
+        },
+        {
+          "path": "skills/catalyst/scripts/test_form4.py",
+          "sha256": "92a42ad94f4804ca8003b5ace6a658861e59e7e20f985480c6992b5f5707f0ad",
+          "bytes": 11568
+        }
+      ]
+    },
+    {
+      "name": "night-desk",
+      "path": "skills/night-desk",
+      "tests": "scripts",
+      "files": [
+        {
+          "path": "skills/night-desk/.gitignore",
+          "sha256": "beb201ca3cf5ad02a01acfcb35ad921c8b0a7e52601bf0e0304b05a51cfdca91",
+          "bytes": 32
+        },
+        {
+          "path": "skills/night-desk/SKILL.md",
+          "sha256": "84547d87cf8da0b1cd5c40b37074c87982576e683d07a0d11f8a0b1e05a2a0ad",
+          "bytes": 3440
+        },
+        {
+          "path": "skills/night-desk/agents/openai.yaml",
+          "sha256": "c21cef0f6e1a768fc5f54eea8a5a1bc2b1ef78d17661c904414f5282664a5f9f",
+          "bytes": 418
+        },
+        {
+          "path": "skills/night-desk/assets/example-input.json",
+          "sha256": "36bc8f8e362d68ed1606f5de3e6a38efb483483495073c7fd31c808b302f0e79",
+          "bytes": 2945
+        },
+        {
+          "path": "skills/night-desk/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/night-desk/references/operations.md",
+          "sha256": "fbe532377fbb8ae2d14ce49fa2510ce31dea2751eedf73851da32aadbcb8b10d",
+          "bytes": 4365
+        },
+        {
+          "path": "skills/night-desk/references/schema.md",
+          "sha256": "c4885b36beea5d58a210fac93299887ba2855154913e0972f478815ef1cf5fae",
+          "bytes": 6861
+        },
+        {
+          "path": "skills/night-desk/scripts/collector.py",
+          "sha256": "def76a0d8d6ec7ffcd72149a8e68ab7519208240a62f3fe537448cbeb56cb61f",
+          "bytes": 10065
+        },
+        {
+          "path": "skills/night-desk/scripts/night_desk.py",
+          "sha256": "cdb93da874f763fc3a46f685c331e0eaf8c625760841d38248c78f76d9975115",
+          "bytes": 20907
+        },
+        {
+          "path": "skills/night-desk/scripts/test_collector.py",
+          "sha256": "be7da8ac86d37b981c366faf211d0fe116adf998eb67e0c72c1dd44c20490f10",
+          "bytes": 5787
+        },
+        {
+          "path": "skills/night-desk/scripts/test_night_desk.py",
+          "sha256": "343032ada7be5933fcf406d1ad78de8c0ea669b3376222e5257b0cac710180c4",
+          "bytes": 9031
+        }
+      ]
+    },
+    {
+      "name": "agent-arena",
+      "path": "skills/agent-arena",
+      "tests": "tests",
+      "files": [
+        {
+          "path": "skills/agent-arena/.gitignore",
+          "sha256": "9273c88eb9ff0d75d42fd757585408302925ce769f3f65a876e47c1d9e34cf96",
+          "bytes": 56
+        },
+        {
+          "path": "skills/agent-arena/SKILL.md",
+          "sha256": "1d4cf89a929c17250030b64d5cffa75c3fd9c9a88d97bd4e5dd7440f36f93025",
+          "bytes": 3512
+        },
+        {
+          "path": "skills/agent-arena/agents/openai.yaml",
+          "sha256": "00b9140fc428a20ab00d3b08d7a27ae0ff9edae42fcfa506765d9aeb502447aa",
+          "bytes": 431
+        },
+        {
+          "path": "skills/agent-arena/assets/example.json",
+          "sha256": "fe5f24ea530c57c9c5b5edb7b450b50923cafb89a0257dce1b64d55f2d420103",
+          "bytes": 9401
+        },
+        {
+          "path": "skills/agent-arena/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/agent-arena/references/accounting.md",
+          "sha256": "c160cbeab00452195345beab07595dad50aff0d6a986454a75fa3693e339d162",
+          "bytes": 3080
+        },
+        {
+          "path": "skills/agent-arena/references/provenance.md",
+          "sha256": "e4b711778b29039c0d4532f3b5afabcbb7b4dabb01109dc8b3b0b8d99a489185",
+          "bytes": 2207
+        },
+        {
+          "path": "skills/agent-arena/references/schema.md",
+          "sha256": "1835a6d5f27bce5605775c16e13f742eed9218a2fa7e5ab950a4babe961d03fb",
+          "bytes": 7960
+        },
+        {
+          "path": "skills/agent-arena/scripts/arena.py",
+          "sha256": "b8f2f8a5d056db53a99db20865f972751e28a571f360603a94fc069941a21ccc",
+          "bytes": 26938
+        },
+        {
+          "path": "skills/agent-arena/tests/test_arena.py",
+          "sha256": "38ba355d83eca4938de6f9d336a1b5691a54866e89a9b55f16642ef16ef2fb89",
+          "bytes": 15560
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T16:04:44.463907+00:00"
+  "updated_at": "2026-09-08T16:47:38.516993+00:00"
 }

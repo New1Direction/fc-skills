@@ -1,0 +1,14 @@
+interface:
+  display_name: CATALYST
+  short_description: Connect SEC disclosures to Robinhood markets
+  default_prompt: Use $catalyst to collect company disclosures, resolve exact Robinhood
+    stock-token identities, and measure observed pool responses.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,11 @@
+# Durable evidence and provenance
+
+The SQLite journal retains one immutable header followed by immutable event rows. A row digest hashes canonical JSON containing sequence, event ID, exact canonical payload string and preceding digest. UTF-8, sorted object keys and compact JSON separators define canonical serialization. Duplicate JSON keys are rejected on input. Array order and numeric string spelling remain meaningful input content.
+
+SQLite WAL and FULL synchronous writes retain committed batches across process restart. A transaction with `BEGIN IMMEDIATE` serializes writers. Repeated exact IDs are idempotent; differing contents or contradictory attempt identities roll the entire import back. Update/delete triggers prevent ordinary accidental mutation, but administrators can remove them. Durability ultimately depends on the filesystem and hardware honoring SQLite's persistence guarantees.
+
+Verification checks sequence continuity, preceding digest, payload digest, canonical encoding, header/event identity and structural schema. Report generation additionally validates accounting and attempt consistency. An optional separately retained expected head detects a changed head, including an accidentally truncated suffix. A changed head also results from a legitimate append; retain anchors per intended review version.
+
+Without an external anchor, an attacker who controls the database can delete a tail or rewrite all events and recompute the hash chain. Even a correctly anchored chain only commits to retained content. It does **not** establish complete transaction coverage, truthful source data, genuine event/observation times, control of a wallet, authentic agent identity, execution causation or profitability. This is an inspectable local evidence journal, not a zero-knowledge proof or chain-derived attestation.
+
+For independently inspectable publication, export the normalized dataset and retain a head hash outside the mutable database along with raw-source references and a source-coverage audit. Publication and any wallet-signature attestation are separate explicit workflows, not performed by this CLI. Sensitive wallet strategy records should not be published automatically.
