@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -1020,7 +1020,155 @@
           "bytes": 13970
         }
       ]
+    },
+    {
+      "name": "pressure",
+      "path": "skills/pressure",
+      "tests": "scripts",
+      "test_runner": "node",
+      "files": [
+        {
+          "path": "skills/pressure/.gitignore",
+          "sha256": "368a7b721eab24e660a0f5fec675b6c2f5446bdfb5c8b40c8b3163a52a81d72f",
+          "bytes": 28
+        },
+        {
+          "path": "skills/pressure/SKILL.md",
+          "sha256": "5e1bf6b3a0e85b328bed0cde3ed8252e78dab859c113d421a32db799618b4baf",
+          "bytes": 8873
+        },
+        {
+          "path": "skills/pressure/agents/openai.yaml",
+          "sha256": "3d6495457954563ce29ee12492a1f993279da70aa197aff03da8cca06c043a4a",
+          "bytes": 442
+        },
+        {
+          "path": "skills/pressure/assets/StockSmoke.sol",
+          "sha256": "7f2fd1b6e8527667df3187cbfb4f7d315799fc34bd24047a01de3bc48fb9833f",
+          "bytes": 2048
+        },
+        {
+          "path": "skills/pressure/assets/evm-smoke.synthetic.json",
+          "sha256": "58e5ca004c59ed0405cb08e4716cc6ada1d523e774ece7c04423d118d5cfbce2",
+          "bytes": 120546
+        },
+        {
+          "path": "skills/pressure/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/pressure/assets/liquidity.synthetic.json",
+          "sha256": "39d243248392e4a592d0a6243b5554efd178848ee26492cb98eaffbe601fb633",
+          "bytes": 3111
+        },
+        {
+          "path": "skills/pressure/assets/supply.synthetic.json",
+          "sha256": "0a78b29a6e7f6f4335ee0041267511917a2b53c8c803130909c2f9c87dc4d9e1",
+          "bytes": 8054
+        },
+        {
+          "path": "skills/pressure/references/collection.md",
+          "sha256": "0b2b9a9603043c718bee6b33d23a9b2e5fbd4ca74340967e56971f6d3cb79436",
+          "bytes": 6677
+        },
+        {
+          "path": "skills/pressure/references/integration.md",
+          "sha256": "5fc22944c52ab4c8ed4c959d337580a685f258e41a04e323b22a83bc12d0f5f3",
+          "bytes": 6254
+        },
+        {
+          "path": "skills/pressure/references/liquidity.md",
+          "sha256": "b8080c85cbea39707c6fc32d947b99c5f0f462b82dc30cbced2e84f234700031",
+          "bytes": 12697
+        },
+        {
+          "path": "skills/pressure/references/outcomes.md",
+          "sha256": "1601e9270550f49e02a5f0a2067baa55f7670bab202a48b62804a6a0ab7da02f",
+          "bytes": 4542
+        },
+        {
+          "path": "skills/pressure/references/stock-semantics.md",
+          "sha256": "b7d01b71e7b596f61052166b734f6ec33f0deef72ec99eeda2ea1e06fe035ff9",
+          "bytes": 4376
+        },
+        {
+          "path": "skills/pressure/references/supply.md",
+          "sha256": "6e6fa7e2467ed60c60b1e4b76cdd6df3380b9fe51ef78758fb76fd2fc53b6e05",
+          "bytes": 8815
+        },
+        {
+          "path": "skills/pressure/references/validation.md",
+          "sha256": "7474f351782c39fce2362b179b919dad7161961507c3a17c25eb24bd4d7bef46",
+          "bytes": 3878
+        },
+        {
+          "path": "skills/pressure/scripts/collect.mjs",
+          "sha256": "46834c0a7d9ec36725ad8e2441d8f21a44c86f9ee919963a532adb4a7e025cb8",
+          "bytes": 15082
+        },
+        {
+          "path": "skills/pressure/scripts/evm-smoke.mjs",
+          "sha256": "abf9c7915e4154573f45e9d1d383df882c557abd0e774b51d813499d486a3598",
+          "bytes": 18240
+        },
+        {
+          "path": "skills/pressure/scripts/journal.mjs",
+          "sha256": "af93cf52d74df63a81dbd196508b02d54b10da4d9c2a820e237f29b1060fe8d7",
+          "bytes": 10462
+        },
+        {
+          "path": "skills/pressure/scripts/keccak.mjs",
+          "sha256": "664e0bca8c9b47c1d84f4f0505bc71b7dab9403429abffe0e748fadf5cffe871",
+          "bytes": 1828
+        },
+        {
+          "path": "skills/pressure/scripts/liquidity.mjs",
+          "sha256": "d3ba27bfec62642111a6ce66e0b3c3c686fb26002c3f1e97164d09be6f1679ae",
+          "bytes": 18373
+        },
+        {
+          "path": "skills/pressure/scripts/pressure.mjs",
+          "sha256": "589dd5d4fa3ae820367f0d65a58fd61de6b1592e4658ecc530f54f8d41e6af5c",
+          "bytes": 9233
+        },
+        {
+          "path": "skills/pressure/scripts/rpc.mjs",
+          "sha256": "ca4344c736fcb1121a1d7b8a6e5dcedfecba26aaa715eacbf85e649a7a48d2ed",
+          "bytes": 2744
+        },
+        {
+          "path": "skills/pressure/scripts/supply.mjs",
+          "sha256": "e0f2b548b91ff371d3770ccacda11a6616bbc9df5d50cd611449eeb714edda43",
+          "bytes": 20794
+        },
+        {
+          "path": "skills/pressure/scripts/test_cli.mjs",
+          "sha256": "4feaa15d65d675b37ac709e2d1293e8e7654a83f1a060716d78f23a87054fa7c",
+          "bytes": 3790
+        },
+        {
+          "path": "skills/pressure/scripts/test_collect.mjs",
+          "sha256": "1cfd0d2d421967b824c4c410f76a1b079b2f92895956f33552d3c6387901b385",
+          "bytes": 15760
+        },
+        {
+          "path": "skills/pressure/scripts/test_journal.mjs",
+          "sha256": "1030f2ac537d22d262584ea2ed3cea15015ad9a2ac28d39882a8d09c81a3536b",
+          "bytes": 5364
+        },
+        {
+          "path": "skills/pressure/scripts/test_liquidity.mjs",
+          "sha256": "aead58daae2d2706d85d1b658c53554093e38edbed6f09f35a58639661f9ffd7",
+          "bytes": 14696
+        },
+        {
+          "path": "skills/pressure/scripts/test_supply.mjs",
+          "sha256": "4eb2d73475accfd74cac81984702eec94fc69a6d1913083582644453bb94f972",
+          "bytes": 15059
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T14:29:11.656524+00:00"
+  "updated_at": "2026-09-08T15:23:17.135715+00:00"
 }

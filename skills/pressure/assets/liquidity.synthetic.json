@@ -1,0 +1,34 @@
+{
+  "schema_version": "pressure.liquidity.v1",
+  "evidence_mode": "synthetic",
+  "chain_id": 4663,
+  "asset": { "address": "0x1111111111111111111111111111111111111111", "decimals": 18 },
+  "quote_asset": { "address": "0x2222222222222222222222222222222222222222", "decimals": 6 },
+  "wallet": "0x3333333333333333333333333333333333333333",
+  "as_of": "2026-09-08T10:02:00Z",
+  "policy": { "max_snapshot_age_seconds": 600, "max_reference_age_seconds": 120, "max_execution_cost_bps": "100" },
+  "observations": [
+    {
+      "id": "synthetic-before-sell",
+      "block": { "number": 100, "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "timestamp": "2026-09-08T10:00:00Z" },
+      "observed_at": "2026-09-08T10:00:01Z",
+      "route": { "id": "SYNTHETIC-ROUTE", "identity_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "configuration_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" },
+      "direction": "sell", "input_raw": "1000000000000000000", "output_raw": "99500000", "status": "ok",
+      "evidence_kind": "quote", "evidence_refs": ["SYNTHETIC-NOT-LIVE:before"],
+      "canonical": true, "identity_verified": true, "fees_in_output": "included",
+      "costs": { "coverage": "complete", "items": [{ "id": "gas", "kind": "gas", "amount_raw": "100000", "currency": "0x2222222222222222222222222222222222222222", "included_in_output": false, "evidence_ref": "SYNTHETIC-NOT-LIVE:gas-conversion" }] },
+      "reference": { "kind": "venue_marginal", "quote_per_asset": { "numerator": "100", "denominator": "1" }, "observed_at": "2026-09-08T10:00:00Z", "block": { "number": 100, "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }, "evidence_ref": "SYNTHETIC-NOT-LIVE:marginal-price-before" }
+    },
+    {
+      "id": "synthetic-after-sell",
+      "block": { "number": 110, "hash": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "timestamp": "2026-09-08T10:01:00Z" },
+      "observed_at": "2026-09-08T10:01:01Z",
+      "route": { "id": "SYNTHETIC-ROUTE", "identity_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "configuration_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" },
+      "direction": "sell", "input_raw": "1000000000000000000", "output_raw": "98000000", "status": "ok",
+      "evidence_kind": "quote", "evidence_refs": ["SYNTHETIC-NOT-LIVE:after"],
+      "canonical": true, "identity_verified": true, "fees_in_output": "included",
+      "costs": { "coverage": "complete", "items": [{ "id": "gas", "kind": "gas", "amount_raw": "100000", "currency": "0x2222222222222222222222222222222222222222", "included_in_output": false, "evidence_ref": "SYNTHETIC-NOT-LIVE:gas-conversion" }] },
+      "reference": { "kind": "venue_marginal", "quote_per_asset": { "numerator": "100", "denominator": "1" }, "observed_at": "2026-09-08T10:01:00Z", "block": { "number": 110, "hash": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" }, "evidence_ref": "SYNTHETIC-NOT-LIVE:marginal-price-after" }
+    }
+  ]
+}

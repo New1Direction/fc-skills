@@ -1,6 +1,6 @@
 # MSK
 
-Ten crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
+Eleven crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
 
 Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. HOOK LAB can execute simulations inside its own isolated local Anvil process.
 
@@ -18,6 +18,7 @@ Each skill includes its instructions, deterministic Python or Node.js helpers, r
 | [Undertow](skills/undertow/SKILL.md) | Is a Robinhood meme gaining against its stock quote, and where is observed capital rotating? | Chain4663 attribution, supplied attributed flows, bounded canonical V4 evidence, current stock-reference capture. |
 | [PULSE](skills/pulse/SKILL.md) | Which source delivers usable Robinhood data first, and how do we operate our own data path? | Multi-source WS/HTTP collection, RPC Race, provisional and reconciled V4 state, private Nitro planning and probes. |
 | [HOOK LAB](skills/hook-lab/SKILL.md) | What does this Robinhood V4 hook do, and what evidence supports this exact wallet call? | Exact deployment identity, Pons V2 source-derived fees, pinned calls/traces, isolated Anvil fork balances, evidence consistency and drift checks. |
+| [PRESSURE](skills/pressure/SKILL.md) | Is stock-token supply changing, where are balances moving, and what do measured liquidity observations support? | Bounded full-receipt collection, raw supply/multiplier reconciliation, custody observations, retained trade-size comparisons and prospective outcome journals. |
 
 ## Use
 
@@ -25,6 +26,7 @@ Start with a skill's `SKILL.md`. Give an agent that folder and a concrete pool, 
 
 Example requests:
 
+- Use PRESSURE to reconcile a stock-token issuance window and compare supported liquidity measurements while retaining missing outcomes.
 - Use HOOK LAB to inspect a graduated Pons pool, model its hook charges and retain the evidence needed for an exact wallet route.
 - Use Autopsy to investigate this launch and distinguish observed transfers from wallet-control hypotheses.
 - Use Ignition to assess this retained candidate universe, then use Exit Doctor only for routes it supports.
@@ -36,7 +38,7 @@ The installed ChatGPT originals remain separate from this export; changing this 
 
 ## Verify the package
 
-Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE and HOOK LAB require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
+Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE, HOOK LAB and PRESSURE require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
 
 ```sh
 python3 scripts/check_package.py
@@ -45,7 +47,23 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-The version 0.4.0 export passes **798 tests across ten skill suites**, including 224 HOOK LAB tests. HOOK LAB also passed an actual isolated Anvil/solc smoke with synthetic token/router contracts, balance reconciliation, revert and allowance cases, and zero source RPC writes. That smoke is distinct from the dependency-free tests and does not establish Pons or Nitro execution. The nine previously exported skills are preserved byte for byte; the manifest verifies all exported skill files.
+The version 0.5.0 export passes **986 tests across eleven skill suites**, including 188 PRESSURE tests and 224 HOOK LAB tests. PRESSURE also passed an actual isolated Anvil/solc supply-collection smoke and an independent skill-use check. The ten previous skill exports are preserved byte for byte; the manifest verifies all exported skill files.
+
+## PRESSURE supply and liquidity research
+
+PRESSURE reconciles raw ERC-20 issuance and balances over pinned block windows, separates changes in the stock-token multiplier, follows observed mint-recipient wallet activity, compares retained wallet/route/size-specific liquidity measurements, and records prospective candidate universes with controls and missing outcomes. It does not turn custody balances into complete pool inventory or a free-float estimate.
+
+The native collector enumerates every transaction receipt reported in a bounded window and retains a replayable RPC transcript. Observed endpoint code matches and receipt enumeration do not authenticate providers, resolve arbitrary proxy upgrades or establish economic backing. Liquidity observations are supplied inputs; PRESSURE does not build router calldata or quote unsupported routes.
+
+Run an offline demonstration from the repository root:
+
+```sh
+node skills/pressure/scripts/pressure.mjs demo --out /tmp/pressure-demo-new
+```
+
+The demo includes independent teaching cases, a generated synthetic joint report and an outcome study that retains a missing selected case. Its EVM fixture separately verifies mint/burn, balances, multiplier changes, receipt omission detection and zero collector writes. Optional EVM reproduction needs a trusted Anvil binary and solc module; neither is bundled.
+
+FYNCH supply/data interfaces and Robinhood stock-token documentation were inspected and linked in the skill. Live mainnet supply capture and Pons wallet-route verification remain open because an available archive RPC was not established. This release exports the research tools and evidence; it does not change FYNCH or Ape production permissions.
 
 ## HOOK LAB execution research
 

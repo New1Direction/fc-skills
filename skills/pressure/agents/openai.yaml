@@ -1,0 +1,15 @@
+interface:
+  display_name: PRESSURE
+  short_description: Track Robinhood stock-token supply and liquidity
+  default_prompt: Use $pressure to trace stock-token issuance and supply destinations,
+    compare supported liquidity observations, and report evidence gaps on Robinhood
+    Chain.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
