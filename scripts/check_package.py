@@ -25,6 +25,8 @@ def verify():
         names.add(name)
         if skill['path'] != 'skills/' + name or skill['tests'] not in ('scripts', 'tests'):
             raise ValueError('invalid skill path or suite')
+        if skill.get('test_runner', 'python') not in ('python', 'node'):
+            raise ValueError('unsupported test runner')
         for entry in skill['files']:
             rel = Path(entry['path'])
             if rel.is_absolute() or '..' in rel.parts or rel.parts[:2] != ('skills', name):
@@ -58,11 +60,18 @@ def main():
             total = 0
             env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1')
             for skill in manifest['skills']:
-                result = subprocess.run([sys.executable, '-m', 'unittest', 'discover',
-                    '-s', skill['tests'], '-p', 'test_*.py'], cwd=ROOT / skill['path'],
+                if skill.get('test_runner') == 'node':
+                    tests = sorted((ROOT / skill['path'] / skill['tests']).glob('test_*.mjs'))
+                    if not tests:
+                        raise ValueError('no Node tests: ' + skill['name'])
+                    command = ['node', '--test', '--test-reporter=tap', *map(str, tests)]
+                else:
+                    command = [sys.executable, '-m', 'unittest', 'discover',
+                        '-s', skill['tests'], '-p', 'test_*.py']
+                result = subprocess.run(command, cwd=ROOT / skill['path'],
                     env=env, capture_output=True, text=True, timeout=180)
                 output = result.stdout + result.stderr
-                count = re.search(r'Ran (\d+) tests?\b', output)
+                count = re.search(r'(?m)^# tests (\d+)\s*$', output) if skill.get('test_runner') == 'node' else re.search(r'Ran (\d+) tests?\b', output)
                 if result.returncode or count is None or int(count[1]) == 0:
                     print(output, file=sys.stderr)
                     raise ValueError('suite failed or had no tests: ' + skill['name'])

@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -679,7 +679,180 @@
           "bytes": 25059
         }
       ]
+    },
+    {
+      "name": "pulse",
+      "path": "skills/pulse",
+      "tests": "scripts",
+      "test_runner": "node",
+      "files": [
+        {
+          "path": "skills/pulse/.gitignore",
+          "sha256": "95a92f796231deccbbe4ab2d42075a120ca97f99a7a80e80a16da69c77ceb9bf",
+          "bytes": 43
+        },
+        {
+          "path": "skills/pulse/SKILL.md",
+          "sha256": "f2b30a5f78b7d3b1569e22867ff261ded9c7c42ba1c4ac33c6252859e682b9d1",
+          "bytes": 4609
+        },
+        {
+          "path": "skills/pulse/agents/openai.yaml",
+          "sha256": "e391e58f1cc7bbf0ae3e067f8a26d70d00e244ffc8fbe88bb24b4c1664f68a20",
+          "bytes": 405
+        },
+        {
+          "path": "skills/pulse/assets/blocks.synthetic.json",
+          "sha256": "4f7284019adca689b068d33ae1799c4c87be14655a85765e43cdbd1d598b44d9",
+          "bytes": 2827
+        },
+        {
+          "path": "skills/pulse/assets/icon.svg",
+          "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+          "bytes": 1738
+        },
+        {
+          "path": "skills/pulse/assets/node-plan.example.json",
+          "sha256": "cf0e94719f86e26553d931b7c7bad1967cfb0af260023f60602b6a3ebcfddcb9",
+          "bytes": 911
+        },
+        {
+          "path": "skills/pulse/assets/pools.synthetic.json",
+          "sha256": "407eba43ce4c3b2e53610fef8540e009f65cc5460984d47a6e4efafc4bc1816d",
+          "bytes": 678
+        },
+        {
+          "path": "skills/pulse/assets/pulse.example.json",
+          "sha256": "b754e74259dedb8d4706a201bdcf5b8f30dfe2af42be7da65fd54d0ddb31269b",
+          "bytes": 609
+        },
+        {
+          "path": "skills/pulse/assets/pulse.service",
+          "sha256": "b955721675e9c8213a7d59aa333c3e5352f79b93034d8f9a70cff5c0fdfb3180",
+          "bytes": 665
+        },
+        {
+          "path": "skills/pulse/references/collector.md",
+          "sha256": "ddef2e31775b2f8762f9343c75210fb04dfa83dfcb8708308f58c7c4f4da8263",
+          "bytes": 17050
+        },
+        {
+          "path": "skills/pulse/references/integration.md",
+          "sha256": "1256c13a5d838d52a5dde947333738e45a3920898a5330ab2465eb55d15c0754",
+          "bytes": 4098
+        },
+        {
+          "path": "skills/pulse/references/node-ops.md",
+          "sha256": "52d96b8dda0d2f3fee55edb062d62218d00bb3d073d8043a4bee8115ad1dc11e",
+          "bytes": 9032
+        },
+        {
+          "path": "skills/pulse/references/pools.md",
+          "sha256": "daae05fa26dee32d5132f2f9d413025d887f11aeff0b6a8d2ca2bf74e2fdf3c2",
+          "bytes": 14286
+        },
+        {
+          "path": "skills/pulse/references/race.md",
+          "sha256": "fa49ba970f169b435d35382fadc88abe0609e22eb13481c9f219def3c2697d6a",
+          "bytes": 12341
+        },
+        {
+          "path": "skills/pulse/references/runtime.md",
+          "sha256": "73e1191c80593bb37a4a7b6275ab8cfb9405c4ef300fabfcef745236ef099111",
+          "bytes": 5715
+        },
+        {
+          "path": "skills/pulse/references/validation.md",
+          "sha256": "9e61159d7985d6b5957c80c0abfb7f6b1db56084b10ab5ddb4890a3b5a827536",
+          "bytes": 2543
+        },
+        {
+          "path": "skills/pulse/scripts/api.mjs",
+          "sha256": "76b73ca1041572a9b87f4b062eec6c05998ec71b5a101c4bde334b89d5953928",
+          "bytes": 1520
+        },
+        {
+          "path": "skills/pulse/scripts/collector.mjs",
+          "sha256": "524256cbb278d287710ef18e21cd69406cff5dd1764ec2dca2056425a5137df8",
+          "bytes": 33927
+        },
+        {
+          "path": "skills/pulse/scripts/common.mjs",
+          "sha256": "ae06a0fa98be1450ef3ccd77a77312ec439648211451681ae69300d656a35b1f",
+          "bytes": 6825
+        },
+        {
+          "path": "skills/pulse/scripts/keccak.mjs",
+          "sha256": "664e0bca8c9b47c1d84f4f0505bc71b7dab9403429abffe0e748fadf5cffe871",
+          "bytes": 1828
+        },
+        {
+          "path": "skills/pulse/scripts/live_pools.mjs",
+          "sha256": "7d585fd77600df3223e9b5bb3a5226183c2e5b74879d7d4b116de00d20ba912f",
+          "bytes": 12891
+        },
+        {
+          "path": "skills/pulse/scripts/node_ops.mjs",
+          "sha256": "48d665092c46a4a1e4846846fa1870f0edf751e86a94ac9e84c2a342a9f97732",
+          "bytes": 22479
+        },
+        {
+          "path": "skills/pulse/scripts/pools.mjs",
+          "sha256": "114592b2f9837bf8ece49286b057ed8d44d1ced49da25a4eb5e212c71e5d9ded",
+          "bytes": 21390
+        },
+        {
+          "path": "skills/pulse/scripts/pulse.mjs",
+          "sha256": "11bfc22a7177da77de17afc143ad8ff0b2d736cc123eb2cfc88fe3751d21fae1",
+          "bytes": 5983
+        },
+        {
+          "path": "skills/pulse/scripts/race.mjs",
+          "sha256": "e36c22f8a4fc1e4113e0788e97d5096406477d61497437ab13ff54a52ad93b41",
+          "bytes": 28426
+        },
+        {
+          "path": "skills/pulse/scripts/runtime.mjs",
+          "sha256": "c2a6136f7c82dd5869a4a935b23239b94fadce7cb29d242e4cbf2ac11cd9b801",
+          "bytes": 7494
+        },
+        {
+          "path": "skills/pulse/scripts/test_collector.mjs",
+          "sha256": "f3941fbb1ec53294528503b0c3604d83ca8feba7f2ff6321e205b03c401c5c65",
+          "bytes": 26033
+        },
+        {
+          "path": "skills/pulse/scripts/test_live_pools.mjs",
+          "sha256": "18930db20b589138546fa2e52f9b9a9ece85430e800947a0935e6af514c27dd6",
+          "bytes": 9888
+        },
+        {
+          "path": "skills/pulse/scripts/test_node_ops.mjs",
+          "sha256": "38aa2d77754f861bb04e4e8876a0c74da158d9d5a24b2d251f31517b33108c5f",
+          "bytes": 11652
+        },
+        {
+          "path": "skills/pulse/scripts/test_pools.mjs",
+          "sha256": "61b7e7c28108d0380842329be7a4ab4103cfdcc38894177088ab36e561a57284",
+          "bytes": 14675
+        },
+        {
+          "path": "skills/pulse/scripts/test_race.mjs",
+          "sha256": "042b1c543f771e159144505ea6bf019779735dbca27315a4beb440912d066fcc",
+          "bytes": 17529
+        },
+        {
+          "path": "skills/pulse/scripts/test_runtime.mjs",
+          "sha256": "0622ae26924fd924dd795565970312d9b9ae5ea2a943bf658fe98033820cf479",
+          "bytes": 10573
+        },
+        {
+          "path": "skills/pulse/scripts/test_service.mjs",
+          "sha256": "4da7f613f6dfcd11cc0f3a0cf7af53ac5136c4b627689095c0843a5d7bc70642",
+          "bytes": 6222
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T06:27:26.112830+00:00"
+  "updated_at": "2026-09-08T07:08:52.059304+00:00"
 }

@@ -1,0 +1,20 @@
+{
+  "schema": "pulse.node-plan.v1",
+  "chainId": 4663,
+  "image": "offchainlabs/nitro-node:v3.11.2-3599aca",
+  "imageSource": "https://docs.robinhood.com/chain/run-a-full-node/",
+  "chainInfo": {
+    "path": "/srv/robinhood/config/robinhood-chain-info.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source": "https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/chain-node-configs/robinhood-chain-info.json"
+  },
+  "genesis": {
+    "path": "/srv/robinhood/config/robinhood-genesis.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source": "https://cdn.robinhood.com/assets/generated_assets/hoodchain_docsite/chain-node-configs/robinhood-genesis.json"
+  },
+  "dataDir": "/srv/robinhood/nitro-data",
+  "l1ExecutionEnv": "RH_L1_EXECUTION_URL",
+  "l1BeaconEnv": "RH_L1_BEACON_URL",
+  "sequencerFeed": true
+}

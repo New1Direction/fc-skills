@@ -1,0 +1,14 @@
+interface:
+  display_name: PULSE
+  short_description: Operate and benchmark Robinhood Chain live data
+  default_prompt: Use $pulse to collect Robinhood Chain events, benchmark their arrival,
+    inspect V4 pool state, or prepare a private Nitro node.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

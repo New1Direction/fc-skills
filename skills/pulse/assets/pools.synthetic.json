@@ -1,0 +1,25 @@
+{
+  "chain_id": 4663,
+  "evidence_mode": "synthetic",
+  "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+  "pools": [
+    {
+      "currency0": "0x1111111111111111111111111111111111111111",
+      "currency1": "0x2222222222222222222222222222222222222222",
+      "fee": 3000,
+      "tick_spacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "decimals0": 18,
+      "decimals1": 6,
+      "pool_id": "0x25431634fd7de72516ccb751020a1a9188376a983ccc5f6c1152ca04a6acffad"
+    }
+  ],
+  "routes": [
+    {
+      "id": "synthetic-route",
+      "pool_ids": [
+        "0x25431634fd7de72516ccb751020a1a9188376a983ccc5f6c1152ca04a6acffad"
+      ]
+    }
+  ]
+}

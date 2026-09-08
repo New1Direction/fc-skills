@@ -1,0 +1,26 @@
+[Unit]
+Description=PULSE Robinhood Chain collector
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=pulse
+Group=pulse
+WorkingDirectory=/opt/msk/skills/pulse
+EnvironmentFile=/etc/pulse/pulse.env
+ExecStart=/usr/bin/node /opt/msk/skills/pulse/scripts/pulse.mjs collect --config /etc/pulse/collector.json --registry /etc/pulse/pools.json --out /var/lib/pulse/events.jsonl --duration 0
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/pulse
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+{
+  "chain_id": 4663,
+  "sources": [
+    {"name": "provider", "http_env": "PULSE_PROVIDER_HTTP", "ws_env": "PULSE_PROVIDER_WS"},
+    {"name": "local-nitro", "http_env": "PULSE_LOCAL_HTTP", "ws_env": "PULSE_LOCAL_WS", "feed_env": "PULSE_FEED_WS"}
+  ],
+  "primary_source": "provider",
+  "addresses": ["0x8366a39cc670b4001a1121b8f6a443a643e40951"],
+  "max_backfill_blocks": 200,
+  "reorg_depth": 32,
+  "request_timeout_ms": 10000,
+  "reconnect_ms": 1000,
+  "max_reconnects": 10,
+  "queue_limit": 1000,
+  "max_message_bytes": 2097152,
+  "duration_seconds": 60,
+  "journal_max_bytes": 268435456,
+  "api_port": 0
+}
