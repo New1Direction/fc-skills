@@ -1,0 +1,119 @@
+{
+  "schema": "lp-edge.ranges-input.v1",
+  "source_kind": "synthetic",
+  "provenance": [
+    "synthetic:sparse-prices"
+  ],
+  "identity": {
+    "chain_id": "eip155:1",
+    "pool": "0x0000000000000000000000000000000000000001",
+    "token0": "0x0000000000000000000000000000000000000002",
+    "token1": "0x0000000000000000000000000000000000000003",
+    "decimals0": 6,
+    "decimals1": 6,
+    "quote_token": 1
+  },
+  "tick_spacing": 60,
+  "predeclared_at": 99999,
+  "declaration_evidence_ids": [
+    "synthetic:declaration"
+  ],
+  "knowledge_cutoff": 100500,
+  "samples": [
+    {
+      "timestamp": 100100,
+      "available_at": 100101,
+      "sqrt_price_x96": "79228162514264337593543950336",
+      "tick": 0,
+      "evidence_ids": [
+        "synthetic:sample-0"
+      ]
+    },
+    {
+      "timestamp": 100200,
+      "available_at": 100201,
+      "sqrt_price_x96": "92049301871182272007977902845",
+      "tick": 3000,
+      "evidence_ids": [
+        "synthetic:sample-1"
+      ]
+    },
+    {
+      "timestamp": 100300,
+      "available_at": 100301,
+      "sqrt_price_x96": "106945228894416644761163377414",
+      "tick": 6000,
+      "evidence_ids": [
+        "synthetic:sample-2"
+      ]
+    },
+    {
+      "timestamp": 100400,
+      "available_at": 100401,
+      "sqrt_price_x96": "144358793897561188941933813477",
+      "tick": 12000,
+      "evidence_ids": [
+        "synthetic:sample-3"
+      ]
+    }
+  ],
+  "ranges": [
+    {
+      "id": "narrow",
+      "tick_lower": -6000,
+      "tick_upper": 6000,
+      "liquidity": "1000000000000",
+      "costs": {
+        "complete": true,
+        "quote_token": 1,
+        "evidence_ids": [
+          "synthetic:all-five-costs-declared"
+        ],
+        "entry": "1000000",
+        "rebalance": "0",
+        "collect": "200000",
+        "withdrawal": "300000",
+        "conversion": "500000"
+      },
+      "scenario_fees": {
+        "source_kind": "synthetic",
+        "amount0_raw": "0",
+        "amount1_raw": "50000000000",
+        "basis": "Explicit hypothetical fee amount for this fixed position and horizon",
+        "evidence_ids": [
+          "synthetic:fee-assumption"
+        ],
+        "assumptions": "Fees fixed externally; no competition, tick replay, swap sequence, or path-dependent accrual modeled."
+      }
+    },
+    {
+      "id": "wide-unknown-fees",
+      "tick_lower": -18000,
+      "tick_upper": 18000,
+      "liquidity": "1000000000000",
+      "costs": {
+        "complete": true,
+        "quote_token": 1,
+        "evidence_ids": [
+          "synthetic:all-five-costs-declared"
+        ],
+        "entry": "1000000",
+        "rebalance": "0",
+        "collect": "200000",
+        "withdrawal": "300000",
+        "conversion": "500000"
+      },
+      "scenario_fees": null
+    }
+  ],
+  "stress_prices": [
+    {
+      "id": "down-45-percent-approx",
+      "sqrt_price_x96": "58694546734607936014596754229"
+    },
+    {
+      "id": "up-500-percent-approx",
+      "sqrt_price_x96": "194861066650599577346362855175"
+    }
+  ]
+}

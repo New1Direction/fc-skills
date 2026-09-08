@@ -1,0 +1,14 @@
+interface:
+  display_name: Exit Doctor
+  short_description: Measure position exits, costs, and liquidity sensitivity
+  default_prompt: Use $exit-doctor to evaluate selling this position at several sizes,
+    reconcile costs, and show the quote and simulation evidence.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

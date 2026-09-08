@@ -1,0 +1,26 @@
+{
+  "schema_version": "meme-scout.input.v1",
+  "source_kind": "synthetic",
+  "window_start": "2026-09-01T00:00:00Z",
+  "cutoff": "2026-09-03T00:00:00Z",
+  "narrative": {"id": "example-moon-garden", "label": "Fictional Moon Garden meme"},
+  "coverage": {
+    "queries": ["Synthetic fixture; no live search conducted"],
+    "channels": ["fictional-forum"],
+    "limitations": ["All accounts, posts, claims, and token associations in this file are synthetic."],
+    "selection_notes": "Offline demonstration of temporal filtering, copies, community labels, and unresolved identity."
+  },
+  "tokens": [{
+    "chain": "eip155:1", "address": "0x00000000000000000000000000000000000000ab",
+    "available_at": "2026-09-01T12:00:00Z", "identity_status": "verified",
+    "evidence": [{"url": "https://example.invalid/project", "available_at": "2026-09-01T12:00:00Z", "source_kind": "synthetic", "role": "primary", "claim": "Fictional page claims the exact example token belongs to the Moon Garden narrative."}]
+  }],
+  "observations": [
+    {"id": "example:1", "platform": "fictional-forum", "author_id": "gardener-a", "event_time": "2026-09-01T10:00:00Z", "available_at": "2026-09-01T10:05:00Z", "url": "https://example.invalid/posts/1", "text": "I drew a garden on the moon; here is my sketch.", "source_kind": "synthetic", "kind": "original", "narrative_match": "confirmed", "sponsorship": "unknown", "community": {"label": "illustrators", "confidence": "documented", "basis": "Synthetic post is located inside a fictional illustrator community."}},
+    {"id": "example:2", "platform": "fictional-forum", "author_id": "gardener-b", "event_time": "2026-09-01T11:00:00Z", "available_at": "2026-09-01T11:05:00Z", "url": "https://example.invalid/posts/2", "text": "MOON GARDEN is blooming https://example.invalid/a", "source_kind": "synthetic", "kind": "original", "narrative_match": "confirmed", "sponsorship": "unknown", "community": {"label": "gardeners", "confidence": "inferred", "basis": "Fictional author mentions gardening; membership remains inferred."}},
+    {"id": "example:3", "platform": "fictional-forum", "author_id": "gardener-c", "event_time": "2026-09-01T12:00:00Z", "available_at": "2026-09-01T12:05:00Z", "url": "https://example.invalid/posts/3", "text": "moon garden is blooming https://example.invalid/b", "source_kind": "synthetic", "kind": "original", "narrative_match": "confirmed", "sponsorship": "unknown", "community": {"label": null, "confidence": "unknown", "basis": "No community evidence retained."}},
+    {"id": "example:4", "platform": "fictional-forum", "author_id": "gardener-d", "event_time": "2026-09-02T09:00:00Z", "available_at": "2026-09-02T09:05:00Z", "url": "https://example.invalid/posts/4", "text": "I drew a garden on the moon; here is my sketch.", "source_kind": "synthetic", "kind": "repost", "narrative_match": "confirmed", "sponsorship": "unknown", "community": {"label": null, "confidence": "unknown", "basis": "No community evidence retained."}},
+    {"id": "example:5", "platform": "fictional-forum", "author_id": "gardener-e", "event_time": "2026-09-02T10:00:00Z", "available_at": "2026-09-02T10:05:00Z", "url": "https://example.invalid/posts/5", "text": "Sponsored Moon Garden art collection announcement.", "source_kind": "synthetic", "kind": "original", "narrative_match": "confirmed", "sponsorship": "paid", "community": {"label": "collectors", "confidence": "documented", "basis": "Synthetic post is located inside a fictional collector community."}, "coordination_group": "fictional-promotion", "coordination_basis": "Synthetic campaign brief identifies this post.", "token_ids": ["eip155:1/0x00000000000000000000000000000000000000ab"]},
+    {"id": "example:6", "platform": "fictional-forum", "author_id": "gardener-f", "event_time": "2026-09-01T08:00:00Z", "available_at": "2026-09-04T10:00:00Z", "url": "https://example.invalid/posts/6", "text": "An earlier fictional sketch discovered after the cutoff.", "source_kind": "synthetic", "kind": "original", "narrative_match": "confirmed", "sponsorship": "unknown", "community": {"label": null, "confidence": "unknown", "basis": "No community evidence retained."}}
+  ]
+}

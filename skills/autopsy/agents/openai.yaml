@@ -1,0 +1,14 @@
+interface:
+  display_name: Autopsy
+  short_description: Trace token launches, supply flows, and wallet evidence
+  default_prompt: Use $autopsy to investigate this token launch and reconstruct its
+    supply, wallet activity, liquidity changes, and exits with verifiable evidence.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

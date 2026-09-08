@@ -1,0 +1,284 @@
+{
+  "schema_version": "ignition.observations.v1",
+  "source_kind": "synthetic",
+  "window_start": "2026-09-08T00:00:00Z",
+  "cutoff": "2026-09-08T02:01:00Z",
+  "covered_venues": [
+    "synthetic:venue-a"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "synthetic:alpha",
+      "chain_id": "synthetic:fixture",
+      "token_id": "synthetic:alpha",
+      "quote_unit": "synthetic:fixture/asset:QUOTE",
+      "quote_decimals": 6,
+      "created_at": "2026-09-07T00:00:00Z",
+      "creation_available_at": "2026-09-07T00:00:00Z",
+      "creation_evidence_refs": [
+        "fixture:creation/synthetic:alpha"
+      ],
+      "coverage": {
+        "status": "complete",
+        "window_start": "2026-09-08T00:00:00Z",
+        "window_end": "2026-09-08T02:00:00Z",
+        "venue_ids": [
+          "synthetic:venue-a"
+        ],
+        "gaps": [],
+        "evidence_refs": [
+          "fixture:coverage/synthetic:alpha"
+        ],
+        "available_at": "2026-09-08T02:00:20Z"
+      }
+    },
+    {
+      "candidate_id": "synthetic:gap",
+      "chain_id": "synthetic:fixture",
+      "token_id": "synthetic:gap",
+      "quote_unit": "synthetic:fixture/asset:QUOTE",
+      "quote_decimals": 6,
+      "created_at": "2026-09-07T00:00:00Z",
+      "creation_available_at": "2026-09-07T00:00:00Z",
+      "creation_evidence_refs": [
+        "fixture:creation/synthetic:gap"
+      ],
+      "coverage": {
+        "status": "partial",
+        "window_start": "2026-09-08T00:00:00Z",
+        "window_end": "2026-09-08T02:00:00Z",
+        "venue_ids": [
+          "synthetic:venue-a"
+        ],
+        "gaps": [
+          "fixture:missing-indexer-period"
+        ],
+        "evidence_refs": [
+          "fixture:coverage/synthetic:gap"
+        ],
+        "available_at": "2026-09-08T02:00:20Z"
+      }
+    },
+    {
+      "candidate_id": "synthetic:age-unknown",
+      "chain_id": "synthetic:fixture",
+      "token_id": "synthetic:age-unknown",
+      "quote_unit": "synthetic:fixture/asset:QUOTE",
+      "quote_decimals": 6,
+      "created_at": null,
+      "creation_available_at": null,
+      "creation_evidence_refs": [],
+      "coverage": {
+        "status": "complete",
+        "window_start": "2026-09-08T00:00:00Z",
+        "window_end": "2026-09-08T02:00:00Z",
+        "venue_ids": [
+          "synthetic:venue-a"
+        ],
+        "gaps": [],
+        "evidence_refs": [
+          "fixture:coverage/synthetic:age-unknown"
+        ],
+        "available_at": "2026-09-08T02:00:20Z"
+      }
+    }
+  ],
+  "swaps": [
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-1",
+      "log_index": 0,
+      "wallet_id": "wallet-1",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T00:10:00Z",
+      "available_at": "2026-09-08T00:10:00Z",
+      "evidence_refs": [
+        "fixture:swap/1"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-2",
+      "log_index": 0,
+      "wallet_id": "wallet-2",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T00:11:00Z",
+      "available_at": "2026-09-08T00:11:00Z",
+      "evidence_refs": [
+        "fixture:swap/2"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-3",
+      "log_index": 0,
+      "wallet_id": "wallet-3",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T00:12:00Z",
+      "available_at": "2026-09-08T00:12:00Z",
+      "evidence_refs": [
+        "fixture:swap/3"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-4",
+      "log_index": 0,
+      "wallet_id": "wallet-1",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:10:00Z",
+      "available_at": "2026-09-08T01:10:00Z",
+      "evidence_refs": [
+        "fixture:swap/4"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-5",
+      "log_index": 0,
+      "wallet_id": "wallet-2",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:11:00Z",
+      "available_at": "2026-09-08T01:11:00Z",
+      "evidence_refs": [
+        "fixture:swap/5"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-6",
+      "log_index": 0,
+      "wallet_id": "wallet-3",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:12:00Z",
+      "available_at": "2026-09-08T01:12:00Z",
+      "evidence_refs": [
+        "fixture:swap/6"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-7",
+      "log_index": 0,
+      "wallet_id": "wallet-4",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:13:00Z",
+      "available_at": "2026-09-08T01:13:00Z",
+      "evidence_refs": [
+        "fixture:swap/7"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-8",
+      "log_index": 0,
+      "wallet_id": "wallet-5",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:14:00Z",
+      "available_at": "2026-09-08T01:14:00Z",
+      "evidence_refs": [
+        "fixture:swap/8"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-9",
+      "log_index": 0,
+      "wallet_id": "wallet-6",
+      "side": "buy",
+      "quote_amount": "10",
+      "event_time": "2026-09-08T01:15:00Z",
+      "available_at": "2026-09-08T01:15:00Z",
+      "evidence_refs": [
+        "fixture:swap/9"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-10",
+      "log_index": 0,
+      "wallet_id": "suspected-bot",
+      "side": "buy",
+      "quote_amount": "1000",
+      "event_time": "2026-09-08T01:20:00Z",
+      "available_at": "2026-09-08T01:20:00Z",
+      "evidence_refs": [
+        "fixture:swap/10"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-11",
+      "log_index": 0,
+      "wallet_id": "rapid-trader",
+      "side": "buy",
+      "quote_amount": "500",
+      "event_time": "2026-09-08T01:21:00Z",
+      "available_at": "2026-09-08T01:21:00Z",
+      "evidence_refs": [
+        "fixture:swap/11"
+      ]
+    },
+    {
+      "candidate_id": "synthetic:alpha",
+      "venue_id": "synthetic:venue-a",
+      "tx_id": "synthetic:tx-12",
+      "log_index": 0,
+      "wallet_id": "rapid-trader",
+      "side": "sell",
+      "quote_amount": "490",
+      "event_time": "2026-09-08T01:21:30Z",
+      "available_at": "2026-09-08T01:21:30Z",
+      "evidence_refs": [
+        "fixture:swap/12"
+      ]
+    }
+  ],
+  "suspected_bots": [
+    {
+      "chain_id": "synthetic:fixture",
+      "wallet_id": "suspected-bot",
+      "reason": "Synthetic label for exclusion test; not an observed bot.",
+      "evidence_refs": [
+        "fixture:bot-label"
+      ],
+      "available_at": "2026-09-08T02:00:00Z"
+    }
+  ],
+  "supplied_clusters": [
+    {
+      "cluster_id": "synthetic:cluster-a",
+      "chain_id": "synthetic:fixture",
+      "wallet_ids": [
+        "wallet-4",
+        "wallet-5",
+        "wallet-6"
+      ],
+      "basis": "shared_infrastructure_funding",
+      "evidence_refs": [
+        "fixture:cluster-hypothesis"
+      ],
+      "available_at": "2026-09-08T02:00:00Z"
+    }
+  ],
+  "window_end": "2026-09-08T02:00:00Z"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "exit-doctor.scenarios.v1",
+  "entries": [
+    {
+      "id": "prior-sale-200000",
+      "type": "prior_sell",
+      "amount_in_raw": "200000000000000000000000"
+    },
+    {
+      "id": "half-liquidity-removed",
+      "type": "proportional_liquidity_removal",
+      "removal_bps": 5000
+    },
+    {
+      "id": "immediate-roundtrip-1000",
+      "type": "buy_then_sell",
+      "quote_spend_raw": "1000000000"
+    }
+  ]
+}

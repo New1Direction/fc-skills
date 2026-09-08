@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "source_kind": "synthetic",
+  "cutoff": "2026-01-05T00:00:00Z",
+  "identity": {
+    "chain": "eip155:1",
+    "token": "synthetic:TOKEN",
+    "token_unit": "TOKEN:18",
+    "quote_unit": "synthetic:USDQ:6",
+    "pool_scope": "synthetic:pool-A"
+  },
+  "evidence": [
+    {
+      "id": "s1",
+      "source_kind": "synthetic",
+      "available_at": "2026-01-05T00:00:00Z",
+      "reference": "synthetic fixture; no live chain data"
+    }
+  ],
+  "windows": [
+    {
+      "id": "w1",
+      "role": "active_history",
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2026-01-02T00:00:00Z",
+      "available_at": "2026-01-05T00:00:00Z",
+      "identity": {
+        "chain": "eip155:1",
+        "token": "synthetic:TOKEN",
+        "token_unit": "TOKEN:18",
+        "quote_unit": "synthetic:USDQ:6",
+        "pool_scope": "synthetic:pool-A"
+      },
+      "evidence_refs": [
+        "s1"
+      ],
+      "activity_coverage": "complete",
+      "buyer_coverage": "unknown",
+      "history_coverage": "unknown",
+      "relationship_coverage": "unknown",
+      "comparability_events": [],
+      "metrics": {
+        "trades": 100,
+        "quote_volume": "1000"
+      }
+    },
+    {
+      "id": "w2",
+      "role": "dormancy",
+      "start": "2026-01-02T00:00:00Z",
+      "end": "2026-01-03T00:00:00Z",
+      "available_at": "2026-01-05T00:00:00Z",
+      "identity": {
+        "chain": "eip155:1",
+        "token": "synthetic:TOKEN",
+        "token_unit": "TOKEN:18",
+        "quote_unit": "synthetic:USDQ:6",
+        "pool_scope": "synthetic:pool-A"
+      },
+      "evidence_refs": [
+        "s1"
+      ],
+      "activity_coverage": "complete",
+      "buyer_coverage": "unknown",
+      "history_coverage": "unknown",
+      "relationship_coverage": "unknown",
+      "comparability_events": [],
+      "metrics": {
+        "trades": 2,
+        "quote_volume": "10"
+      }
+    },
+    {
+      "id": "w3",
+      "role": "dormancy",
+      "start": "2026-01-03T00:00:00Z",
+      "end": "2026-01-04T00:00:00Z",
+      "available_at": "2026-01-05T00:00:00Z",
+      "identity": {
+        "chain": "eip155:1",
+        "token": "synthetic:TOKEN",
+        "token_unit": "TOKEN:18",
+        "quote_unit": "synthetic:USDQ:6",
+        "pool_scope": "synthetic:pool-A"
+      },
+      "evidence_refs": [
+        "s1"
+      ],
+      "activity_coverage": "complete",
+      "buyer_coverage": "unknown",
+      "history_coverage": "unknown",
+      "relationship_coverage": "unknown",
+      "comparability_events": [],
+      "metrics": {
+        "trades": 2,
+        "quote_volume": "10"
+      }
+    },
+    {
+      "id": "w4",
+      "role": "current",
+      "start": "2026-01-04T00:00:00Z",
+      "end": "2026-01-05T00:00:00Z",
+      "available_at": "2026-01-05T00:00:00Z",
+      "identity": {
+        "chain": "eip155:1",
+        "token": "synthetic:TOKEN",
+        "token_unit": "TOKEN:18",
+        "quote_unit": "synthetic:USDQ:6",
+        "pool_scope": "synthetic:pool-A"
+      },
+      "evidence_refs": [
+        "s1"
+      ],
+      "activity_coverage": "complete",
+      "buyer_coverage": "complete",
+      "history_coverage": "complete",
+      "relationship_coverage": "complete",
+      "comparability_events": [],
+      "metrics": {
+        "trades": 50,
+        "quote_volume": "500"
+      },
+      "buyers": [
+        {
+          "wallet": "synthetic:new-0",
+          "buy_quote": "50",
+          "first_buy_at": "2026-01-04T01:00:00Z",
+          "dependency_group": null
+        },
+        {
+          "wallet": "synthetic:new-1",
+          "buy_quote": "50",
+          "first_buy_at": "2026-01-04T01:00:00Z",
+          "dependency_group": null
+        },
+        {
+          "wallet": "synthetic:new-2",
+          "buy_quote": "50",
+          "first_buy_at": "2026-01-04T01:00:00Z",
+          "dependency_group": null
+        },
+        {
+          "wallet": "synthetic:new-3",
+          "buy_quote": "50",
+          "first_buy_at": "2026-01-04T01:00:00Z",
+          "dependency_group": null
+        },
+        {
+          "wallet": "synthetic:returning",
+          "buy_quote": "100",
+          "first_buy_at": "2026-01-01T01:00:00Z",
+          "dependency_group": null
+        }
+      ],
+      "incumbents": {
+        "snapshot_at": "2026-01-04T00:00:00Z",
+        "buy_quote": "100",
+        "sell_quote": "150"
+      },
+      "liquidity": {
+        "quote_reserve_start": "1000",
+        "quote_reserve_end": "1200",
+        "depth_quote_start": "50",
+        "depth_quote_end": "80",
+        "token_units_start": "500",
+        "token_units_end": "600",
+        "slippage_bps": 100
+      }
+    }
+  ]
+}

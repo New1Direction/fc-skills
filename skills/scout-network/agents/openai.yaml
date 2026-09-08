@@ -1,0 +1,14 @@
+interface:
+  display_name: Scout Network
+  short_description: Evaluate wallets for early and followable discoveries
+  default_prompt: Use $scout-network to evaluate which wallets made early discoveries
+    that remained useful after realistic following delays.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

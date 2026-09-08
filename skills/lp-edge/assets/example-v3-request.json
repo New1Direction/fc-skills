@@ -1,0 +1,42 @@
+{
+  "block_numbers": [
+    100,
+    101
+  ],
+  "chain_id": 1,
+  "deployment_evidence": "SYNTHETIC fixture; not a real deployment verification.",
+  "expected_code_sha256": {
+    "factory": "f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017",
+    "pool": "f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017",
+    "position_manager": "f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017",
+    "token0": "f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017",
+    "token1": "f3df0a62b10f205b0f29768aa3d69e777154caaa179f64aabb0a4899c666b017"
+  },
+  "factory": "0x000000000000000000000000000000000000000b",
+  "fee": 3000,
+  "pool": "0x000000000000000000000000000000000000000c",
+  "position_manager": "0x000000000000000000000000000000000000000d",
+  "simulate": {
+    "collect": true,
+    "mint": {
+      "amount0_desired_raw": "100",
+      "amount0_min_raw": "1",
+      "amount1_desired_raw": "100",
+      "amount1_min_raw": "1",
+      "deadline_seconds": 300
+    },
+    "withdraw": {
+      "amount0_min_raw": "1",
+      "amount1_min_raw": "1",
+      "deadline_seconds": 300,
+      "liquidity": "100"
+    }
+  },
+  "standard_token_evidence": "SYNTHETIC fixture; no observed token verification.",
+  "tick_lower": -60,
+  "tick_upper": 60,
+  "token0": "0x0000000000000000000000000000000000000001",
+  "token1": "0x0000000000000000000000000000000000000002",
+  "token_id": "7",
+  "wallet": "0x0000000000000000000000000000000000000014"
+}

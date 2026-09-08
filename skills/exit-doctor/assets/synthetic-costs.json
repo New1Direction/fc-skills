@@ -1,0 +1,47 @@
+{
+  "schema_version": "exit-doctor.costs.v1",
+  "chain_id": 31337,
+  "token_out": "0x0000000000000000000000000000000000000005",
+  "entries": [
+    {
+      "amount_in_raw": "1000000000000000000000",
+      "status": "known",
+      "amount_out_cost_raw": "1250000",
+      "unit": "output_token_raw",
+      "includes_pool_fee": false,
+      "coverage": "all_additional_costs",
+      "source": "Invented complete extra-cost estimate in output-token units, including assumed gas conversion; assumes no platform or other extra charges. Embedded pool fee excluded.",
+      "evidence_ids": []
+    },
+    {
+      "amount_in_raw": "10000000000000000000000",
+      "status": "known",
+      "amount_out_cost_raw": "1250000",
+      "unit": "output_token_raw",
+      "includes_pool_fee": false,
+      "coverage": "all_additional_costs",
+      "source": "Invented complete extra-cost estimate in output-token units, including assumed gas conversion; assumes no platform or other extra charges. Embedded pool fee excluded.",
+      "evidence_ids": []
+    },
+    {
+      "amount_in_raw": "50000000000000000000000",
+      "status": "unknown",
+      "amount_out_cost_raw": null,
+      "unit": "output_token_raw",
+      "includes_pool_fee": false,
+      "coverage": "incomplete",
+      "source": "No complete gas conversion and additional-cost estimate supplied for this size.",
+      "evidence_ids": []
+    },
+    {
+      "amount_in_raw": "100000000000000000000000",
+      "status": "known",
+      "amount_out_cost_raw": "1500000",
+      "unit": "output_token_raw",
+      "includes_pool_fee": false,
+      "coverage": "all_additional_costs",
+      "source": "Invented complete extra-cost estimate in output-token units, including assumed gas conversion; assumes no platform or other extra charges. Embedded pool fee excluded.",
+      "evidence_ids": []
+    }
+  ]
+}

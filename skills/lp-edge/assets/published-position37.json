@@ -1,0 +1,52 @@
+{
+  "schema": "lp-edge.published-case.v1",
+  "source_kind": "published_case",
+  "source_url": "https://blog.uniswap.org/uniswap-v3-math-primer-2",
+  "source_published_date": "2023-06-26",
+  "retrieved_date": "2026-09-08",
+  "position_id": "37",
+  "block_number": null,
+  "block_hash": null,
+  "position": {
+    "liquidity": "10860507277202",
+    "tick_lower": 192180,
+    "tick_upper": 193380,
+    "sqrt_price_x96": "1906627091097897970122208862883908",
+    "tick_current": 201780,
+    "token0_symbol": "USDC",
+    "token0_decimals": 6,
+    "token1_symbol": "WETH",
+    "token1_decimals": 18,
+    "fee_growth_global0_x128": "3094836483914812667943230173936420",
+    "fee_growth_outside0_upper_x128": "233371140530963296710329726203514",
+    "fee_growth_outside0_lower_x128": "37180414779992829129391081655145",
+    "fee_growth_inside0_last_x128": "0",
+    "fee_growth_global1_x128": null,
+    "fee_growth_outside1_upper_x128": null,
+    "fee_growth_outside1_lower_x128": null,
+    "fee_growth_inside1_last_x128": null,
+    "tokens_owed0": null,
+    "tokens_owed1": null
+  },
+  "published_outputs": {
+    "range_status": "above_range",
+    "principal0_raw": "0",
+    "principal1_approximate_raw": "9999999960000000",
+    "principal1_display": "0.009999",
+    "incremental_fee0_approximate_raw": "6261655.06",
+    "fee0_display": "6.261"
+  },
+  "independent_calculations": {
+    "method": "Python Decimal at 110-digit precision for price powers; integer floor division for fee growth",
+    "principal0_raw": "0",
+    "principal1_high_precision_floor_raw": "9999999999999133",
+    "fee_growth_inside0_x128": "196190725750970467580938644548369",
+    "incremental_fee0_floor_raw": "6261655"
+  },
+  "limitations": [
+    "Published historical example; underlying RPC responses, contracts, transaction hash, block number and block hash were not supplied by the article.",
+    "Published principal output uses rounded intermediate square roots. Compare approximate displayed magnitude; do not expect its raw approximation to match integer protocol accounting.",
+    "Fee data cover token0 incremental accrual only; stored tokens owed and all token1 fee data are absent.",
+    "This checks published-case arithmetic, not collector operation, independently authenticated historical state, fork replay, execution, costs, or profitability."
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "decision_cutoff": "2026-01-10T00:00:00Z",
+  "source_kind": "synthetic",
+  "cohort": {
+    "rule": "All first ordinary-or-unknown discoveries from the one fictional wallet in the fixed window; no return filter.",
+    "frozen_at": "2026-01-01T00:00:00Z",
+    "available_at": "2026-01-01T00:00:00Z",
+    "window_start": "2026-01-02T00:00:00Z",
+    "window_end": "2026-01-08T00:00:00Z",
+    "coverage_status": "complete",
+    "expected_case_count": 4,
+    "exclusions": [],
+    "source_refs": [
+      "synthetic:cohort-manifest",
+      "synthetic:coverage-assertion"
+    ],
+    "coverage_available_at": "2026-01-09T00:00:00Z"
+  },
+  "scenario": {
+    "currency": "ethereum:USDC",
+    "follower_delay_seconds": 60,
+    "entry_budget": "100",
+    "hold_seconds": 3600,
+    "max_execution_lag_seconds": 0,
+    "execution_mode": "simulated",
+    "thresholds": null
+  },
+  "wallets": [
+    {
+      "id": "fictional-scout-a",
+      "selected_at": "2026-01-01T00:00:00Z",
+      "selection_available_at": "2026-01-01T00:00:00Z",
+      "selection_rule": "Fixed fictional test cohort, before observing any picks.",
+      "source_refs": [
+        "synthetic:wallet-selection"
+      ],
+      "relation_group": null,
+      "relation_available_at": null,
+      "relation_source_refs": []
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-2",
+      "wallet_id": "fictional-scout-a",
+      "chain": "ethereum",
+      "token": "fictional-token-2",
+      "source_kind": "synthetic",
+      "discovery": {
+        "event_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "source_refs": [
+          "synthetic:discovery-2"
+        ]
+      },
+      "access": {
+        "kind": "ordinary_buy",
+        "event_at": "2026-01-02T00:00:00Z",
+        "available_at": "2026-01-02T00:00:00Z",
+        "source_refs": [
+          "synthetic:access-2"
+        ]
+      },
+      "entry": {
+        "status": "filled",
+        "event_at": "2026-01-02T00:01:00Z",
+        "available_at": "2026-01-02T00:01:00Z",
+        "source_refs": [
+          "synthetic:entry-2"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "100",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      },
+      "exit": {
+        "status": "filled",
+        "event_at": "2026-01-02T01:01:00Z",
+        "available_at": "2026-01-02T01:01:00Z",
+        "source_refs": [
+          "synthetic:exit-2"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "150",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      }
+    },
+    {
+      "id": "case-3",
+      "wallet_id": "fictional-scout-a",
+      "chain": "ethereum",
+      "token": "fictional-token-3",
+      "source_kind": "synthetic",
+      "discovery": {
+        "event_at": "2026-01-03T00:00:00Z",
+        "available_at": "2026-01-03T00:00:00Z",
+        "source_refs": [
+          "synthetic:discovery-3"
+        ]
+      },
+      "access": {
+        "kind": "ordinary_buy",
+        "event_at": "2026-01-03T00:00:00Z",
+        "available_at": "2026-01-03T00:00:00Z",
+        "source_refs": [
+          "synthetic:access-3"
+        ]
+      },
+      "entry": {
+        "status": "filled",
+        "event_at": "2026-01-03T00:01:00Z",
+        "available_at": "2026-01-03T00:01:00Z",
+        "source_refs": [
+          "synthetic:entry-3"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "100",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      },
+      "exit": {
+        "status": "filled",
+        "event_at": "2026-01-03T01:01:00Z",
+        "available_at": "2026-01-03T01:01:00Z",
+        "source_refs": [
+          "synthetic:exit-3"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "145",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      }
+    },
+    {
+      "id": "case-4",
+      "wallet_id": "fictional-scout-a",
+      "chain": "ethereum",
+      "token": "fictional-token-4",
+      "source_kind": "synthetic",
+      "discovery": {
+        "event_at": "2026-01-04T00:00:00Z",
+        "available_at": "2026-01-04T00:00:00Z",
+        "source_refs": [
+          "synthetic:discovery-4"
+        ]
+      },
+      "access": {
+        "kind": "ordinary_buy",
+        "event_at": "2026-01-04T00:00:00Z",
+        "available_at": "2026-01-04T00:00:00Z",
+        "source_refs": [
+          "synthetic:access-4"
+        ]
+      },
+      "entry": {
+        "status": "filled",
+        "event_at": "2026-01-04T00:01:00Z",
+        "available_at": "2026-01-04T00:01:00Z",
+        "source_refs": [
+          "synthetic:entry-4"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "100",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      },
+      "exit": {
+        "status": "filled",
+        "event_at": "2026-01-04T01:01:00Z",
+        "available_at": "2026-01-04T01:01:00Z",
+        "source_refs": [
+          "synthetic:exit-4"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "60",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      }
+    },
+    {
+      "id": "case-5",
+      "wallet_id": "fictional-scout-a",
+      "chain": "ethereum",
+      "token": "fictional-token-5",
+      "source_kind": "synthetic",
+      "discovery": {
+        "event_at": "2026-01-05T00:00:00Z",
+        "available_at": "2026-01-05T00:00:00Z",
+        "source_refs": [
+          "synthetic:discovery-5"
+        ]
+      },
+      "access": {
+        "kind": "ordinary_buy",
+        "event_at": "2026-01-05T00:00:00Z",
+        "available_at": "2026-01-05T00:00:00Z",
+        "source_refs": [
+          "synthetic:access-5"
+        ]
+      },
+      "entry": {
+        "status": "filled",
+        "event_at": "2026-01-05T00:01:00Z",
+        "available_at": "2026-01-05T00:01:00Z",
+        "source_refs": [
+          "synthetic:entry-5"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "100",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      },
+      "exit": {
+        "status": "filled",
+        "event_at": "2026-01-05T01:01:00Z",
+        "available_at": "2026-01-05T01:01:00Z",
+        "source_refs": [
+          "synthetic:exit-5"
+        ],
+        "evidence_kind": "simulated",
+        "currency": "ethereum:USDC",
+        "quote_amount": "125",
+        "token_quantity": "1000",
+        "fees": "1",
+        "assumptions": "Fictional full-size simulation; output includes price impact and transfer tax; fees include gas, route fees and explicit MEV allowance; no real chain data."
+      }
+    }
+  ]
+}

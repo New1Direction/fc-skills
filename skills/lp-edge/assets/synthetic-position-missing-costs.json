@@ -1,0 +1,132 @@
+{
+  "schema": "lp-edge.position-input.v1",
+  "source_kind": "synthetic",
+  "provenance": [
+    "synthetic:adverse-price-path-with-positive-fees"
+  ],
+  "identity": {
+    "chain_id": "eip155:1",
+    "pool": "0x0000000000000000000000000000000000000001",
+    "token0": "0x0000000000000000000000000000000000000002",
+    "token1": "0x0000000000000000000000000000000000000003",
+    "decimals0": 6,
+    "decimals1": 6,
+    "quote_token": 1
+  },
+  "snapshots": [
+    {
+      "chain_id": "eip155:1",
+      "block": {
+        "number": 100,
+        "hash": "0x0000000000000000000000000000000000000000000000000000000000000064",
+        "timestamp": 100100
+      },
+      "pool": {
+        "address": "0x0000000000000000000000000000000000000001",
+        "factory": "0x0000000000000000000000000000000000000004",
+        "token0": "0x0000000000000000000000000000000000000002",
+        "token1": "0x0000000000000000000000000000000000000003",
+        "fee": 3000,
+        "tick_spacing": 60,
+        "sqrt_price_x96": "79228162514264337593543950336",
+        "tick": 0,
+        "liquidity": "2000000000000",
+        "fee_growth_global0_x128": "0",
+        "fee_growth_global1_x128": "0"
+      },
+      "range": {
+        "tick_lower": -6000,
+        "tick_upper": 6000,
+        "lower": {
+          "liquidity_gross": "1000000000000",
+          "fee_growth_outside0_x128": "0",
+          "fee_growth_outside1_x128": "0",
+          "initialized": true
+        },
+        "upper": {
+          "liquidity_gross": "1000000000000",
+          "fee_growth_outside0_x128": "0",
+          "fee_growth_outside1_x128": "0",
+          "initialized": true
+        }
+      },
+      "position": {
+        "token_id": "1",
+        "owner": "0x0000000000000000000000000000000000000005",
+        "token0": "0x0000000000000000000000000000000000000002",
+        "token1": "0x0000000000000000000000000000000000000003",
+        "fee": 3000,
+        "liquidity": "1000000000000",
+        "tick_lower": -6000,
+        "tick_upper": 6000,
+        "fee_growth_inside0_last_x128": "0",
+        "fee_growth_inside1_last_x128": "0",
+        "tokens_owed0": "10000000000",
+        "tokens_owed1": "0"
+      }
+    },
+    {
+      "chain_id": "eip155:1",
+      "block": {
+        "number": 200,
+        "hash": "0x00000000000000000000000000000000000000000000000000000000000000c8",
+        "timestamp": 100200
+      },
+      "pool": {
+        "address": "0x0000000000000000000000000000000000000001",
+        "factory": "0x0000000000000000000000000000000000000004",
+        "token0": "0x0000000000000000000000000000000000000002",
+        "token1": "0x0000000000000000000000000000000000000003",
+        "fee": 3000,
+        "tick_spacing": 60,
+        "sqrt_price_x96": "144358793897561188941933813477",
+        "tick": 12000,
+        "liquidity": "2000000000000",
+        "fee_growth_global0_x128": "0",
+        "fee_growth_global1_x128": "17014118346046923173168730371588410573"
+      },
+      "range": {
+        "tick_lower": -6000,
+        "tick_upper": 6000,
+        "lower": {
+          "liquidity_gross": "1000000000000",
+          "fee_growth_outside0_x128": "0",
+          "fee_growth_outside1_x128": "0",
+          "initialized": true
+        },
+        "upper": {
+          "liquidity_gross": "1000000000000",
+          "fee_growth_outside0_x128": "0",
+          "fee_growth_outside1_x128": "17014118346046923173168730371588410573",
+          "initialized": true
+        }
+      },
+      "position": {
+        "token_id": "1",
+        "owner": "0x0000000000000000000000000000000000000005",
+        "token0": "0x0000000000000000000000000000000000000002",
+        "token1": "0x0000000000000000000000000000000000000003",
+        "fee": 3000,
+        "liquidity": "1000000000000",
+        "tick_lower": -6000,
+        "tick_upper": 6000,
+        "fee_growth_inside0_last_x128": "0",
+        "fee_growth_inside1_last_x128": "0",
+        "tokens_owed0": "10000000000",
+        "tokens_owed1": "0"
+      }
+    }
+  ],
+  "continuity": {
+    "complete": true,
+    "from_block": 101,
+    "to_block": 200,
+    "events": [],
+    "evidence_ids": [
+      "synthetic:unchanged-position-and-counter-bound"
+    ],
+    "fee_growth_wrap_bound_confirmed": true
+  },
+  "costs": null,
+  "incentives": null
+}

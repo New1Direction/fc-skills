@@ -1,0 +1,14 @@
+interface:
+  display_name: LP Edge
+  short_description: Measure LP fees, inventory risk, and net economics
+  default_prompt: Use $lp-edge to evaluate this liquidity pool and position size against
+    holding, including fees, range risk, costs, and withdrawal evidence.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

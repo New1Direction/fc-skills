@@ -1,0 +1,14 @@
+interface:
+  display_name: Meme Scout
+  short_description: Trace emerging memes and independent community adoption
+  default_prompt: Use $meme-scout to investigate emerging narratives, trace their
+    spread, and resolve associated token identities.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

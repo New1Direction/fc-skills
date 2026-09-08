@@ -1,0 +1,14 @@
+interface:
+  display_name: Second Wind
+  short_description: Detect renewed participation in dormant memecoins
+  default_prompt: Use $second-wind to find dormant tokens showing renewed participation
+    and test whether old holders are selling into it.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

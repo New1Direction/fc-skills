@@ -1,0 +1,577 @@
+{
+  "schema_version": "exit-doctor.v2-evidence.v1",
+  "source_kind": "synthetic",
+  "status": "complete",
+  "chain_id": 31337,
+  "block": {
+    "number": 100,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1788782400,
+    "after_hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "evidence_id": "rpc-000002",
+    "after_evidence_id": "rpc-000029"
+  },
+  "route": {
+    "router": "0x0000000000000000000000000000000000000001",
+    "factory": "0x0000000000000000000000000000000000000002",
+    "pair": "0x0000000000000000000000000000000000000003",
+    "token_in": "0x0000000000000000000000000000000000000004",
+    "token_out": "0x0000000000000000000000000000000000000005",
+    "fee_bps": 30,
+    "deployment_verification": "unverified",
+    "identity_verified": true,
+    "supported_math": true,
+    "reserve_balance_match": true,
+    "code_sha256": {
+      "router": "8880a54d03747df9eda6b310443a788558dc080c804db3fde94aee0382f66ea9",
+      "factory": "8880a54d03747df9eda6b310443a788558dc080c804db3fde94aee0382f66ea9",
+      "pair": "8880a54d03747df9eda6b310443a788558dc080c804db3fde94aee0382f66ea9",
+      "token_in": "8880a54d03747df9eda6b310443a788558dc080c804db3fde94aee0382f66ea9",
+      "token_out": "8880a54d03747df9eda6b310443a788558dc080c804db3fde94aee0382f66ea9"
+    },
+    "deployment_evidence": "Invented offline fixture. Dummy addresses and bytecode; no chain deployment is claimed.",
+    "expected_code_sha256": {},
+    "token0": "0x0000000000000000000000000000000000000004",
+    "token1": "0x0000000000000000000000000000000000000005"
+  },
+  "state": {
+    "reserve_in_raw": "1000000000000000000000000",
+    "reserve_out_raw": "25000000000",
+    "decimals_in": 18,
+    "decimals_out": 6,
+    "balance_in_raw": "1000000000000000000000000",
+    "balance_out_raw": "25000000000",
+    "reserves_evidence_id": "rpc-000013",
+    "decimals_in_evidence_id": "rpc-000014",
+    "balance_in_evidence_id": "rpc-000015",
+    "decimals_out_evidence_id": "rpc-000016",
+    "balance_out_evidence_id": "rpc-000017"
+  },
+  "wallet_state": {
+    "address": "0x0000000000000000000000000000000000000006",
+    "balance_in_raw": "100000000000000000000000",
+    "allowance_raw": "40000000000000000000000",
+    "native_balance_raw": "1000000000000000000",
+    "balance_in_raw_evidence_id": "rpc-000018",
+    "allowance_raw_evidence_id": "rpc-000019",
+    "native_balance_raw_evidence_id": "rpc-000020"
+  },
+  "slippage_bps": 100,
+  "quotes": [
+    {
+      "amount_in_raw": "1000000000000000000000",
+      "amount_out_raw": "24900174",
+      "model_amount_out_raw": "24900174",
+      "quote_evidence_id": "rpc-000021",
+      "min_output_raw": "24651172",
+      "simulation": {
+        "status": "succeeded",
+        "amount_out_raw": "24900174",
+        "evidence_id": "rpc-000022",
+        "gas_estimate_units": "90000",
+        "gas_evidence_id": "rpc-000023"
+      }
+    },
+    {
+      "amount_in_raw": "10000000000000000000000",
+      "amount_out_raw": "246789508",
+      "model_amount_out_raw": "246789508",
+      "quote_evidence_id": "rpc-000024",
+      "min_output_raw": "244321612",
+      "simulation": {
+        "status": "succeeded",
+        "amount_out_raw": "246789508",
+        "evidence_id": "rpc-000025",
+        "gas_estimate_units": "90000",
+        "gas_evidence_id": "rpc-000026"
+      }
+    },
+    {
+      "amount_in_raw": "50000000000000000000000",
+      "amount_out_raw": "1187074343",
+      "model_amount_out_raw": "1187074343",
+      "quote_evidence_id": "rpc-000027",
+      "min_output_raw": "1175203599",
+      "simulation": {
+        "status": "prerequisite_missing",
+        "amount_out_raw": null,
+        "evidence_id": null,
+        "gas_estimate_units": null,
+        "gas_evidence_id": null
+      }
+    },
+    {
+      "amount_in_raw": "100000000000000000000000",
+      "amount_out_raw": "2266527234",
+      "model_amount_out_raw": "2266527234",
+      "quote_evidence_id": "rpc-000028",
+      "min_output_raw": "2243861961",
+      "simulation": {
+        "status": "prerequisite_missing",
+        "amount_out_raw": null,
+        "evidence_id": null,
+        "gas_estimate_units": null,
+        "gas_evidence_id": null
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "rpc-000001",
+      "method": "eth_chainId",
+      "params": [],
+      "observed_at_utc": "2026-09-08T02:47:42.282200Z",
+      "result": "0x7a69"
+    },
+    {
+      "id": "rpc-000002",
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x64",
+        false
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282274Z",
+      "result": {
+        "number": "0x64",
+        "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "timestamp": "0x6a9ea740"
+      }
+    },
+    {
+      "id": "rpc-000003",
+      "method": "eth_getCode",
+      "params": [
+        "0x0000000000000000000000000000000000000001",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282324Z",
+      "result": "0x6001600055"
+    },
+    {
+      "id": "rpc-000004",
+      "method": "eth_getCode",
+      "params": [
+        "0x0000000000000000000000000000000000000002",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282387Z",
+      "result": "0x6001600055"
+    },
+    {
+      "id": "rpc-000005",
+      "method": "eth_getCode",
+      "params": [
+        "0x0000000000000000000000000000000000000003",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282400Z",
+      "result": "0x6001600055"
+    },
+    {
+      "id": "rpc-000006",
+      "method": "eth_getCode",
+      "params": [
+        "0x0000000000000000000000000000000000000004",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282412Z",
+      "result": "0x6001600055"
+    },
+    {
+      "id": "rpc-000007",
+      "method": "eth_getCode",
+      "params": [
+        "0x0000000000000000000000000000000000000005",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282420Z",
+      "result": "0x6001600055"
+    },
+    {
+      "id": "rpc-000008",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000001",
+          "data": "0xc45a0155"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282433Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    {
+      "id": "rpc-000009",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000003",
+          "data": "0xc45a0155"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282453Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    {
+      "id": "rpc-000010",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000002",
+          "data": "0xe6a4390500000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282468Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    {
+      "id": "rpc-000011",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000003",
+          "data": "0x0dfe1681"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282484Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "id": "rpc-000012",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000003",
+          "data": "0xd21220a7"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282496Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000005"
+    },
+    {
+      "id": "rpc-000013",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000003",
+          "data": "0x0902f1ac"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282509Z",
+      "result": "0x00000000000000000000000000000000000000000000d3c21bcecceda100000000000000000000000000000000000000000000000000000000000005d21dba00000000000000000000000000000000000000000000000000000000006a9ea73f"
+    },
+    {
+      "id": "rpc-000014",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000004",
+          "data": "0x313ce567"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282558Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "id": "rpc-000015",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000004",
+          "data": "0x70a082310000000000000000000000000000000000000000000000000000000000000003"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282567Z",
+      "result": "0x00000000000000000000000000000000000000000000d3c21bcecceda1000000"
+    },
+    {
+      "id": "rpc-000016",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000005",
+          "data": "0x313ce567"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282576Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "id": "rpc-000017",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000005",
+          "data": "0x70a082310000000000000000000000000000000000000000000000000000000000000003"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282586Z",
+      "result": "0x00000000000000000000000000000000000000000000000000000005d21dba00"
+    },
+    {
+      "id": "rpc-000018",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000004",
+          "data": "0x70a082310000000000000000000000000000000000000000000000000000000000000006"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282599Z",
+      "result": "0x00000000000000000000000000000000000000000000152d02c7e14af6800000"
+    },
+    {
+      "id": "rpc-000019",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000004",
+          "data": "0xdd62ed3e00000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000001"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282614Z",
+      "result": "0x000000000000000000000000000000000000000000000878678326eac9000000"
+    },
+    {
+      "id": "rpc-000020",
+      "method": "eth_getBalance",
+      "params": [
+        "0x0000000000000000000000000000000000000006",
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282627Z",
+      "result": "0xde0b6b3a7640000"
+    },
+    {
+      "id": "rpc-000021",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000001",
+          "data": "0xd06ca61f00000000000000000000000000000000000000000000003635c9adc5dea000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282642Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000003635c9adc5dea0000000000000000000000000000000000000000000000000000000000000017bf24e"
+    },
+    {
+      "id": "rpc-000022",
+      "method": "eth_call",
+      "params": [
+        {
+          "from": "0x0000000000000000000000000000000000000006",
+          "to": "0x0000000000000000000000000000000000000001",
+          "value": "0x0",
+          "data": "0x38ed173900000000000000000000000000000000000000000000003635c9adc5dea0000000000000000000000000000000000000000000000000000000000000017825a400000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000006a9ea86c000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282738Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000003635c9adc5dea0000000000000000000000000000000000000000000000000000000000000017bf24e"
+    },
+    {
+      "id": "rpc-000023",
+      "method": "eth_estimateGas",
+      "params": [
+        {
+          "from": "0x0000000000000000000000000000000000000006",
+          "to": "0x0000000000000000000000000000000000000001",
+          "value": "0x0",
+          "data": "0x38ed173900000000000000000000000000000000000000000000003635c9adc5dea0000000000000000000000000000000000000000000000000000000000000017825a400000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000006a9ea86c000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        "0x64"
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282753Z",
+      "result": "0x15f90"
+    },
+    {
+      "id": "rpc-000024",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000001",
+          "data": "0xd06ca61f00000000000000000000000000000000000000000000021e19e0c9bab24000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282768Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000021e19e0c9bab2400000000000000000000000000000000000000000000000000000000000000eb5b584"
+    },
+    {
+      "id": "rpc-000025",
+      "method": "eth_call",
+      "params": [
+        {
+          "from": "0x0000000000000000000000000000000000000006",
+          "to": "0x0000000000000000000000000000000000000001",
+          "value": "0x0",
+          "data": "0x38ed173900000000000000000000000000000000000000000000021e19e0c9bab2400000000000000000000000000000000000000000000000000000000000000e900d4c00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000006a9ea86c000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282788Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000021e19e0c9bab2400000000000000000000000000000000000000000000000000000000000000eb5b584"
+    },
+    {
+      "id": "rpc-000026",
+      "method": "eth_estimateGas",
+      "params": [
+        {
+          "from": "0x0000000000000000000000000000000000000006",
+          "to": "0x0000000000000000000000000000000000000001",
+          "value": "0x0",
+          "data": "0x38ed173900000000000000000000000000000000000000000000021e19e0c9bab2400000000000000000000000000000000000000000000000000000000000000e900d4c00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000006a9ea86c000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        "0x64"
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282800Z",
+      "result": "0x15f90"
+    },
+    {
+      "id": "rpc-000027",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000001",
+          "data": "0xd06ca61f000000000000000000000000000000000000000000000a968163f0a57b4000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282813Z",
+      "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000a968163f0a57b4000000000000000000000000000000000000000000000000000000000000046c15127"
+    },
+    {
+      "id": "rpc-000028",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0000000000000000000000000000000000000001",
+          "data": "0xd06ca61f00000000000000000000000000000000000000000000152d02c7e14af68000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000005"
+        },
+        {
+          "blockHash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "requireCanonical": true
+        }
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282839Z",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000152d02c7e14af68000000000000000000000000000000000000000000000000000000000000087187602"
+    },
+    {
+      "id": "rpc-000029",
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x64",
+        false
+      ],
+      "observed_at_utc": "2026-09-08T02:47:42.282913Z",
+      "result": {
+        "number": "0x64",
+        "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "timestamp": "0x6a9ea740"
+      }
+    }
+  ],
+  "captured_at_utc": "2026-09-08T02:47:42.282179Z",
+  "diagnostics": [
+    {
+      "type": "DeploymentUnverified",
+      "detail": "Address relationships and caller-supplied code hashes do not authenticate audited bytecode, proxy implementation, or protocol provenance."
+    },
+    {
+      "type": "SimulationPrerequisiteMissing",
+      "amount_in_raw": "50000000000000000000000",
+      "balance_sufficient": true,
+      "allowance_sufficient": false
+    },
+    {
+      "type": "SimulationPrerequisiteMissing",
+      "amount_in_raw": "100000000000000000000000",
+      "balance_sufficient": true,
+      "allowance_sufficient": false
+    }
+  ],
+  "status_reason": "Complete means scoped requested quote/state capture with consistent anchors, not independent net wallet execution proof, deployment authenticity, finality, or future sellability.",
+  "gas_anchor_mode": "numeric_height_with_boundary_recheck",
+  "fixture_notice": "All addresses, state, RPC results, wallet data, gas estimates and costs are invented. Generated offline for reproducible exercises; no RPC endpoint or live chain was contacted. Input token has 18 decimals; output token has 6 decimals and no USD value is asserted."
+}

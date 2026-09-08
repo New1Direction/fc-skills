@@ -1,0 +1,23 @@
+{
+  "schema_version": "ignition.outcome.v1",
+  "id": "synthetic-loss-alpha",
+  "report_sha256": "84ec091e03643ad4b07448c8176c003a438d69fc03ab27368d168c23e9cabc8c",
+  "candidate_id": "synthetic:alpha",
+  "quote_unit": "synthetic:fixture/asset:QUOTE",
+  "source_kind": "synthetic",
+  "horizon_at": "2026-09-08T03:01:00Z",
+  "available_at": "2026-09-08T03:02:00Z",
+  "status": "resolved",
+  "basis": "modeled",
+  "cost_coverage": "complete",
+  "entry_all_in_quote": "100",
+  "exit_net_quote": "95",
+  "method": "Invented 60-second follow delay, 100 all-in quote units, full exit at declared horizon, all additional costs included. No real execution.",
+  "evidence": [
+    {
+      "id": "synthetic-loss-evidence",
+      "source": "Invented exercise outcome; no provider or chain execution.",
+      "available_at": "2026-09-08T03:02:00Z"
+    }
+  ]
+}

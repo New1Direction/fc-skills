@@ -1,0 +1,13 @@
+# Bounded discovery and retained sources
+
+Start with the user's narrative or discover candidates from their specified communities and window. Use spelling variants, distinctive phrases, native-language variants, relevant hashtags, and skeptical or debunking terms. Search earliest and latest portions of the window separately; one relevance-ranked query cannot establish emergence. Record each query, platform/channel, search time, date filter, and known omissions in `coverage`.
+
+For X tools actually exposed in the session, consult the current tool schema. The [official xAI X Search documentation](https://docs.x.ai/developers/tools/x-search) describes keyword, semantic, user, and thread search, including date and handle filtering. Capabilities and access depend on the tool/client; this skill does not provide that client. Available web search can find public posts and primary project pages. Search engines, API rankings, deleted/private content, languages, and pagination produce uneven samples.
+
+Retain the specific post URL, stable author/account ID when visible, platform, supplied text, event time, and `available_at` (the earliest defensible time this observation was accessible to the investigation). For a post retrieved today, availability is today unless an archived or contemporaneous observation supports an earlier date. Do not backdate availability to publication merely because the post is old. A search snippet supports only what it shows; mark unsupported classifications unknown. Make narrative inclusion decisions from content, not engagement metrics. Retain uncertain matches and explain their exclusion from adoption counts.
+
+Post IDs must be unique within a report, preferably platform-prefixed. Deduplicate repeated retrievals of the same post before input; keep collection details in coverage. The analyzer rejects duplicate IDs instead of choosing between conflicting versions. Do not claim a screenshot, excerpt, supplied URL, or hash proves authenticity. A content hash supports reproducibility, not truth.
+
+For origin research, distinguish first observed expression, first observed token association, first observed community use, and later popularization. Where feasible follow quoted sources, earlier linked threads, and image reuse manually. State inaccessible originals as a limitation. Historical records revised or found later cannot silently enter an earlier as-of report.
+
+Stop when the user scope is covered or the planned search budget is exhausted. Record unsearched platforms and absent capabilities. Repeating selected queries can produce a new snapshot, but no autonomous monitoring is created by this skill.

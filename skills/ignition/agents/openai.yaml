@@ -1,0 +1,14 @@
+interface:
+  display_name: Ignition
+  short_description: Find early buying traction and track signal outcomes
+  default_prompt: Use $ignition to find tokens with broadening early demand, explain
+    the evidence, and record the shortlist.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
