@@ -1,0 +1,27 @@
+{
+  "schema": "undertow.v4-request.v1",
+  "chain_id": 4663,
+  "from_block": null,
+  "to_block": null,
+  "manager": {
+    "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+    "expected_code_sha256": null,
+    "deployment_source": "https://developers.uniswap.org/docs/protocols/v4/deployments",
+    "code_source": "REPLACE: independently reviewed deployed runtime bytecode source and pinned block"
+  },
+  "pools": [
+    {
+      "pool_id": null,
+      "currency0": null,
+      "currency1": null,
+      "decimals0": null,
+      "decimals1": null,
+      "base_currency": null,
+      "fee": null,
+      "tick_spacing": null,
+      "hooks": null,
+      "initialize_transaction": null,
+      "initialize_log_index": null
+    }
+  ]
+}

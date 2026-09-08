@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -552,6 +552,134 @@
           "bytes": 13944
         }
       ]
+    },
+    {
+      "name": "undertow",
+      "path": "skills/undertow",
+      "tests": "scripts",
+      "files": [
+        {
+          "path": "skills/undertow/.gitignore",
+          "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b",
+          "bytes": 23
+        },
+        {
+          "path": "skills/undertow/SKILL.md",
+          "sha256": "5f1db0a5efb9440e08b73318c7f036a2e34a12cb3252a4612029da58619e7b3a",
+          "bytes": 7872
+        },
+        {
+          "path": "skills/undertow/agents/openai.yaml",
+          "sha256": "ed54e0ed9b1fd8ea8f010bff17eada2cccfb44028ebbd36e560130bdc964cc61",
+          "bytes": 417
+        },
+        {
+          "path": "skills/undertow/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/undertow/examples/attribution.json",
+          "sha256": "a66f76b8619d5e5b03ddd6467ddf362a5c197839a5e369d8d04c228a562635ba",
+          "bytes": 6439
+        },
+        {
+          "path": "skills/undertow/examples/flows.json",
+          "sha256": "cf0381818cd6ec0da61c4fa81b88721ebc6dfb6ddc324180b27ce2068f67598f",
+          "bytes": 10985
+        },
+        {
+          "path": "skills/undertow/examples/v4-request.json",
+          "sha256": "ad6c437737b0bb112133e3052c49ffd5cf626a0805f4f11850ac54ee31330c91",
+          "bytes": 733
+        },
+        {
+          "path": "skills/undertow/references/attribution-schema.md",
+          "sha256": "08a3891a2887b2f4894a0c858f7abd73421e98dba79231b5bae9713dd78b592c",
+          "bytes": 11702
+        },
+        {
+          "path": "skills/undertow/references/flow-schema.md",
+          "sha256": "4837915a8788f02e23556c657b3f0e1400e306d83fc9524ff81d350857764c4a",
+          "bytes": 13714
+        },
+        {
+          "path": "skills/undertow/references/integration.md",
+          "sha256": "931d257e45c781dcd323bc4c559a5bc85cee3487681f93fddf176f676e705621",
+          "bytes": 5263
+        },
+        {
+          "path": "skills/undertow/references/reporting.md",
+          "sha256": "efdd2aad6d3bcbeed395110f347a400b5fd55fc7a929809463512197f9f229ef",
+          "bytes": 3605
+        },
+        {
+          "path": "skills/undertow/references/stock-reference.md",
+          "sha256": "425cbb3659f1d27d2301a02e57eceeeb8887419eb133d98999eb68ba67375fd4",
+          "bytes": 2340
+        },
+        {
+          "path": "skills/undertow/references/v4-evidence.md",
+          "sha256": "9eb83d74db684ed9da95696f67bb3e0001a16b37a63aaabf6cf6a4dca455e91b",
+          "bytes": 10157
+        },
+        {
+          "path": "skills/undertow/references/validation.md",
+          "sha256": "ae5b71ab188647b6c0da36f87657fd448615df4249a999a9dcde6c11e4ce0b8e",
+          "bytes": 3847
+        },
+        {
+          "path": "skills/undertow/scripts/attribution.py",
+          "sha256": "9d51e3ff675f269bd8fff690003baaa55fefa04d45c39d5e5d1c2cd31c823296",
+          "bytes": 25397
+        },
+        {
+          "path": "skills/undertow/scripts/flows.py",
+          "sha256": "adac10b10fc5e3314a464be2ccee6554315285507911146d0d351388ecfde89c",
+          "bytes": 27636
+        },
+        {
+          "path": "skills/undertow/scripts/research.py",
+          "sha256": "240ff964d76f095210c6d6d93cd0fd6430d87ccc7b69cc68a498e526ce1ae0dc",
+          "bytes": 10581
+        },
+        {
+          "path": "skills/undertow/scripts/stock_reference.py",
+          "sha256": "d745fa92cb80f318e362a25769573d94d3bd69facf859b808275a41c9e1b5da5",
+          "bytes": 9974
+        },
+        {
+          "path": "skills/undertow/scripts/test_attribution.py",
+          "sha256": "e133df45195c159396330da44f1cdd1ede1314944c5a1958820aa67e978229b2",
+          "bytes": 16418
+        },
+        {
+          "path": "skills/undertow/scripts/test_flows.py",
+          "sha256": "ed6476b691f5df6d9c0811726f04460a3ffd5a435af5247a2064abbfbfe71ea6",
+          "bytes": 18049
+        },
+        {
+          "path": "skills/undertow/scripts/test_research.py",
+          "sha256": "65dc78a55c23975732e9cafabd80729173888aa5e9e8d3cfb025702e4b4d731a",
+          "bytes": 3836
+        },
+        {
+          "path": "skills/undertow/scripts/test_stock_reference.py",
+          "sha256": "06983cd74c3913196a74fc676c57ea236fb2328c706f74a0c7c85b350674ed2b",
+          "bytes": 5728
+        },
+        {
+          "path": "skills/undertow/scripts/test_v4_evidence.py",
+          "sha256": "66c721d122f464e9d02e24a7fdc19fa3ce27f2f5f2606e5d83b46ea3b86be9e9",
+          "bytes": 14112
+        },
+        {
+          "path": "skills/undertow/scripts/v4_evidence.py",
+          "sha256": "1297a713be4f60f6979a00278e7ebdb5352828a67127eaff22d742101c87abfc",
+          "bytes": 25059
+        }
+      ]
     }
-  ]
+  ],
+  "updated_at": "2026-09-08T06:27:26.112830+00:00"
 }

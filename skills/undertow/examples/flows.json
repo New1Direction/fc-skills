@@ -1,0 +1,300 @@
+{
+  "chain_id": 4663,
+  "knowledge_cutoff": 1788876060,
+  "window": {
+    "start": 1788876000,
+    "end": 1788876031
+  },
+  "baseline": {
+    "start": 1788875900,
+    "end": 1788876000
+  },
+  "assets": {
+    "0x1111111111111111111111111111111111111111": {
+      "decimals": 18,
+      "kind": "meme",
+      "known_at": 1788875850,
+      "standard_token": true,
+      "evidence": "synthetic:asset-registry"
+    },
+    "0x2222222222222222222222222222222222222222": {
+      "decimals": 18,
+      "kind": "stock",
+      "known_at": 1788875850,
+      "standard_token": true,
+      "evidence": "synthetic:asset-registry"
+    },
+    "0x3333333333333333333333333333333333333333": {
+      "decimals": 2,
+      "kind": "stock",
+      "known_at": 1788875850,
+      "standard_token": true,
+      "evidence": "synthetic:asset-registry"
+    },
+    "0x4444444444444444444444444444444444444444": {
+      "decimals": 2,
+      "kind": "meme",
+      "known_at": 1788875850,
+      "standard_token": true,
+      "evidence": "synthetic:asset-registry"
+    },
+    "0x5555555555555555555555555555555555555555": {
+      "decimals": 2,
+      "kind": "cash",
+      "known_at": 1788875850,
+      "standard_token": true,
+      "evidence": "synthetic:asset-registry"
+    }
+  },
+  "pools": [
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "currency0": "0x1111111111111111111111111111111111111111",
+      "currency1": "0x2222222222222222222222222222222222222222",
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "fee": 3000,
+      "tick_spacing": 60,
+      "adapter_status": "verified",
+      "known_at": 1788875850,
+      "evidence": "synthetic:pool-registry",
+      "normalization_evidence": "synthetic:adapter-validation"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "currency0": "0x2222222222222222222222222222222222222222",
+      "currency1": "0x5555555555555555555555555555555555555555",
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "fee": 3000,
+      "tick_spacing": 60,
+      "adapter_status": "verified",
+      "known_at": 1788875850,
+      "evidence": "synthetic:pool-registry",
+      "normalization_evidence": "synthetic:adapter-validation"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "currency0": "0x3333333333333333333333333333333333333333",
+      "currency1": "0x4444444444444444444444444444444444444444",
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "fee": 3000,
+      "tick_spacing": 60,
+      "adapter_status": "verified",
+      "known_at": 1788875850,
+      "evidence": "synthetic:pool-registry",
+      "normalization_evidence": "synthetic:adapter-validation"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "currency0": "0x3333333333333333333333333333333333333333",
+      "currency1": "0x5555555555555555555555555555555555555555",
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "fee": 3000,
+      "tick_spacing": 60,
+      "adapter_status": "verified",
+      "known_at": 1788875850,
+      "evidence": "synthetic:pool-registry",
+      "normalization_evidence": "synthetic:adapter-validation"
+    }
+  ],
+  "coverage": [
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "start": 1788875900,
+      "end": 1788876000,
+      "known_at": 1788876000,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "start": 1788876000,
+      "end": 1788876031,
+      "known_at": 1788876031,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "start": 1788875900,
+      "end": 1788876000,
+      "known_at": 1788876000,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "start": 1788876000,
+      "end": 1788876031,
+      "known_at": 1788876031,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "start": 1788875900,
+      "end": 1788876000,
+      "known_at": 1788876000,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "start": 1788876000,
+      "end": 1788876031,
+      "known_at": 1788876031,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "start": 1788875900,
+      "end": 1788876000,
+      "known_at": 1788876000,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    },
+    {
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "start": 1788876000,
+      "end": 1788876031,
+      "known_at": 1788876031,
+      "status": "complete",
+      "evidence": "synthetic:coverage"
+    }
+  ],
+  "swaps": [
+    {
+      "event_type": "swap",
+      "chain_id": 4663,
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "block_number": 101,
+      "block_hash": "0x000000000000000000000000000000000000000000000000000000000000044d",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e5",
+      "log_index": 0,
+      "transaction_index": 0,
+      "timestamp": 1788876010,
+      "known_at": 1788876011,
+      "canonical": true,
+      "transaction_complete": true,
+      "suspected_activity": false,
+      "amount0_raw": "-1000000000000000000",
+      "amount1_raw": "1200000000000000000",
+      "attribution": {
+        "wallet": "0x00000000000000000000000000000000000000c8",
+        "method": "verified_trace",
+        "evidence": "synthetic:wallet-trace"
+      },
+      "evidence": "synthetic:retained-normalized-swap"
+    },
+    {
+      "event_type": "swap",
+      "chain_id": 4663,
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "block_number": 101,
+      "block_hash": "0x000000000000000000000000000000000000000000000000000000000000044d",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e5",
+      "log_index": 1,
+      "transaction_index": 0,
+      "timestamp": 1788876010,
+      "known_at": 1788876011,
+      "canonical": true,
+      "transaction_complete": true,
+      "suspected_activity": false,
+      "amount0_raw": "-1200000000000000000",
+      "amount1_raw": "10000",
+      "attribution": {
+        "wallet": "0x00000000000000000000000000000000000000c8",
+        "method": "verified_trace",
+        "evidence": "synthetic:wallet-trace"
+      },
+      "evidence": "synthetic:retained-normalized-swap"
+    },
+    {
+      "event_type": "swap",
+      "chain_id": 4663,
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "block_number": 102,
+      "block_hash": "0x000000000000000000000000000000000000000000000000000000000000044e",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e6",
+      "log_index": 0,
+      "transaction_index": 0,
+      "timestamp": 1788876020,
+      "known_at": 1788876021,
+      "canonical": true,
+      "transaction_complete": true,
+      "suspected_activity": false,
+      "amount0_raw": "-300",
+      "amount1_raw": "100",
+      "attribution": {
+        "wallet": "0x00000000000000000000000000000000000000c8",
+        "method": "verified_trace",
+        "evidence": "synthetic:wallet-trace"
+      },
+      "evidence": "synthetic:retained-normalized-swap"
+    },
+    {
+      "event_type": "swap",
+      "chain_id": 4663,
+      "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+      "pool_id": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "block_number": 102,
+      "block_hash": "0x000000000000000000000000000000000000000000000000000000000000044e",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e6",
+      "log_index": 1,
+      "transaction_index": 0,
+      "timestamp": 1788876020,
+      "known_at": 1788876021,
+      "canonical": true,
+      "transaction_complete": true,
+      "suspected_activity": false,
+      "amount0_raw": "300",
+      "amount1_raw": "-8000",
+      "attribution": {
+        "wallet": "0x00000000000000000000000000000000000000c8",
+        "method": "verified_trace",
+        "evidence": "synthetic:wallet-trace"
+      },
+      "evidence": "synthetic:retained-normalized-swap"
+    }
+  ],
+  "dataset_label": "Synthetic demonstration only. Token/pool identities and amounts are invented; the manager address is a documented deployment identifier, not evidence of these pools.",
+  "valuations": [
+    {
+      "wallet": "0x00000000000000000000000000000000000000c8",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e5",
+      "asset": "0x1111111111111111111111111111111111111111",
+      "asset_amount_raw": "1000000000000000000",
+      "numeraire": "0x5555555555555555555555555555555555555555",
+      "cashflow_raw": "10000",
+      "known_at": 1788876011,
+      "basis": "verified_tx_net_cashflow",
+      "evidence": "synthetic:reconciled-cashflow"
+    },
+    {
+      "wallet": "0x00000000000000000000000000000000000000c8",
+      "tx_hash": "0x00000000000000000000000000000000000000000000000000000000000007e6",
+      "asset": "0x4444444444444444444444444444444444444444",
+      "asset_amount_raw": "100",
+      "numeraire": "0x5555555555555555555555555555555555555555",
+      "cashflow_raw": "-8000",
+      "known_at": 1788876021,
+      "basis": "verified_tx_net_cashflow",
+      "evidence": "synthetic:reconciled-cashflow"
+    }
+  ]
+}

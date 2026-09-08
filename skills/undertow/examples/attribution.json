@@ -1,0 +1,170 @@
+{
+  "schema_version": "undertow.attribution.v1",
+  "chain_id": 4663,
+  "evidence_mode": "synthetic",
+  "as_of": "2026-09-08T14:01:00Z",
+  "policy": {
+    "max_age_seconds": 30,
+    "max_alignment_seconds": 10
+  },
+  "asset_continuity": "verified",
+  "assets": {
+    "meme": {
+      "address": "0x1111111111111111111111111111111111111111",
+      "decimals": 18
+    },
+    "quote": {
+      "address": "0x2222222222222222222222222222222222222222",
+      "decimals": 18,
+      "kind": "stock_token",
+      "underlying_id": "synthetic-nvda-underlying"
+    }
+  },
+  "pool": {
+    "protocol": "uniswap_v4",
+    "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+    "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "token0": "0x1111111111111111111111111111111111111111",
+    "token1": "0x2222222222222222222222222222222222222222",
+    "fee": 3000,
+    "tick_spacing": 60,
+    "hook": "0x0000000000000000000000000000000000000000",
+    "hook_status": "zero_hook",
+    "identity_status": "verified",
+    "identity_evidence_ref": "synthetic://fixture/pool-key-not-a-live-pool"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-09-08T14:00:00Z",
+      "observed_at": "2026-09-08T14:00:02Z",
+      "block_number": 100,
+      "block_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "canonical": true,
+      "token_paused": false,
+      "pool_mark": {
+        "kind": "raw_ratio",
+        "token0_raw": "1000000000000000000",
+        "token1_raw": "1000000000000000000",
+        "token0": "0x1111111111111111111111111111111111111111",
+        "token1": "0x2222222222222222222222222222222222222222",
+        "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "block_number": 100,
+        "block_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "timestamp": "2026-09-08T14:00:00Z",
+        "observed_at": "2026-09-08T14:00:01Z",
+        "source_id": "synthetic-pool-state",
+        "evidence_ref": "synthetic://fixture/block-100/slot0",
+        "quality": "verified"
+      },
+      "quote_usd": {
+        "quote_token": "0x2222222222222222222222222222222222222222",
+        "currency": "USD",
+        "unit": "USD_per_quote_token",
+        "basis": "local_market",
+        "venue": "synthetic-local-quote-market",
+        "bid": "100",
+        "ask": "100",
+        "timestamp": "2026-09-08T14:00:00Z",
+        "observed_at": "2026-09-08T14:00:01Z",
+        "source_id": "synthetic-local-market",
+        "evidence_ref": "synthetic://fixture/block-100/quote-usd",
+        "quality": "verified"
+      },
+      "reference": {
+        "basis": "raw_equity",
+        "quote_token": "0x2222222222222222222222222222222222222222",
+        "underlying_id": "synthetic-nvda-underlying",
+        "currency": "USD",
+        "unit": "USD_per_share",
+        "bid": "100",
+        "ask": "100",
+        "asset_status": "active",
+        "session": "regular",
+        "tradability": "tradable",
+        "halted": false,
+        "timestamp": "2026-09-08T14:00:00Z",
+        "observed_at": "2026-09-08T14:00:01Z",
+        "source_id": "synthetic-equity-reference",
+        "evidence_ref": "synthetic://fixture/block-100/equity",
+        "quality": "verified",
+        "multiplier": {
+          "basis": "block_state",
+          "value": "1",
+          "block_number": 100,
+          "block_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "observed_at": "2026-09-08T14:00:01Z",
+          "source_id": "synthetic-multiplier-state",
+          "evidence_ref": "synthetic://fixture/block-100/multiplier",
+          "quality": "verified"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-08T14:00:30Z",
+      "observed_at": "2026-09-08T14:00:32Z",
+      "block_number": 103,
+      "block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "canonical": true,
+      "token_paused": false,
+      "pool_mark": {
+        "kind": "raw_ratio",
+        "token0_raw": "12000000000000000000",
+        "token1_raw": "13000000000000000000",
+        "token0": "0x1111111111111111111111111111111111111111",
+        "token1": "0x2222222222222222222222222222222222222222",
+        "manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+        "pool_id": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "block_number": 103,
+        "block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "timestamp": "2026-09-08T14:00:30Z",
+        "observed_at": "2026-09-08T14:00:31Z",
+        "source_id": "synthetic-pool-state",
+        "evidence_ref": "synthetic://fixture/block-103/slot0",
+        "quality": "verified"
+      },
+      "quote_usd": {
+        "quote_token": "0x2222222222222222222222222222222222222222",
+        "currency": "USD",
+        "unit": "USD_per_quote_token",
+        "basis": "local_market",
+        "venue": "synthetic-local-quote-market",
+        "bid": "120",
+        "ask": "120",
+        "timestamp": "2026-09-08T14:00:30Z",
+        "observed_at": "2026-09-08T14:00:31Z",
+        "source_id": "synthetic-local-market",
+        "evidence_ref": "synthetic://fixture/block-103/quote-usd",
+        "quality": "verified"
+      },
+      "reference": {
+        "basis": "raw_equity",
+        "quote_token": "0x2222222222222222222222222222222222222222",
+        "underlying_id": "synthetic-nvda-underlying",
+        "currency": "USD",
+        "unit": "USD_per_share",
+        "bid": "110",
+        "ask": "110",
+        "asset_status": "active",
+        "session": "regular",
+        "tradability": "tradable",
+        "halted": false,
+        "timestamp": "2026-09-08T14:00:30Z",
+        "observed_at": "2026-09-08T14:00:31Z",
+        "source_id": "synthetic-equity-reference",
+        "evidence_ref": "synthetic://fixture/block-103/equity",
+        "quality": "verified",
+        "multiplier": {
+          "basis": "block_state",
+          "value": "1",
+          "block_number": 103,
+          "block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "observed_at": "2026-09-08T14:00:31Z",
+          "source_id": "synthetic-multiplier-state",
+          "evidence_ref": "synthetic://fixture/block-103/multiplier",
+          "quality": "verified"
+        }
+      }
+    }
+  ]
+}

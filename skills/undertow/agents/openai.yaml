@@ -1,0 +1,14 @@
+interface:
+  display_name: Undertow
+  short_description: Trace Robinhood stock and meme market flows
+  default_prompt: Use $undertow to explain Robinhood Chain meme returns, trace observed
+    capital rotation, and identify shared stock-token liquidity exposure.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
