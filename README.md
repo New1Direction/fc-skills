@@ -4,9 +4,9 @@
 
 Investigate launches, measure early participation, retain chain activity, explain stock-token markets, and test exact routes. Each skill includes agent instructions, executable helpers, examples, references, and explicit coverage limits.
 
-**[Read the documentation](https://msk-field-manual.apt-tetra-2799.chatgpt.site)** · [Quickstart](https://msk-field-manual.apt-tetra-2799.chatgpt.site/docs/quickstart/) · [Skill catalog](https://msk-field-manual.apt-tetra-2799.chatgpt.site/docs/skills/) · [Workflows](https://msk-field-manual.apt-tetra-2799.chatgpt.site/docs/workflows/)
+**[Read the documentation](docs-site/content/docs/index.mdx)** · [Quickstart](docs-site/content/docs/quickstart.mdx) · [Skill catalog](docs-site/content/docs/skills/index.mdx) · [Workflows](docs-site/content/docs/workflows/index.mdx)
 
-The repository and hosted documentation are private. Use the source links below if you have repository access but cannot open the owner-only documentation site.
+The repository is private. Browse the documentation source here, or run the complete Fumadocs site locally with the commands below.
 
 ## Start in three commands
 
