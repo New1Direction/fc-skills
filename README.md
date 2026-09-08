@@ -1,109 +1,53 @@
 # fc-skills
 
-**16 skills for onchain research, Robinhood Chain data, and wallet-call simulation.**
+**Crypto research tools for your AI agent.**
 
-Investigate launches, measure early participation, retain chain activity, explain stock-token markets, and test exact routes. Each skill includes agent instructions, executable helpers, examples, references, and explicit coverage limits.
+Research tokens, check liquidity, and monitor Robinhood Chain with 16 focused skills.
 
-**[Read the documentation](docs-site/content/docs/index.mdx)** · [Quickstart](docs-site/content/docs/quickstart.mdx) · [Skill catalog](docs-site/content/docs/skills/index.mdx) · [Workflows](docs-site/content/docs/workflows/index.mdx)
+A skill gives your agent instructions and tools for a specific job. You ask the question; the skill helps it work through the evidence.
 
-The repository is private. Browse the documentation source here, or run the complete Fumadocs site locally with the commands below.
+[Start here](docs-site/content/docs/quickstart.mdx) · [Browse the skills](docs-site/content/docs/skills/index.mdx) · [Read the docs](docs-site/content/docs/index.mdx)
 
-## Run the Operator
+## What can I use it for?
 
-**fc-skills Operator** connects WATCHTOWER capture and durable workers to actual PULSE V4 pool analysis. It adds one foreground supervisor, health and report commands, reorg-aware acknowledgements, verified exports, restoration, and capacity expansion. It needs only Node.js 24+; no npm install is required for the runtime.
-
-Try the complete synthetic capture → research → reorg → export demonstration:
-
-```sh
-node scripts/msk.mjs demo --out ../msk-operator-demo
-node scripts/msk.mjs help
-```
-
-Use the [Operator guide](docs-site/content/docs/operations/operator.mdx) for real endpoint configuration, exact-pool registries, short runs, and the 24-hour acceptance gate. [Runtime source and service template](operator/README.md) are included. A working live RPC and an owned persistent host are still required; the local demo does not establish a live deployment or fastest-provider performance.
-
-## Start in three commands
-
-Requires Python 3.12+ and Node.js 24+. Clone with an authenticated GitHub account that has access:
-
-```sh
-git clone https://github.com/New1Direction/MSK.git fc-skills
-cd fc-skills
-python3 scripts/check_package.py
-```
-
-Run a complete offline example in a new output directory:
-
-```sh
-python3 scripts/research_demo.py --out /tmp/msk-first-research
-```
-
-This produces a synthetic disclosure, valuation reports, a portfolio journal, and `research-bundle.json` with exact-asset links. It makes no live network requests and submits no trades. Choose a different output directory if that path already exists.
-
-To use a skill with an agent, open its `SKILL.md` and provide the complete folder through your agent's supported skill installation workflow. Give it a concrete question and the required evidence. Keep scripts and references together; repository updates do not automatically update separately installed copies.
-
-## The skills
-
-| Skill | What it is used for |
+| I want to… | Start with |
 | --- | --- |
-| [Autopsy](skills/autopsy/SKILL.md) | Reconstruct launch supply, wallet activity, funding evidence, and exits |
-| [Meme Scout](skills/meme-scout/SKILL.md) | Trace retained meme and narrative adoption across communities |
-| [Ignition](skills/ignition/SKILL.md) | Measure early buying participation, spending, and concentration |
-| [Scout Network](skills/scout-network/SKILL.md) | Evaluate discovery wallets and whether their historical picks were followable |
-| [Second Wind](skills/second-wind/SKILL.md) | Investigate renewed participation in dormant tokens |
-| [PULSE](skills/pulse/SKILL.md) | Collect live observations, compare RPC sources, cache provisional V4 state, and prepare Nitro nodes |
-| [WATCHTOWER](skills/watchtower/SKILL.md) | Retain all RPC-reported included transactions over an explicit interval, reconcile receipts, and operate research workers |
-| [Undertow](skills/undertow/SKILL.md) | Separate meme returns from stock-quote moves, premiums, and corporate actions |
-| [PRESSURE](skills/pressure/SKILL.md) | Reconcile stock-token issuance, supply destinations, and retained liquidity measurements |
-| [CATALYST](skills/catalyst/SKILL.md) | Collect SEC disclosures and map them to exact stock-token identities |
-| [Night Desk](skills/night-desk/SKILL.md) | Compare equity references, adjusted token values, onchain marks, and retained exit evidence |
-| [HOOK LAB](skills/hook-lab/SKILL.md) | Investigate exact V4 hook deployments, fees, configuration, and wallet calls |
-| [CIRCUIT](skills/circuit/SKILL.md) | Build pinned Universal Router 2.1.1 V4 routes and measure complete wallet calls on isolated forks |
-| [Exit Doctor](skills/exit-doctor/SKILL.md) | Assess size-specific exits through a supported canonical 30-bps V2 route |
-| [LP Edge](skills/lp-edge/SKILL.md) | Analyze canonical V3 LP fees, inventory, operating costs, and performance versus holding |
-| [Agent Arena](skills/agent-arena/SKILL.md) | Audit supplied portfolio performance with external funding, open inventory, and failed attempts |
+| Understand a token launch | [Autopsy](docs-site/content/docs/skills/autopsy.mdx) |
+| Check early buying interest | [Ignition](docs-site/content/docs/skills/ignition.mdx) |
+| Understand stock-paired memecoins | [Undertow](docs-site/content/docs/skills/undertow.mdx) |
+| Monitor chain activity | [WATCHTOWER](docs-site/content/docs/skills/watchtower.mdx) |
+| Test a supported swap route | [CIRCUIT](docs-site/content/docs/skills/circuit.mdx) |
 
-## Put them together
+[See all 16 skills →](docs-site/content/docs/skills/index.mdx)
 
-- **Early discovery:** Meme Scout + Scout Network → Ignition or Second Wind → Autopsy → a venue-supported exit assessment.
-- **FYNCH research:** CATALYST + PRESSURE + Undertow + Night Desk → exact-asset application evidence → Agent Arena performance accounting.
-- **Arbitrage Ape research:** PULSE + WATCHTOWER → HOOK LAB deployment evidence → CIRCUIT route construction and fork measurement.
+## Try an example
 
-The [JSON handoff](references/research-integration.md) composes CATALYST and Night Desk evidence. fc-skills Operator also connects WATCHTOWER dispatches to retained PULSE single-block pool reports. FYNCH/Ape production application connections remain separate integrations.
-
-## Build the Fumadocs site
-
-From the repository root:
+Requires Git and Node.js 24 or newer.
 
 ```sh
-npm ci
-npm run dev
+git clone https://github.com/New1Direction/fc-skills.git
+cd fc-skills
+node scripts/msk.mjs demo --out ../fc-skills-demo
 ```
 
-Build and validate the static export:
+The demo records sample transactions, creates pool reports, and shows how reports update when a block is replaced. It uses a simulated chain. No wallet or provider key is needed.
 
-```sh
-npm run build
-npm run typecheck
-npm run check:docs
+## Use it with your agent
+
+Give your agent access to the skill's complete folder. Then ask a clear question:
+
+```text
+Use Autopsy to investigate this token launch.
+Show where the supply went and which findings have transaction evidence.
+Ask me for any missing data.
 ```
 
-Edit pages in [`docs-site/content/docs/`](docs-site/content/docs/). The site includes all 16 skill guides, verified commands, full-text search, page outlines, light/dark themes, workflows, operations notes, and capability references. Generated public files are staged in `out/`. See the [development guide](docs-site/content/docs/development.mdx).
+## Good to know
 
-## Verification and scope
+- These tools research and simulate. They do not place live trades.
+- Live monitoring needs a data provider and a running host.
+- Pool support varies. Check the skill page before using real data.
 
-```sh
-python3 scripts/check_package.py --tests
-npm run test:operator
-```
+[Monitoring setup](docs-site/content/docs/operations/operator.mdx) · [Developer guide](docs-site/content/docs/development.mdx) · [Validation](operator/validation/README.md)
 
-**v0.8.0:** 16 skills, 317 exported skill files, and 1,422 passing offline release tests. CIRCUIT also retains eight actual-protocol EVM validation scenarios. The [manifest](manifest.json) records file hashes and byte lengths; it is an integrity inventory, not a publisher signature.
-
-Operator v1 is a repository integration alongside those skill exports. Its separate suite covers capture/consumer recovery, competing owners, retractions, receipt fallback, source outages, export tampering, restoration, and storage expansion. The PULSE service test now waits for reconciled readiness under delayed fixture RPC responses; its production helpers are unchanged. CI runs package, Operator, and documentation checks without live provider credentials.
-
-Exit Doctor's native adapter is V2; LP Edge's is V3. Exact V4 hook and route research belongs to HOOK LAB and CIRCUIT. Several discovery skills analyze retained normalized inputs rather than collecting live data themselves. Installing skills does not deploy monitoring services or connect FYNCH/Ape production consumers. No skill signs or submits live trades.
-
-Keep synthetic, observed, modeled, simulated, and executed results distinct. Unknown costs and incomplete history remain unknown. See the [capability matrix](docs-site/content/docs/reference/capabilities.mdx), [evidence guide](docs-site/content/docs/reference/evidence.mdx), and [preserved release runbook](docs-site/content/docs/reference/release-runbook.mdx).
-
-## Third-party material
-
-Preserve [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and all scoped license notices inside the skill folders. Keep this repository private.
+A project-wide open-source license has not been assigned. See the [third-party notices](THIRD_PARTY_NOTICES.md) for component terms.

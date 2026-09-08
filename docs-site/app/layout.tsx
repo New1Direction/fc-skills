@@ -4,8 +4,8 @@ import { Provider } from '@/components/provider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: { default: 'fc-skills — Onchain research docs', template: '%s | fc-skills' },
-  description: 'The field manual for 16 crypto research, Robinhood Chain data, and execution-simulation skills.',
+  title: { default: 'fc-skills — Docs', template: '%s | fc-skills' },
+  description: 'Simple guides to researching tokens, checking liquidity, and monitoring Robinhood Chain with your AI agent.',
   robots: { index: false, follow: false },
 };
 

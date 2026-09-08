@@ -8,7 +8,7 @@ export default function Home() {
   const page = source.getPage([])!;
   const MDX = page.data.body;
   return <DocsLayout tree={source.pageTree} {...baseOptions()}><DocsPage toc={page.data.toc}>
-    <div className="msk-page-label">ROBINHOOD CHAIN / RESEARCH TOOLKIT</div>
+    <div className="msk-page-label">ROBINHOOD CHAIN</div>
     <DocsTitle>{page.data.title}</DocsTitle>
     <DocsDescription>{page.data.description}</DocsDescription>
     <DocsBody><MDX components={getMDXComponents()} /></DocsBody>

@@ -1,67 +1,67 @@
 ---
-title: Maintain the package and docs
-description: Edit MDX, verify source links, and build the same static documentation used by the private site.
+title: "Developer guide"
+description: "Edit the docs, run checks, and build the site."
 ---
 
-## Repository layout
+The docs use Fumadocs and Next.js. Pages are written in MDX and exported as a static site.
 
-| Path | Purpose |
+## Find the right file
+
+| Path | What it contains |
 | --- | --- |
-| `skills/` | Complete exported skill folders, helpers, fixtures, and references |
-| `manifest.json` | Versioned inventory of skill paths, hashes, and byte lengths |
-| `scripts/check_package.py` | Package integrity and isolated skill test runner |
-| `scripts/research_demo.py` | Offline three-skill research handoff |
-| `references/` | Cross-package integration notes |
-| `operator/` | Repo-level supervisor, durable pool consumer, storage tools, and recovery tests |
-| `scripts/msk.mjs` | Node.js 24+ Operator command line |
-| `docs-site/content/docs/` | Fumadocs MDX pages and sidebar metadata |
-| `docs-site/app/` | Next.js routes, layout, and theme |
-| `scripts/check_docs.mjs` | Static output, local link, and search-index checks |
-| `out/` | Generated static site; excluded from Git |
+| `skills/` | Skill instructions, helpers, examples, and tests |
+| `operator/` | Monitoring service, storage, and recovery tools |
+| `docs-site/content/docs/` | Documentation pages and sidebar order |
+| `docs-site/app/` | Site routes and theme |
+| `references/` | Integration notes |
+| `manifest.json` | Exported skill file inventory and hashes |
 
 ## Edit a page
 
-Create or update an `.mdx` file inside `docs-site/content/docs/`. Include a title and a description in frontmatter. Add a new page to the relevant `meta.json` ordering. Use root-relative site links such as `/docs/skills/circuit/` and full GitHub links for repository source.
+Update its `.mdx` file. Keep the title and description short. Add new pages to the folder’s `meta.json`.
 
-Keep commands copyable from the repository root. Clearly identify synthetic examples and choose a new output path for commands that reject existing files. Check the actual helper's arguments before documenting a new command.
+Use `/docs/…/` for site links and full GitHub URLs for source files. Examples should run from the repository root, use a fresh output path, and clearly identify simulated data.
 
-Fumadocs provides sidebar navigation, page outlines, searchable content, syntax highlighting, copyable code blocks, and a light/dark theme. The search index is generated at build time and consumed locally in the browser.
+Keep the explanation brief. Put detailed setup or limitations in a reference page or an expandable section.
 
-## Validate changes
+## Check docs changes
 
-From the repository root:
+Use Node.js 24 or newer:
 
 ```sh
 npm ci
 npm run build
-npm run typecheck
 npm run check:docs
+```
+
+The build checks types and creates the static site in `out/`. The docs check verifies pages, links, assets, and search results for all 16 skills.
+
+## Check code changes
+
+Use Python 3.12 or newer for the package runner:
+
+```sh
 python3 scripts/check_package.py
+python3 scripts/check_package.py --tests
 npm run test:operator
 ```
 
-`npm run build` compiles MDX and exports the Next.js site. The postbuild stage copies the public export to `out/`. `check:docs` checks the built routes and local asset/link targets, verifies that every manifest skill has a documentation page, and validates the static search payload.
+The first command verifies the exported file inventory. The next two run the skill and Operator suites. Update the manifest when exported skill files change; docs-only edits do not require new skill hashes.
 
-For skill behavior changes, run the affected suite and the package runner as needed:
+GitHub CI runs the package, Operator, and docs checks. These checks use local evidence and do not contact live trading providers.
 
-```sh
-python3 scripts/check_package.py --tests
-```
+## Host the docs
 
-Docs-only edits do not require changes to exported skill hashes. Intentional edits under `skills/` require review and an updated manifest. Keep the package inventory valid and preserve scoped license notices.
+Serve the generated `out/` directory with directory-index support. The exported `/search-index.json` must remain accessible for search.
 
-Operator changes outside `skills/` do not alter the exported skill inventory. Its integration tests exercise the existing WATCHTOWER store/workers and PULSE decoder through retained evidence and a local HTTP RPC. The GitHub workflow runs all package tests, the Operator suite, and the static documentation checks. It does not contact live trading providers.
+The site has no built-in authentication. Configure access and search indexing for your intended audience before publishing. Use the existing hosting project when updating its deployment.
 
-## Publishing
-
-The static output can be hosted by a service that supports directory indexes and the exported route files. Serve `/search-index.json` as the exported JSON payload. Preserve private access for this repository's documentation; the site itself does not implement an authentication system.
-
-The checked-in hosting manifest identifies the existing private documentation site. Reuse that identity when updating it. Local environment files, provider credentials, generated output, caches, and runtime journals stay out of Git.
+Keep provider credentials, environment files, runtime journals, and generated output out of Git.
 
 ## Framework references
 
-- [Fumadocs Next.js setup](https://www.fumadocs.dev/docs/manual-installation/next)
-- [Fumadocs static export](https://www.fumadocs.dev/docs/deploying/static)
-- [Fumadocs search](https://www.fumadocs.dev/docs/search/orama)
+- [Fumadocs setup](https://www.fumadocs.dev/docs/manual-installation/next)
+- [Static export](https://www.fumadocs.dev/docs/deploying/static)
+- [Search](https://www.fumadocs.dev/docs/search/orama)
 
-Dependencies are pinned in the lockfile. Review framework release notes and rerun the build when upgrading.
+Dependencies are pinned in the lockfile. Check the framework’s release notes and rerun the build before upgrading.

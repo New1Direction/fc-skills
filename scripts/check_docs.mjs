@@ -24,7 +24,7 @@ for (const page of pages) {
   const relative = path.relative(content, page).replaceAll(path.sep, '/').replace(/\.mdx$/, '').replace(/(^|\/)index$/, '');
   assert(await targetExists('/docs/' + relative), `Missing rendered page: ${relative}`);
   const text = await readFile(page, 'utf8');
-  for (const match of text.matchAll(/https:\/\/github\.com\/New1Direction\/MSK\/blob\/main\/([^\s)"#]+)/g)) {
+  for (const match of text.matchAll(/https:\/\/github\.com\/New1Direction\/fc-skills\/blob\/main\/([^\s)"#]+)/g)) {
     assert(await isFile(path.join(root, decodeURIComponent(match[1]))), `Missing repository reference in ${relative}: ${match[1]}`);
   }
 }

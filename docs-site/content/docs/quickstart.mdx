@@ -1,78 +1,42 @@
 ---
-title: Quickstart
-description: Verify the package and produce your first research report without live credentials.
+title: Start here
+description: Run an example, then choose your first skill.
 ---
 
-## Requirements
+## 1. Get the project
 
-Use Python 3.12 or newer and Node.js 24 or newer. The Python helpers use the standard library and SQLite. Normal Node helpers use built-in modules. Anvil and solc are optional tools for the separate EVM validation paths; they are not needed for this quickstart.
-
-## 1. Clone and verify
-
-fc-skills is private. Authenticate with a GitHub account that has access, then run:
+You'll need Git and Node.js 24 or newer.
 
 ```sh
-git clone https://github.com/New1Direction/MSK.git fc-skills
+git clone https://github.com/New1Direction/fc-skills.git
 cd fc-skills
-python3 scripts/check_package.py
 ```
 
-This checks the skill files against the package manifest. To run all offline package tests:
+## 2. Try the demo
 
 ```sh
-python3 scripts/check_package.py --tests
+node scripts/msk.mjs demo --out ../fc-skills-demo
 ```
 
-The v0.8.0 release contains 1,422 offline tests. A passing suite verifies local behavior against its fixtures; it does not establish live source availability.
+This runs a small simulated chain. It records transactions, creates pool reports, and updates them after a block changes.
 
-## 2. Run a complete offline handoff
+No wallet, provider key, or npm install is needed. If the output folder already exists, choose a new name.
 
-Run from the repository root. Output directories must be new: change the suffix if you have already run the example.
+## 3. Read the result
 
-```sh
-python3 scripts/research_demo.py --out /tmp/msk-first-research
-```
+Open `../fc-skills-demo/demo-report.json`. It shows the transaction count, report count, and recovery checks.
 
-The demo collects a synthetic Form 4 through an injected transport, creates Night Desk valuation views, verifies an Agent Arena journal, and joins the disclosure to the exact stock-token identity.
-
-| Output | What to inspect |
-| --- | --- |
-| `catalyst/events.json` | The disclosure and supplied security mapping |
-| `night-desk.json` | Separate reference, mark, and exit-evidence views |
-| `agent-arena.json` | Portfolio performance with funding and inventory |
-| `arena-integrity.json` | Journal verification results |
-| `research-bundle.json` | Exact-asset links and time-qualified exclusions |
-
-The command reports `SYNTHETIC_DEMO_COMPLETE`, zero network requests, and zero live trades. No credentials or wallet keys are needed.
-
-## 3. Give an agent a complete skill
-
-Open the chosen skill's `SKILL.md` and keep its entire folder together. Scripts, fixtures, and references use paths inside that folder. Use your agent's supported skill installer or a user-controlled skill location; do not overwrite an existing installation without reviewing it.
-
-Example request:
+You can ask your agent:
 
 ```text
-Use Ignition on my retained normalized swaps. Compare participation,
-spending, concentration, and suspected activity across the declared
-windows. Return a research shortlist with missing data and coverage.
+Read the demo report and explain what happened in plain English.
+Point out which checks passed and what still needs real-world testing.
 ```
 
-The [skill catalog](/docs/skills/) has a runnable offline example for every package. Installing the folder does not start collectors, workers, or a trading bot. Changes to this repository also do not update separately installed copies automatically.
+## 4. Choose a skill
 
-## 4. Build the documentation
+[Browse the skills](/docs/skills/) and give your agent access to the complete folder for the one you choose. Its `SKILL.md` explains the task and required data.
 
-The docs use Fumadocs and Next.js. From the repository root:
+Each skill page includes a prompt you can copy. Skills written in Python need Python 3.12 or newer; the page lists the requirement.
 
-```sh
-npm ci
-npm run dev
-```
-
-For a production static export:
-
-```sh
-npm run build
-npm run check:docs
-```
-
-The export is staged in `out/`. Search is included in the build and runs in the browser. See [maintaining the docs](/docs/development/) for content structure and validation.
+**For live monitoring:** follow [Run the Operator](/docs/operations/operator/). The demo does not start a permanent service.

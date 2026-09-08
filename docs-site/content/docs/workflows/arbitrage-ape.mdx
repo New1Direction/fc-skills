@@ -1,39 +1,32 @@
 ---
-title: Arbitrage Ape route research
-description: From an observed V4 pool to an exact wallet-call simulation with explicit costs and refunds.
+title: Investigate a swap route
+description: Understand the pool rules and test a supported route.
 ---
 
-## 1. Retain state and source timing
+## Work through three steps
 
-Use [PULSE](/docs/skills/pulse/) to compare arrival observations and maintain provisional V4 state. Use [WATCHTOWER](/docs/skills/watchtower/) for full included blocks, receipts, recovery, and research dispatch. Do not substitute provisional cache values for a trade-size quote or an exact wallet-call simulation.
+1. **Check the data.** [PULSE](/docs/skills/pulse/) reads pool activity and compares sources. [WATCHTOWER](/docs/skills/watchtower/) records included transactions and receipts.
+2. **Understand the pool.** [HOOK LAB](/docs/skills/hook-lab/) investigates custom fees and restrictions.
+3. **Test the route.** [CIRCUIT](/docs/skills/circuit/) builds supported routes and measures wallet changes in a local simulation.
 
-## 2. Qualify the pool and hook
+Include the trade size, wallet, pool identities, and block being tested. Fees and missing costs need to stay visible.
 
-[HOOK LAB](/docs/skills/hook-lab/) binds evidence to exact code, configuration, PoolKey, block hash, wallet, and calldata. Its Pons V2 fee model is source-derived. Published deployment records and internally consistent evidence do not by themselves establish that live bytecode corresponds to the inspected source.
+## Try an example
 
-The retained Ape implementation rejects nonzero hooks in its vault. This research package does not change that production behavior or its execution permissions.
-
-## 3. Build a bounded route
-
-[CIRCUIT](/docs/skills/circuit/) constructs Universal Router 2.1.1 V4 calls for one to four hops. It can enumerate bounded paths and same-asset circuits from a supplied registry. It prepays input and returns positive route-currency credits, including partial-fill refunds.
-
-From the repository root:
+Requires Node.js 24 or newer. Run from the project folder:
 
 ```sh
-node skills/circuit/scripts/circuit.mjs demo --out /tmp/msk-ape-demo
-node skills/circuit/scripts/circuit.mjs build --in skills/circuit/assets/route-example.json --out /tmp/msk-ape-built.json
+node skills/circuit/scripts/circuit.mjs demo --out ../fc-route-demo
 ```
 
-Both examples use synthetic identities. They demonstrate the interface; they do not discover a current Robinhood trade.
+This uses sample identities. It does not find a live trading opportunity.
 
-## 4. Measure the complete wallet call
+## Ask your agent
 
-Preflight checks code, wiring, balances, and both existing Permit2 approval layers at a pinned parent block. A fresh Anvil fork measures the wallet call without injecting missing balances, approvals, code, or storage. Each sampled size gets an independent fork of the same parent state.
+```text
+Investigate this swap route with HOOK LAB and CIRCUIT.
+Check the pool rules, required approvals, expected wallet changes, and costs.
+Show any unsupported parts. Do not submit a live transaction.
+```
 
-Compare returned balances, refunds, residual credits, hook charges already included in balances, and gas. Optional Nitro NodeInterface cost evidence estimates source fees including L1 once. If required costs or token conversion are missing, net economics remain unknown.
-
-## 5. Keep execution and evaluation separate
-
-The package does not sign or submit live trades. Runtime correspondence, source freshness, a live wallet route, and FYNCH/Ape production integration remain separate deployment evidence.
-
-If an external system later executes a strategy, retain all attempts, external funding, costs, and open inventory for [Agent Arena](/docs/skills/agent-arena/). A positive local simulation is a research result; realized performance requires actual execution and complete accounting.
+A successful local simulation does not guarantee the same result on a live chain. [Read the route limits](/docs/skills/circuit/).

@@ -4,6 +4,7 @@
     "capabilities",
     "evidence",
     "releases",
+    "operator-runbook",
     "release-runbook"
   ]
 }

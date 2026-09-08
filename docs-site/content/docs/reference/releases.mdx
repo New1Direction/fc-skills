@@ -1,20 +1,26 @@
 ---
-title: Release notes
-description: Package scope and retained validation for fc-skills v0.8.0.
+title: Project status
+description: What is available and what has been verified.
 ---
 
-## v0.8.0 — CIRCUIT
+## Available now
 
-The package contains 16 skills and 317 exported skill files. CIRCUIT adds exact Universal Router 2.1.1 V4 route construction, bounded path and cycle enumeration, Permit2 preflight, isolated Anvil measurement, and conditional Nitro fee estimates.
+- 16 research skills, each with instructions and examples.
+- An Operator for capture, pool reports, and recovery.
+- Searchable documentation and local demos.
 
-The release passes 1,422 offline tests, including 175 CIRCUIT checks. CIRCUIT also retains eight isolated scenarios against actual upstream Uniswap protocol bytecode. Those scenarios establish local protocol behavior with zero source writes. They do not establish a current Robinhood opportunity.
+## Verified locally
 
-The fifteen earlier skill inventories remain byte-for-byte identical to v0.7.0. See the [full release runbook](/docs/reference/release-runbook/) for the retained service and adapter validation notes.
+The package has 1,422 passing offline tests. The Operator adds 24 tests covering capture, reports, restarts, chain changes, and storage recovery.
 
-## Documentation addition
+These checks establish behavior against the tested inputs. They do not establish profitable signals or sustained mainnet performance.
 
-Fumadocs adds a searchable 16-skill catalog, runnable examples, quickstart instructions, workflow guides, operations notes, and evidence conventions. The README becomes the repository entry point. This documentation change does not alter the v0.8.0 skill inventory or deploy research services.
+## Still to establish
 
-## Attribution
+A working production data source, a persistent deployment, and a completed 24-hour mainnet run.
 
-Preserve the package's [third-party notices](https://github.com/New1Direction/MSK/blob/main/THIRD_PARTY_NOTICES.md) and the scoped notices inside each skill. This repository's private status does not remove third-party license obligations.
+[Validation record](https://github.com/New1Direction/fc-skills/blob/main/operator/validation/README.md) · [Technical release history](/docs/reference/release-runbook/)
+
+## Licensing
+
+A project-wide open-source license has not been assigned. Component licenses and attribution are listed in the [third-party notices](https://github.com/New1Direction/fc-skills/blob/main/THIRD_PARTY_NOTICES.md).

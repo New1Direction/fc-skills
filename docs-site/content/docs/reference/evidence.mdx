@@ -1,38 +1,33 @@
 ---
-title: Evidence and coverage
-description: Read a report without turning a local observation into a claim the data cannot support.
+title: Read a report
+description: Understand the labels and what the findings can support.
 ---
 
-## Label what happened
+## Start with three checks
 
-| Evidence label | Meaning | Appropriate use |
-| --- | --- | --- |
-| Synthetic | Fabricated identities or observations for teaching and validation | Check interfaces and expected behavior |
-| Retained observation | Stored data with declared provenance, time, and coverage | Reproduce an analysis within its observed scope |
-| Published illustrative | A documented external example with potentially incomplete history | Check supplied arithmetic, not authenticated replay |
-| Modeled | A calculation under explicit assumptions | Compare scenarios and sensitivity |
-| Simulated | A call or state transition measured in a declared environment | Assess that wallet call at that state and context |
-| Executed | A real submitted transaction with retained execution evidence | Reconcile what actually happened and what it cost |
+1. **Source:** Where did the data come from?
+2. **Time:** When was it observed?
+3. **Coverage:** What is included, and what is missing?
 
-A retained RPC transcript checks reproducibility and consistency. It does not independently authenticate the provider. A file hash identifies content. It does not prove completeness or authorship.
+## Common labels
 
-## Carry identity and time together
+| Label | Meaning |
+| --- | --- |
+| Synthetic | Invented data used for a demo or test |
+| Retained observation | Saved source data that can be reviewed again |
+| Published example | An external example that may have incomplete history |
+| Modeled | A calculation based on stated assumptions |
+| Simulated | A transaction or scenario tested in a stated environment |
+| Executed | A real submitted transaction with supporting records |
 
-For onchain research, preserve chain ID, exact contract and pool identity, block number and hash, observation time, and data source. For wallet-call evidence, also preserve wallet, calldata, trade size, route, and relevant approvals.
+## Read unknowns literally
 
-For disclosures, distinguish filing time, first observation, download completion, detail readiness, and the time an asset mapping became known. Do not use later mappings to manufacture a historical signal.
+Missing costs are not zero costs. A displayed price is not a completed sale. A positive simulation is not realized profit.
 
-## Treat unknown values as unknown
+Reports should keep those differences visible so you can decide what to investigate next.
 
-- Missing costs are not zero costs.
-- Custody balances do not establish sellable float or economic backing.
-- Pool turnover is not independently attributed wallet participation.
-- A quote or displayed mark is not a completed sale.
-- A positive fork result is not realized profit or evidence that the route is currently available.
-- A configured source is not evidence of complete or continuous collection.
+## Compare like with like
 
-## Preserve the comparison set
+Use the same assets, time window, position size, and cost basis. Keep unsuccessful cases and failed attempts in the record.
 
-Keep complete candidate universes, failed attempts, missing outcomes, observation windows, external flows, and open inventory. Freeze point-in-time selection rules before evaluating outcomes. Compare like-for-like assets, state, timing, and costs.
-
-Use [Agent Arena](/docs/skills/agent-arena/) for supplied portfolio evidence and each discovery skill's outcome journal where supported. See [capabilities](/docs/reference/capabilities/) before joining outputs from different adapters.
+For a portfolio review, start with [Agent Arena](/docs/skills/agent-arena/). For supported sources and pools, see the [support table](/docs/reference/capabilities/).

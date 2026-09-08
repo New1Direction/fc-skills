@@ -1,36 +1,37 @@
 ---
-title: FYNCH stock-token research
-description: Keep disclosures, issuance, equity references, onchain marks, and exits in their correct units.
+title: Understand a stock token
+description: Connect company filings, token supply, and market prices.
 ---
 
-## Build around exact assets
+## Look at each part separately
 
-Use chain ID, stock-token contract, exact pool identity, and the time at which the mapping was known. Joining records by ticker alone can mix different assets or apply information that was unavailable at the time.
+| Question | Use |
+| --- | --- |
+| What did the company disclose? | [CATALYST](/docs/skills/catalyst/) |
+| Did the token supply change? | [PRESSURE](/docs/skills/pressure/) |
+| Did a paired meme move because of the stock token? | [Undertow](/docs/skills/undertow/) |
+| How do reference value and pool price compare? | [Night Desk](/docs/skills/night-desk/) |
 
-| Question | Skill | Handoff |
-| --- | --- | --- |
-| What company event was newly disclosed? | [CATALYST](/docs/skills/catalyst/) | Original filing, processing times, structured facts, and exact supplied security mapping |
-| Did raw stock-token supply change? | [PRESSURE](/docs/skills/pressure/) | Pinned mint/burn reconciliation, initial destinations, and multiplier context |
-| What explains a stock-paired meme's return? | [Undertow](/docs/skills/undertow/) | Meme-relative move, quote-stock move, local premium, and corporate-action components |
-| What is the position worth under different references? | [Night Desk](/docs/skills/night-desk/) | Equity reference, adjusted token reference, onchain mark, and retained exit evidence |
-| What did the whole strategy earn? | [Agent Arena](/docs/skills/agent-arena/) | Portfolio snapshots, external flows, costs, and open inventory |
+Use the exact token address and observation time. A ticker alone can point to the wrong asset.
 
-## Run the existing handoff
+## Try a combined example
 
-From the repository root, choose a new output directory:
+Requires Python 3.12 or newer. Run from the project folder:
 
 ```sh
-python3 scripts/research_demo.py --out /tmp/msk-fynch-research
+python3 scripts/research_demo.py --out ../fc-stock-demo
 ```
 
-The result includes `research-bundle.json` in the `MSKResearchBundle@1` format. The composer joins CATALYST disclosures to Night Desk valuations by exact chain and token address. It preserves original valuation reports, excludes evidence available after the view's cutoff, and labels retrospective mappings.
+The example connects a sample company filing to token valuation and portfolio reports. Open `../fc-stock-demo/research-bundle.json` to see the combined result.
 
-This is an offline synthetic example. It does not write to FYNCH or start continuous services.
+It uses simulated data and does not update FYNCH or place trades.
 
-## Display the missing states
+## Ask your agent
 
-An application consumer should show stale quotes, unknown FX, missing costs, late mappings, incomplete coverage, and unavailable exits directly. Do not replace those states with zero, a current price, or a retroactively matched asset.
+```text
+Review this stock token.
+Separate company disclosures, token supply changes, and pool prices.
+Explain what the data supports and whether the price references are fresh.
+```
 
-Equity references and adjusted token references have different units. Pool prices may contain local premiums. Exit evidence belongs to a particular wallet, route, size, and time. Keep all three valuation views visible.
-
-Read the [exact-asset application handoff](https://github.com/New1Direction/MSK/blob/main/references/research-integration.md) for the schema and point-in-time consumer rules.
+[Developer integration details](https://github.com/New1Direction/fc-skills/blob/main/references/research-integration.md)
