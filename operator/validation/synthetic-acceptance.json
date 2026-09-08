@@ -1,0 +1,313 @@
+{
+  "schema": "msk.operator.acceptance.v1",
+  "result": "INCOMPLETE",
+  "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+  "required_seconds": 86400,
+  "observed_seconds": 2.1074821790000002,
+  "checks": {
+    "live_evidence": false,
+    "config_matches": true,
+    "finished": true,
+    "duration": false,
+    "blocks_complete": true,
+    "receipts_complete": true,
+    "workers_drained": true,
+    "consumer_drained": true,
+    "real_pool_report": true,
+    "source_observed": true,
+    "clean_child_shutdown": true,
+    "normal_stop": true
+  },
+  "final_status": {
+    "schema": "msk.operator.status.v1",
+    "generated_at": "2026-09-08T21:01:37.396Z",
+    "evidence_mode": "synthetic",
+    "supervisor_alive": true,
+    "phase": "DRAINING",
+    "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+    "heartbeat_age_ms": 377,
+    "configured_pools": 1,
+    "storage": {
+      "database_bytes": 294912,
+      "filesystem_free_bytes": "31148285952",
+      "max_db_bytes": 33554432,
+      "usage_ratio": 0.0087890625
+    },
+    "coverage": {
+      "chain_id": 4663,
+      "start_block": 1,
+      "canonical_head": 2,
+      "contiguous_block_head": 2,
+      "contiguous_receipt_head": 2,
+      "block_count": 2,
+      "transaction_count": 8,
+      "receipt_count": 8,
+      "pending_receipt_blocks": 0,
+      "complete_through_head": true,
+      "receipt_complete_through_head": true,
+      "evidence": "RPC_REPORTED_INCLUDED_TRANSACTIONS",
+      "internal_calls": "UNTRACED",
+      "finality": "UNVERIFIED"
+    },
+    "workers": {
+      "jobs": {
+        "COMPLETED": 7,
+        "INVALIDATED": 3
+      },
+      "pending": 0,
+      "failed": 0,
+      "event_head": 7,
+      "policies": [
+        {
+          "version": "operator-256ad6e0fa7b9043a1bf38db",
+          "cursor": 7
+        }
+      ]
+    },
+    "research": {
+      "cursor": 13,
+      "outbox_head": 13,
+      "unacknowledged": 0,
+      "results": {
+        "CURRENT": 3,
+        "RETRACTED": 1
+      },
+      "currently_canonical_reports": 3,
+      "failed": 0
+    },
+    "sources": [
+      {
+        "source": "primary",
+        "primary": true,
+        "last_observed_at": "2026-09-08T21:01:36.097Z",
+        "observation_age_ms": 1302,
+        "retained_head_age_ms": 3399,
+        "reported": {
+          "head_hash": "0xe1f377e5c9829b55ee902f1a9367dfe9ac0b939ea5313b87661b5ab2547cfa2c",
+          "head_number": 2,
+          "primary": true,
+          "responsive": true,
+          "syncing": false,
+          "syncing_checked_at": "2026-09-08T21:01:35.008Z"
+        }
+      }
+    ],
+    "health": "OBSERVED_HEALTHY",
+    "reasons": []
+  },
+  "latency": {
+    "schema": "watchtower.latency.v1",
+    "scope": "same-object same-stage same-run same-clock relative arrival; provider-derived",
+    "fastest_claim_established": false,
+    "network_origin_latency_available": false,
+    "retained_rows": 7,
+    "usable_unique_arrivals": 5,
+    "excluded_rows": 2,
+    "duplicate_rows": 0,
+    "comparisons": [
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "receipts_durable",
+        "delivery": "live",
+        "source": "primary",
+        "matched_with_another_source": 0,
+        "first_arrivals": 1,
+        "relative_to_first_observed": {
+          "count": 1,
+          "min_ms": 0,
+          "p50_ms": 0,
+          "p95_ms": 0,
+          "p99_ms": 0,
+          "max_ms": 0
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "receipts",
+        "delivery": "live",
+        "source": "primary",
+        "matched_with_another_source": 0,
+        "first_arrivals": 1,
+        "relative_to_first_observed": {
+          "count": 1,
+          "min_ms": 0,
+          "p50_ms": 0,
+          "p95_ms": 0,
+          "p99_ms": 0,
+          "max_ms": 0
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "block_durable",
+        "delivery": "live",
+        "source": "primary",
+        "matched_with_another_source": 0,
+        "first_arrivals": 1,
+        "relative_to_first_observed": {
+          "count": 1,
+          "min_ms": 0,
+          "p50_ms": 0,
+          "p95_ms": 0,
+          "p99_ms": 0,
+          "max_ms": 0
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "block",
+        "delivery": "live",
+        "source": "primary",
+        "matched_with_another_source": 0,
+        "first_arrivals": 1,
+        "relative_to_first_observed": {
+          "count": 1,
+          "min_ms": 0,
+          "p50_ms": 0,
+          "p95_ms": 0,
+          "p99_ms": 0,
+          "max_ms": 0
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "head",
+        "delivery": "live",
+        "source": "primary",
+        "matched_with_another_source": 0,
+        "first_arrivals": 1,
+        "relative_to_first_observed": {
+          "count": 1,
+          "min_ms": 0,
+          "p50_ms": 0,
+          "p95_ms": 0,
+          "p99_ms": 0,
+          "max_ms": 0
+        }
+      }
+    ],
+    "persistence": [
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "receipts_durable",
+        "delivery": "live",
+        "source": "primary",
+        "negative_pairs": 0,
+        "arrival_to_commit": {
+          "count": 1,
+          "min_ms": 1.390307,
+          "p50_ms": 1.390307,
+          "p95_ms": 1.390307,
+          "p99_ms": 1.390307,
+          "max_ms": 1.390307
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "block_durable",
+        "delivery": "live",
+        "source": "primary",
+        "negative_pairs": 0,
+        "arrival_to_commit": {
+          "count": 1,
+          "min_ms": 2.031901,
+          "p50_ms": 2.031901,
+          "p95_ms": 2.031901,
+          "p99_ms": 2.031901,
+          "max_ms": 2.031901
+        }
+      }
+    ],
+    "observed_universes": [
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "receipts_durable",
+        "delivery": "live",
+        "events": 1,
+        "by_source": {
+          "primary": {
+            "observed": 1,
+            "missing_from_observed_union": 0
+          }
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "receipts",
+        "delivery": "live",
+        "events": 1,
+        "by_source": {
+          "primary": {
+            "observed": 1,
+            "missing_from_observed_union": 0
+          }
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "block_durable",
+        "delivery": "live",
+        "events": 1,
+        "by_source": {
+          "primary": {
+            "observed": 1,
+            "missing_from_observed_union": 0
+          }
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "block",
+        "delivery": "live",
+        "events": 1,
+        "by_source": {
+          "primary": {
+            "observed": 1,
+            "missing_from_observed_union": 0
+          }
+        }
+      },
+      {
+        "run_id": "4e4cce36-1250-45de-8761-5339601dcba7",
+        "clock_id": "c7c147a4-056a-4dcd-b945-6a1fb1ce8d82",
+        "stage": "head",
+        "delivery": "live",
+        "events": 1,
+        "by_source": {
+          "primary": {
+            "observed": 1,
+            "missing_from_observed_union": 0
+          }
+        }
+      }
+    ],
+    "limitations": [
+      "An event absent from every source is absent from this comparison universe; reconcile against full canonical blocks.",
+      "Independent clock/run values are never subtracted.",
+      "Live, backfill and replay deliveries are reported separately.",
+      "A block timestamp does not measure sequencer-to-observer delay."
+    ],
+    "sampling": {
+      "kind": "LATEST_ROWS_OF_SELECTED_RUN",
+      "max_rows": 50000,
+      "truncated": false,
+      "capture_run_ids": [
+        "4e4cce36-1250-45de-8761-5339601dcba7"
+      ]
+    }
+  },
+  "evaluation": "RETAINED_END_OF_SELECTED_RUN; not current network health",
+  "recovery_validation": "SEPARATE_TEST_EVIDENCE_REQUIRED",
+  "profitable_execution_established": false
+}

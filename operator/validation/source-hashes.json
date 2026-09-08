@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "operator/common.mjs": "0d8880ffc54672e1e5d4fc6651ad17d8d2e305c8059dbf8b821f2bfceb31ffca",
+    "operator/config.mjs": "96da52d3c8679481a334c77a975bff8e7b69bb4dd7c42801d7e0fe9c285c7ec3",
+    "operator/consumer.mjs": "034a858a44f971f4952d9cf895ad68fdc0b177a1935e5815c7488fe2a44fd924",
+    "operator/demo.mjs": "de35b92cc37fd23a779a96deef81b963a1f181cf971c9fc1ffcd645c1a8cb992",
+    "operator/fixtures.mjs": "89278bd66846a41e563546ff3634f8a2cbdc9707bcde05c8415101197ffa7dd5",
+    "operator/runtime.mjs": "1c8bbfb9b7d57872e696b251ff744d8b0fb007442b1aac68af418559da1c8e24",
+    "operator/status.mjs": "27738a37e0de6292305d6ca2332c5e4cacff8a05e00aa83af28df58455d42827",
+    "operator/storage.mjs": "9cf5910807f3c04e567a2cbc95c538eb36f2c56592b99b3e490cfcc5912efb29",
+    "operator/test_operator.mjs": "6337d91194b20ac8c1fa35a6b2d7c8abcd2a736159bb07f4ff3eb5fa714c94b9",
+    "scripts/msk.mjs": "8ce17d276bfa915d7fa1e27a47df3ab49fe4d3b40505b2d59a2e9d09bd1f3e12"
+  }
+}

@@ -12,6 +12,8 @@ description: Edit MDX, verify source links, and build the same static documentat
 | `scripts/check_package.py` | Package integrity and isolated skill test runner |
 | `scripts/research_demo.py` | Offline three-skill research handoff |
 | `references/` | Cross-package integration notes |
+| `operator/` | Repo-level supervisor, durable pool consumer, storage tools, and recovery tests |
+| `scripts/msk.mjs` | Node.js 24+ Operator command line |
 | `docs-site/content/docs/` | Fumadocs MDX pages and sidebar metadata |
 | `docs-site/app/` | Next.js routes, layout, and theme |
 | `scripts/check_docs.mjs` | Static output, local link, and search-index checks |
@@ -35,6 +37,7 @@ npm run build
 npm run typecheck
 npm run check:docs
 python3 scripts/check_package.py
+npm run test:operator
 ```
 
 `npm run build` compiles MDX and exports the Next.js site. The postbuild stage copies the public export to `out/`. `check:docs` checks the built routes and local asset/link targets, verifies that every manifest skill has a documentation page, and validates the static search payload.
@@ -46,6 +49,8 @@ python3 scripts/check_package.py --tests
 ```
 
 Docs-only edits do not require changes to exported skill hashes. Intentional edits under `skills/` require review and an updated manifest. Keep the package inventory valid and preserve scoped license notices.
+
+Operator changes outside `skills/` do not alter the exported skill inventory. Its integration tests exercise the existing WATCHTOWER store/workers and PULSE decoder through retained evidence and a local HTTP RPC. The GitHub workflow runs all package tests, the Operator suite, and the static documentation checks. It does not contact live trading providers.
 
 ## Publishing
 

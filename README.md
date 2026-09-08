@@ -8,6 +8,19 @@ Investigate launches, measure early participation, retain chain activity, explai
 
 The repository is private. Browse the documentation source here, or run the complete Fumadocs site locally with the commands below.
 
+## Run the Operator
+
+**MSK Operator** connects WATCHTOWER capture and durable workers to actual PULSE V4 pool analysis. It adds one foreground supervisor, health and report commands, reorg-aware acknowledgements, verified exports, restoration, and capacity expansion. It needs only Node.js 24+; no npm install is required for the runtime.
+
+Try the complete synthetic capture → research → reorg → export demonstration:
+
+```sh
+node scripts/msk.mjs demo --out ../msk-operator-demo
+node scripts/msk.mjs help
+```
+
+Use the [Operator guide](docs-site/content/docs/operations/operator.mdx) for real endpoint configuration, exact-pool registries, short runs, and the 24-hour acceptance gate. [Runtime source and service template](operator/README.md) are included. A working live RPC and an owned persistent host are still required; the local demo does not establish a live deployment or fastest-provider performance.
+
 ## Start in three commands
 
 Requires Python 3.12+ and Node.js 24+. Clone with an authenticated GitHub account that has access:
@@ -55,7 +68,7 @@ To use a skill with an agent, open its `SKILL.md` and provide the complete folde
 - **FYNCH research:** CATALYST + PRESSURE + Undertow + Night Desk → exact-asset application evidence → Agent Arena performance accounting.
 - **Arbitrage Ape research:** PULSE + WATCHTOWER → HOOK LAB deployment evidence → CIRCUIT route construction and fork measurement.
 
-These are research workflows. The [existing JSON handoff](references/research-integration.md) composes CATALYST and Night Desk evidence. Other service and application connections require explicit integration.
+The [JSON handoff](references/research-integration.md) composes CATALYST and Night Desk evidence. MSK Operator also connects WATCHTOWER dispatches to retained PULSE single-block pool reports. FYNCH/Ape production application connections remain separate integrations.
 
 ## Build the Fumadocs site
 
@@ -80,9 +93,12 @@ Edit pages in [`docs-site/content/docs/`](docs-site/content/docs/). The site inc
 
 ```sh
 python3 scripts/check_package.py --tests
+npm run test:operator
 ```
 
 **v0.8.0:** 16 skills, 317 exported skill files, and 1,422 passing offline release tests. CIRCUIT also retains eight actual-protocol EVM validation scenarios. The [manifest](manifest.json) records file hashes and byte lengths; it is an integrity inventory, not a publisher signature.
+
+Operator v1 is a repository integration alongside those skill exports. Its separate suite covers capture/consumer recovery, competing owners, retractions, receipt fallback, source outages, export tampering, restoration, and storage expansion. The PULSE service test now waits for reconciled readiness under delayed fixture RPC responses; its production helpers are unchanged. CI runs package, Operator, and documentation checks without live provider credentials.
 
 Exit Doctor's native adapter is V2; LP Edge's is V3. Exact V4 hook and route research belongs to HOOK LAB and CIRCUIT. Several discovery skills analyze retained normalized inputs rather than collecting live data themselves. Installing skills does not deploy monitoring services or connect FYNCH/Ape production consumers. No skill signs or submits live trades.
 

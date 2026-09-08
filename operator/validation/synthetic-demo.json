@@ -1,0 +1,25 @@
+{
+  "schema": "msk.operator.demo.v1",
+  "evidence_mode": "synthetic",
+  "initial_run": "b93e1673-668c-4773-b10a-d3c552cb3513",
+  "recovery_run": "4e4cce36-1250-45de-8761-5339601dcba7",
+  "included_transactions": 8,
+  "receipt_count": 8,
+  "reports_before": 3,
+  "current_reports": 3,
+  "retracted_reports": 1,
+  "export_manifest_sha256": "be42fba512b6a5f5021ce8153518726c5ced9dfddfe8fb632a07560b0909947c",
+  "read_only_rpc_requests": 74,
+  "forbidden_rpc_requests": 0,
+  "live_24_hour_acceptance": "INCOMPLETE",
+  "checks": {
+    "initial_capture": true,
+    "recovery_capture": true,
+    "reports": true,
+    "retractions": true,
+    "receipts": true,
+    "source_writes": true
+  },
+  "reproduce": "node scripts/msk.mjs demo --out NEW_DIRECTORY",
+  "capture_status": "SYNTHETIC_LOCAL_HTTP; NOT A MAINNET MEASUREMENT"
+}

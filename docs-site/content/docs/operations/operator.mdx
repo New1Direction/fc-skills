@@ -1,0 +1,172 @@
+---
+title: Run MSK Operator
+description: Supervise Robinhood Chain capture, durable workers and exact-pool research from one command.
+---
+
+MSK Operator connects WATCHTOWER capture and workers to a PULSE pool-research consumer. It runs three separate processes, retains their evidence and progress in one SQLite database, and provides commands for health, reports, recovery and verified exports.
+
+**A live 24-hour acceptance run has not yet been established.** The local demonstration uses synthetic RPC evidence. Installing MSK does not provision a host or start continuous monitoring.
+
+## Start with the local demonstration
+
+Run from the MSK repository with Node.js 24 or newer. Choose a destination that does not already exist:
+
+```bash
+node scripts/msk.mjs demo --out ../msk-operator-demo
+```
+
+The demonstration starts a local mock RPC, captures protocol-shaped transactions and receipts, generates pool reports, replaces a block, verifies report retractions, and creates a verified export. Its output remains labeled `synthetic`; it cannot satisfy live acceptance.
+
+## Prepare a live registry and source
+
+Provide an HTTP RPC endpoint through `MSK_PRIMARY_HTTP`, or choose another environment-variable name with `--http-env`. Configure the value through your host's environment or secret manager. Endpoint values are not written into operator configuration.
+
+Prepare `../robinhood-pools.json` with independently resolved pool identities. A registry contains:
+
+| Field | Required meaning |
+| --- | --- |
+| `chain_id` | `4663` |
+| `manager` | `0x8366a39cc670b4001a1121b8f6a443a643e40951` |
+| `pools` | Up to 64 exact V4 pool keys |
+| `routes` | Optional; the operator's single-pool reports do not construct routes |
+
+Each pool requires `pool_id`, sorted `currency0` and `currency1` addresses, `fee`, `tick_spacing`, `hooks`, `decimals0` and `decimals1`. The loader recomputes the PoolId and rejects inconsistent keys. Supply block-appropriate token decimals; structural validation does not independently verify them.
+
+Optional `identity_evidence` can retain a matching Initialize log and its source reference. It remains supplied evidence. A missing initialization yields an identity-unqualified observation; a nonzero hook remains economically unqualified by this consumer.
+
+Do not use `skills/pulse/assets/pools.synthetic.json` as a live registry. Its addresses and pool represent demonstration data.
+
+You may omit `--registry` to start with an empty registry. WATCHTOWER still captures and classifies included transactions, but no exact-pool reports are generated, health includes `NO_RESEARCH_POOLS_CONFIGURED`, and the research acceptance check cannot pass. Configure the intended registry before the first run; changing it after consumer initialization requires a new workspace.
+
+## Configure and run
+
+The workspace must be new. These commands keep runtime data outside the repository:
+
+```bash
+node scripts/msk.mjs init \
+  --workspace ../msk-robinhood \
+  --from-block latest \
+  --registry ../robinhood-pools.json \
+  --http-env MSK_PRIMARY_HTTP \
+  --max-db-bytes 21474836480
+
+node scripts/msk.mjs doctor --workspace ../msk-robinhood
+
+node scripts/msk.mjs start \
+  --workspace ../msk-robinhood \
+  --duration 60
+```
+
+`latest` probes the primary and persists its observed starting block. It does not collect earlier history. Use an explicit decimal block number instead when you require a particular historical interval. Resume the same workspace with its original starting block and reorg configuration.
+
+`doctor` checks the primary's chain, full-block support and reported sync status. A successful probe is a bounded observation, not a throughput benchmark.
+
+`start` stays in the foreground and supervises capture, workers and the pool consumer. Use your persistent host's process supervisor for unattended operation. Duration `0` runs until stopped; the default is 60 seconds. A child failure, storage threshold or low free space causes a visible stop. Capture stops first, followed by a bounded worker/consumer drain.
+
+From another terminal:
+
+```bash
+node scripts/msk.mjs status --workspace ../msk-robinhood
+node scripts/msk.mjs reports --workspace ../msk-robinhood --limit 20
+node scripts/msk.mjs reports --workspace ../msk-robinhood --limit 1 --evidence true
+node scripts/msk.mjs stop --workspace ../msk-robinhood
+```
+
+Commands return JSON. Applicable read commands accept `--out FILE`. `status` separates selected-head coverage, contiguous receipt coverage, source freshness, queued work, report progress and storage usage. A responsive RPC can still be stale. Missing timestamps and unknown sync state remain visible.
+
+## What the consumer actually computes
+
+A matching Initialize, Swap or ModifyLiquidity log at the exact manager and PoolId produces a durable WATCHTOWER dispatch. The consumer checks the selected block generation and connected receipt coverage, loads every retained receipt for that block, and passes the block into PULSE's existing V4 decoder and state engine.
+
+Each result is a **single-block report** with:
+
+- Exact block, pool and source-job identities, input hashes and capture provenance.
+- Decoded protocol events and raw swap totals.
+- Exact rational core spot marks and the pool's final supported observation in that block.
+- Initialization, hook and liquidity qualification labels, plus explicit unknown fields.
+
+It does not build continuous pool history from outbox order: jobs can finish out of block order. A liquidity modification after a swap can invalidate the final active-liquidity observation. Router sender addresses are not attributed traders, active liquidity is not pool reserves, and a core spot mark is not a wallet exit quote.
+
+The consumer runs PULSE core analysis. WATCHTOWER's `undertow` skill hint is routing metadata; it does not mean the full UNDERTOW research workflow executed. No live transaction is signed or submitted.
+
+## Acknowledgement, reorgs and retries
+
+The consumer commits each report or explicit failure disposition together with its outbox cursor. Restarting does not repeat an acknowledged job. Missing earlier receipts defer research instead of silently qualifying a disconnected tail block. Analysis retries are bounded; terminal failures remain in status.
+
+Reports bind to both block hash and canonical generation. A reorg retracts affected reports while retaining their historical bytes; re-adoption creates a new generation. Report reads also check current branch membership, so a report can show `RETRACTED_PENDING_PROCESSING` before the durable consumer processes its tombstone.
+
+`reports --after N` paginates **new report rows by outbox sequence**. It is not a complete stream of changes to previously returned rows. Re-query earlier report pages to refresh their current status; do not assume an earlier report remains current because a later page is empty.
+
+## Run the 24-hour acceptance gate
+
+After a successful short live run, use a persistent host with enough disk capacity and a prepared exact-pool registry:
+
+```bash
+node scripts/msk.mjs start --workspace ../msk-robinhood --duration 86400
+node scripts/msk.mjs acceptance --workspace ../msk-robinhood
+```
+
+For a retained run, add `--run-id RUN_UUID`. The default required duration is 86,400 seconds. A shorter `--minimum-seconds` can inspect a short run, but does not establish a 24-hour result.
+
+Acceptance requires live evidence, matching configuration, sufficient captured duration, complete retained blocks and receipts, drained successful work, a pool report attributable to that run, a fresh observed primary, and clean child shutdown. Capture duration uses a monotonic timer around the capture call and excludes child setup and database close. The gate evaluates the selected run's retained end state. Its latency sample is bounded and scoped to that run; inspect truncation and live/backfill/replay labels.
+
+`INCOMPLETE` identifies unmet checks. Passing this gate would establish the stated capture/research evidence for that run, not fastest-in-market performance, complete internal-call traces or profitable execution. Recovery testing remains separate evidence.
+
+## Storage recovery and exports
+
+Runtime storage has a persisted byte budget, a stop threshold and a filesystem reserve. SQLite database, WAL and shared-memory sizes count toward usage. Evidence is not automatically pruned, and export does not free source space.
+
+Stop the operator and wait for it to exit before maintenance. Export into a new directory outside the workspace:
+
+```bash
+node scripts/msk.mjs export \
+  --workspace ../msk-robinhood \
+  --out ../msk-export-001
+
+node scripts/msk.mjs verify-export --export ../msk-export-001
+```
+
+An export contains a standalone SQLite snapshot, configuration, registry, retained run records, file hashes and exact cursor boundaries. Verification checks hashes, SQLite integrity and configuration correspondence. An incomplete export remains in a partial staging directory and is not a completed export.
+
+After your retention owner has retained the verified export, record its acknowledgement with the returned manifest digest:
+
+```bash
+node scripts/msk.mjs ack-export \
+  --workspace ../msk-robinhood \
+  --export ../msk-export-001 \
+  --sha256 MANIFEST_SHA256 \
+  --owner FYNCH-retention
+```
+
+This is an operator attestation. It does not independently prove off-host durability or authorize deletion. Future reorgs can invalidate research present in an older snapshot.
+
+Restore into a new workspace:
+
+```bash
+node scripts/msk.mjs restore \
+  --export ../msk-export-001 \
+  --workspace ../msk-robinhood-restored
+
+node scripts/msk.mjs doctor --workspace ../msk-robinhood-restored
+```
+
+Restore preserves the original and does not start services. Supply the named endpoint environment variables on the destination host, then explicitly start the restored workspace. Retained coverage and cursors resume from the snapshot boundary.
+
+Expand capacity with a verified pre-change snapshot:
+
+```bash
+node scripts/msk.mjs resize \
+  --workspace ../msk-robinhood \
+  --max-db-bytes 42949672960 \
+  --snapshot ../msk-before-expansion-001
+```
+
+Resize only increases capacity, checks available filesystem space and preserves evidence. The committed database budget is authoritative after an interrupted configuration update. Do not delete the database or edit coverage cursors to manufacture a healthy status.
+
+## Ownership and interrupted maintenance
+
+The operator prevents two supervisors or maintenance operations from owning one workspace concurrently. A dead owner is recovered only when its recorded supervisor and children are no longer alive. Linux process identity also checks boot/process-start identity against PID reuse.
+
+`OPERATOR_BUSY` means an owner or child may still be active. `INCOMPLETE_OPERATOR_LOCK` or `OWNERSHIP_UPDATE_BUSY_OR_INTERRUPTED` requires manual inspection. A short ownership guard is deliberately not reclaimed automatically after interruption: deleting it while another process is updating ownership could permit two writers.
+
+Inspect the recorded owner, child processes and pending maintenance before repairing an interrupted guard. Preserve the workspace and evidence; do not remove ownership files as a routine restart step. Once the old processes are confirmed stopped and the interrupted operation understood, perform a deliberate host-level repair, then rerun status and doctor.

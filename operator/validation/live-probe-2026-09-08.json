@@ -1,0 +1,60 @@
+{
+  "schema": "msk.operator.live-probe.v1",
+  "started_at": "2026-09-08T20:54:51.448Z",
+  "ended_at": "2026-09-08T20:54:56.468Z",
+  "network": "Robinhood Chain",
+  "chain_id": 4663,
+  "source": "https://rpc.mainnet.chain.robinhood.com",
+  "source_reference": "https://docs.robinhood.com/chain/connecting/",
+  "live_24_hour_run": false,
+  "persistent_host_deployed": false,
+  "result": {
+    "schema": "msk.operator.doctor.v1",
+    "ready_for_capture": false,
+    "research_pools": 0,
+    "probe": {
+      "schema": "watchtower.probe.v1",
+      "primary_source": "primary",
+      "sources": [
+        {
+          "name": "primary",
+          "state": "unavailable",
+          "error_code": "request_timeout"
+        }
+      ],
+      "requests": 1,
+      "endpoints_retained": false
+    },
+    "state": {
+      "schema": "msk.operator.status.v1",
+      "generated_at": "2026-09-08T20:54:56.467Z",
+      "evidence_mode": "live",
+      "supervisor_alive": false,
+      "phase": "NOT_STARTED",
+      "run_id": null,
+      "heartbeat_age_ms": null,
+      "configured_pools": 0,
+      "storage": {
+        "database_bytes": 0,
+        "filesystem_free_bytes": "31159414784"
+      },
+      "coverage": null,
+      "workers": null,
+      "research": null,
+      "sources": [],
+      "health": "DEGRADED",
+      "reasons": [
+        "OPERATOR_STOPPED",
+        "SOURCE_UNOBSERVED",
+        "SOURCE_SYNC_UNVERIFIED",
+        "BLOCK_COVERAGE_INCOMPLETE",
+        "RECEIPT_COVERAGE_INCOMPLETE",
+        "NO_RESEARCH_POOLS_CONFIGURED"
+      ]
+    },
+    "notes": [
+      "A probe is a bounded provider observation, not a sustained capacity or source authenticity check.",
+      "Run capture and research on an owned persistent host; installation does not start a service."
+    ]
+  }
+}

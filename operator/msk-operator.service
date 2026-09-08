@@ -1,0 +1,28 @@
+[Unit]
+Description=MSK Robinhood Chain capture and research
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=msk
+Group=msk
+WorkingDirectory=/opt/msk
+EnvironmentFile=/etc/msk/endpoint.env
+ExecStart=/usr/bin/node /opt/msk/scripts/msk.mjs start --workspace /var/lib/msk/robinhood --duration 0
+Restart=on-failure
+RestartPreventExitStatus=1 2
+RestartSec=10
+TimeoutStopSec=150
+KillMode=mixed
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/msk
+
+[Install]
+WantedBy=multi-user.target

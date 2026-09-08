@@ -848,8 +848,8 @@
         },
         {
           "path": "skills/pulse/scripts/test_service.mjs",
-          "sha256": "4da7f613f6dfcd11cc0f3a0cf7af53ac5136c4b627689095c0843a5d7bc70642",
-          "bytes": 6222
+          "sha256": "53fbf94933b4b5942ad1ba39d2631b79ea2c74b4e0439ef1a692686792baeae9",
+          "bytes": 6934
         }
       ]
     },

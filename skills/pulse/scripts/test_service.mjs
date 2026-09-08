@@ -20,6 +20,8 @@ test('actual two-source WS/HTTP service retains live, reconciled and replayable 
  const frame=(payload,opcode=1)=>{const body=Buffer.isBuffer(payload)?payload:Buffer.from(JSON.stringify(payload));
   const head=Buffer.alloc(body.length<126?2:4);head[0]=0x80|opcode;if(body.length<126)head[1]=body.length;else{head[1]=126;head.writeUInt16BE(body.length,2);}return Buffer.concat([head,body]);};
  const server=createServer(async(req,res)=>{
+  // Exercise ordinary RPC delay; readiness must follow reconciliation, not a fixed sleep.
+  await new Promise(resolve=>setTimeout(resolve,35));
   let text='';for await(const chunk of req)text+=chunk;const q=JSON.parse(text);let result;
   if(q.method==='eth_chainId')result='0x1237';
   else if(q.method==='eth_blockNumber')result='0x65';
@@ -52,11 +54,22 @@ test('actual two-source WS/HTTP service retains live, reconciled and replayable 
  const names=['PULSE_SERVICE_HTTP','PULSE_SERVICE_FAST_WS','PULSE_SERVICE_SLOW_WS'],before=Object.fromEntries(names.map(n=>[n,process.env[n]]));
  process.env.PULSE_SERVICE_HTTP=`http://127.0.0.1:${port}`;process.env.PULSE_SERVICE_FAST_WS=`ws://127.0.0.1:${port}/fast`;process.env.PULSE_SERVICE_SLOW_WS=`ws://127.0.0.1:${port}/slow`;
  const cfg={chain_id:4663,sources:[{name:'fast',http_env:names[0],ws_env:names[1]},{name:'slow',http_env:names[0],ws_env:names[2]}],
-   addresses:[registry.manager],from_block:100,duration_seconds:1,request_timeout_ms:500,reconnect_ms:100,max_reconnects:1};
+   addresses:[registry.manager],from_block:100,duration_seconds:3,request_timeout_ms:500,reconnect_ms:100,max_reconnects:1};
  let readApi;
  try {
   const result=await runService(cfg,{out,registry,collectImpl:collect,engineFactory:r=>new PoolEngine(r),liveFactory:r=>new LivePoolCache(r),onReady:async info=>{
-   readApi=new Promise((resolve,reject)=>setTimeout(()=>fetch(`http://127.0.0.1:${info.api.port}/v1/pools`).then(r=>r.json()).then(resolve,reject),150));
+   readApi=(async()=>{
+    const deadline=performance.now()+2000;let last;
+    while(performance.now()<deadline){
+     last=await fetch(`http://127.0.0.1:${info.api.port}/v1/pools`,{signal:AbortSignal.timeout(1000)}).then(r=>r.json());
+     if(last.state?.head?.number==='101'&&last.state.pools[0].qualification==='CORE_STATE_OBSERVED'&&
+        ['fast','slow'].every(name=>last.health.sources[name]?.next_block===102))return last;
+     await new Promise(resolve=>setTimeout(resolve,10));
+    }
+    assert.fail('Expected complete fixture reconciliation before deadline: '+JSON.stringify(last?.health));
+   })();
+   // The collector continues until its own bound; propagate a poll failure below.
+   readApi.catch(()=>{});
   }});
   const live=await readApi;assert.equal(live.state.pools[0].qualification,'CORE_STATE_OBSERVED');
   assert.equal(live.provisional_live_state.pools[0].qualification,'PROVISIONAL_UNRECONCILED');

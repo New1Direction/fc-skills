@@ -5,6 +5,9 @@ __pycache__/
 .env.*
 !.env.example
 *.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
 *.sqlite3
 *.db
 cases/

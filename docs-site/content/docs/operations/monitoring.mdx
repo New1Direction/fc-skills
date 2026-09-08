@@ -5,6 +5,8 @@ description: Understand source collection, transaction coverage, recovery, and d
 
 ## Two services with different responsibilities
 
+[MSK Operator](/docs/operations/operator/) now supplies the shared supervisor, health commands, a durable PULSE pool consumer, and storage recovery. Use that guide for the integrated runtime; the table below explains its underlying components.
+
 | Component | Responsibility | What it does not establish |
 | --- | --- | --- |
 | PULSE RPC Race | Compare first arrivals of the same object under an explicit run and clock | A universal fastest-provider ranking |
@@ -39,7 +41,7 @@ The benchmark measures a synthetic local workload. It excludes live network and 
 2. Configure exact source references, monitored start block, storage bounds, and recovery policy using the supplied examples.
 3. Run capture and research workers as separate processes with retained logs and health evidence.
 4. Compare matching source arrivals; keep live, recovered, and replay observations separate.
-5. Connect an explicit downstream consumer, monitor gaps and outbox retractions, and define retention/export ownership.
+5. Configure Operator's exact-pool consumer, monitor gaps and outbox retractions, and define retention/export ownership. Other downstream applications need their own integration.
 
 Do not publish secret RPC URLs or provider credentials into reports or Git. The package includes Linux service templates; installation alone does not activate them.
 
