@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -1168,7 +1168,140 @@
           "bytes": 15059
         }
       ]
+    },
+    {
+      "name": "watchtower",
+      "path": "skills/watchtower",
+      "tests": "scripts",
+      "test_runner": "node",
+      "files": [
+        {
+          "path": "skills/watchtower/.gitignore",
+          "sha256": "8c52ae4d817d883fa02548882e9973dedd1366b49168ffcacabdf9c48e6cf931",
+          "bytes": 59
+        },
+        {
+          "path": "skills/watchtower/SKILL.md",
+          "sha256": "8ff60ed580f7350c72fb1416a743b197ff8b9a149fdeca059fb0683f79bf16ea",
+          "bytes": 5251
+        },
+        {
+          "path": "skills/watchtower/agents/openai.yaml",
+          "sha256": "7ef6599eb8e8c223a7891cec6ff48b75711ef7cd79b0dc88a879abd4f698f808",
+          "bytes": 390
+        },
+        {
+          "path": "skills/watchtower/assets/benchmark.synthetic.json",
+          "sha256": "604c86ca81eba903810f6a54f27c46a72dfa07a646475fe4652f060d00017d6c",
+          "bytes": 2688
+        },
+        {
+          "path": "skills/watchtower/assets/evm-smoke.synthetic.json",
+          "sha256": "29fc285df1abc5d453403af210a3d80b3d02834fded4f191e25e18a9be2f93cc",
+          "bytes": 33618
+        },
+        {
+          "path": "skills/watchtower/assets/icon.svg",
+          "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b",
+          "bytes": 420
+        },
+        {
+          "path": "skills/watchtower/assets/watchtower-capture.service",
+          "sha256": "86837cf4f3e65e6efb17d5e0cdff876cfacd59443d2c2ac66eed0f186adbfec1",
+          "bytes": 658
+        },
+        {
+          "path": "skills/watchtower/assets/watchtower-workers.service",
+          "sha256": "776c3cf9383b06017fcf0b818eae0f6f8f2008b1955b7fab792cf84b34ba1a36",
+          "bytes": 590
+        },
+        {
+          "path": "skills/watchtower/assets/watchtower.example.json",
+          "sha256": "ff11a1e74b7019cdac2af3d86d400c22e827a30629de0e22edc91bfb78910f7e",
+          "bytes": 776
+        },
+        {
+          "path": "skills/watchtower/references/integration.md",
+          "sha256": "b246135b20dd258cf7130952e06ba22d1adc8da008bf0d4973be56a7fe4f7d50",
+          "bytes": 4939
+        },
+        {
+          "path": "skills/watchtower/references/operations.md",
+          "sha256": "cbf122debe08e1f31f0c23a369d3166176185c9d828b5a4c4f225a24f3333b56",
+          "bytes": 3663
+        },
+        {
+          "path": "skills/watchtower/references/sources.md",
+          "sha256": "756868bb8ad9c169a6c5205bf41a052db7084adb506f18aba8a27844be71b7f7",
+          "bytes": 3585
+        },
+        {
+          "path": "skills/watchtower/references/validation.md",
+          "sha256": "0f54cf6c741cfa89d1e48a43a14e377a1250105f4a0cdca1e43bda60a78fa44c",
+          "bytes": 3243
+        },
+        {
+          "path": "skills/watchtower/scripts/capture.mjs",
+          "sha256": "17b4a9d54275ff7c556f0b9e8b7a904e555599891304585be3c1ee848b8a4afb",
+          "bytes": 30354
+        },
+        {
+          "path": "skills/watchtower/scripts/evm-smoke.mjs",
+          "sha256": "115ef7120ff5613cc27927431c00a72b7e5d7b03eafe17b946e600dd4fcec97e",
+          "bytes": 20188
+        },
+        {
+          "path": "skills/watchtower/scripts/latency.mjs",
+          "sha256": "884596ccc219a4ea0d2e4650e526c546e23c4ff927598914c4d66a0b85b0a0b0",
+          "bytes": 4661
+        },
+        {
+          "path": "skills/watchtower/scripts/scenarios.mjs",
+          "sha256": "241c599adce3245dadb70214a622ee58259c0699da6c6a75f90bd2d38e13159d",
+          "bytes": 6188
+        },
+        {
+          "path": "skills/watchtower/scripts/store.mjs",
+          "sha256": "0182f87870bf4452b2fdc1b5ad1f2c45527388186b41af809445637a90d6abfa",
+          "bytes": 25412
+        },
+        {
+          "path": "skills/watchtower/scripts/test_capture.mjs",
+          "sha256": "e934601cebe7f2f2a470c2c29cb0b1e0914f49e4c5fbc9aaefacecb40bac87e0",
+          "bytes": 23332
+        },
+        {
+          "path": "skills/watchtower/scripts/test_cli.mjs",
+          "sha256": "303577183355bcbbd876489a503f4d8a4d23ddd8e1ca1adcb023e5ef3f091f89",
+          "bytes": 4769
+        },
+        {
+          "path": "skills/watchtower/scripts/test_latency.mjs",
+          "sha256": "e2ce9fb4a1ba226934614693125a229272d917c90fbc54de020008ea21f6aa9b",
+          "bytes": 2119
+        },
+        {
+          "path": "skills/watchtower/scripts/test_store.mjs",
+          "sha256": "fce27f63de7a4890d5ef4b44eb17b05c13bc3952c8b34fc112e0c93bf813740c",
+          "bytes": 16901
+        },
+        {
+          "path": "skills/watchtower/scripts/test_workers.mjs",
+          "sha256": "d57922aeeb6d9e755b8c6ba752af275ab501bfcc40544d870d3af6b946ff8bb7",
+          "bytes": 18886
+        },
+        {
+          "path": "skills/watchtower/scripts/watchtower.mjs",
+          "sha256": "c3c61868bfe474e2b9f4d001110e371385a437aa8902f96ce80a8ea91b3f9e1f",
+          "bytes": 8424
+        },
+        {
+          "path": "skills/watchtower/scripts/workers.mjs",
+          "sha256": "111e27b529b720be2cee38bdde96f0e878326b15e25ac1aaa9aea3e6bf5d72c3",
+          "bytes": 25696
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T15:23:17.135715+00:00"
+  "updated_at": "2026-09-08T16:04:44.463907+00:00"
 }

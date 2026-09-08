@@ -1,0 +1,89 @@
+{
+  "schema": "watchtower.synthetic-throughput.v1",
+  "synthetic": true,
+  "network_involved": false,
+  "mainnet_qualified": false,
+  "fastest_claim_established": false,
+  "runtime": "v24.19.0",
+  "platform": "linux",
+  "architecture": "x64",
+  "blocks": 100,
+  "transactions": 10000,
+  "durable_capture_ms": 296.409965,
+  "capture_and_builtin_workers_ms": 1057.125872,
+  "durable_transactions_per_second": 33737.05738941672,
+  "end_to_end_transactions_per_second": 9459.611447292247,
+  "coverage": {
+    "chain_id": 4663,
+    "start_block": 1,
+    "canonical_head": 100,
+    "contiguous_block_head": 100,
+    "contiguous_receipt_head": 100,
+    "block_count": 100,
+    "transaction_count": 10000,
+    "receipt_count": 10000,
+    "pending_receipt_blocks": 0,
+    "gaps": [],
+    "disconnected_blocks": [],
+    "complete_through_head": true,
+    "receipt_complete_through_head": true,
+    "storage_bytes": 24017464,
+    "max_bytes": 2147483648,
+    "storage_blocked": false,
+    "evidence_kind": "rpc-derived",
+    "finalized": false,
+    "receipt_trie_verified": false
+  },
+  "workers": {
+    "schema_version": "watchtower.workers-status.v1",
+    "jobs": {
+      "COMPLETED": 200
+    },
+    "pending_jobs": 0,
+    "leased_jobs": 0,
+    "failed_jobs": 0,
+    "policies": [
+      {
+        "version": "synthetic-v1",
+        "cursor": 200,
+        "fingerprint": "9a23e53865405ee76bc92bb608be96a7c0a1c58e7ca36220c0541f424df7df61"
+      }
+    ],
+    "classifications": {
+      "total": 10000,
+      "canonical": 10000,
+      "with_receipts": 10000
+    },
+    "outbox": {
+      "total": 200,
+      "canonical": 200
+    },
+    "coverage": {
+      "chain_id": 4663,
+      "start_block": 1,
+      "canonical_head": 100,
+      "contiguous_block_head": 100,
+      "contiguous_receipt_head": 100,
+      "block_count": 100,
+      "transaction_count": 10000,
+      "receipt_count": 10000,
+      "pending_receipt_blocks": 0,
+      "gaps": [],
+      "disconnected_blocks": [],
+      "complete_through_head": true,
+      "receipt_complete_through_head": true,
+      "storage_bytes": 24017464,
+      "max_bytes": 2147483648,
+      "storage_blocked": false,
+      "evidence_kind": "rpc-derived",
+      "finalized": false,
+      "receipt_trie_verified": false
+    }
+  },
+  "limitations": [
+    "This workload has small synthetic transactions and empty receipt logs; it is not representative chain load.",
+    "Rates describe this process and filesystem only, with no RPC, Nitro execution or network delay.",
+    "Storage fills eventually; no history is silently pruned.",
+    "Use retained real blocks, payload distributions, multiple sources and sustained target-host tests before capacity claims."
+  ]
+}

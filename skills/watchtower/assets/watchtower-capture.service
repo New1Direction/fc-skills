@@ -1,0 +1,26 @@
+[Unit]
+Description=WATCHTOWER Robinhood transaction capture
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=watchtower
+Group=watchtower
+WorkingDirectory=/opt/msk/skills/watchtower
+EnvironmentFile=/etc/watchtower/sources.env
+ExecStart=/usr/bin/node scripts/watchtower.mjs capture --config /etc/watchtower/config.json --db /var/lib/watchtower/capture.sqlite --duration 0
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/watchtower
+
+[Install]
+WantedBy=multi-user.target

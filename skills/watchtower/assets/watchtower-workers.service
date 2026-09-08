@@ -1,0 +1,24 @@
+[Unit]
+Description=WATCHTOWER transaction research workers
+After=watchtower-capture.service
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=watchtower
+Group=watchtower
+WorkingDirectory=/opt/msk/skills/watchtower
+ExecStart=/usr/bin/node scripts/watchtower.mjs workers --config /etc/watchtower/config.json --db /var/lib/watchtower/capture.sqlite --duration 0
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/watchtower
+
+[Install]
+WantedBy=multi-user.target

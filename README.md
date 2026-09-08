@@ -1,8 +1,8 @@
 # MSK
 
-Eleven crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
+Twelve crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
 
-Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. HOOK LAB can execute simulations inside its own isolated local Anvil process.
+Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. The optional EVM harnesses operate inside their own isolated local Anvil processes.
 
 ## Included skills
 
@@ -19,6 +19,7 @@ Each skill includes its instructions, deterministic Python or Node.js helpers, r
 | [PULSE](skills/pulse/SKILL.md) | Which source delivers usable Robinhood data first, and how do we operate our own data path? | Multi-source WS/HTTP collection, RPC Race, provisional and reconciled V4 state, private Nitro planning and probes. |
 | [HOOK LAB](skills/hook-lab/SKILL.md) | What does this Robinhood V4 hook do, and what evidence supports this exact wallet call? | Exact deployment identity, Pons V2 source-derived fees, pinned calls/traces, isolated Anvil fork balances, evidence consistency and drift checks. |
 | [PRESSURE](skills/pressure/SKILL.md) | Is stock-token supply changing, where are balances moving, and what do measured liquidity observations support? | Bounded full-receipt collection, raw supply/multiplier reconciliation, custody observations, retained trade-size comparisons and prospective outcome journals. |
+| [WATCHTOWER](skills/watchtower/SKILL.md) | Can we retain every included Robinhood transaction promptly and verify the reported monitored interval has no gaps? | Full RPC blocks and receipts, fresh-tail priority, durable recovery, research workers and source latency comparisons. |
 
 ## Use
 
@@ -26,6 +27,7 @@ Start with a skill's `SKILL.md`. Give an agent that folder and a concrete pool, 
 
 Example requests:
 
+- Use WATCHTOWER to capture all included transactions, reconcile receipt coverage, operate bounded workers and measure actual source arrival.
 - Use PRESSURE to reconcile a stock-token issuance window and compare supported liquidity measurements while retaining missing outcomes.
 - Use HOOK LAB to inspect a graduated Pons pool, model its hook charges and retain the evidence needed for an exact wallet route.
 - Use Autopsy to investigate this launch and distinguish observed transfers from wallet-control hypotheses.
@@ -38,7 +40,7 @@ The installed ChatGPT originals remain separate from this export; changing this 
 
 ## Verify the package
 
-Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE, HOOK LAB and PRESSURE require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
+Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE, HOOK LAB, PRESSURE and WATCHTOWER require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
 
 ```sh
 python3 scripts/check_package.py
@@ -47,7 +49,24 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-The version 0.5.0 export passes **986 tests across eleven skill suites**, including 188 PRESSURE tests and 224 HOOK LAB tests. PRESSURE also passed an actual isolated Anvil/solc supply-collection smoke and an independent skill-use check. The ten previous skill exports are preserved byte for byte; the manifest verifies all exported skill files.
+The version 0.6.0 export passes **1,100 tests across twelve skill suites**, including 114 WATCHTOWER tests. WATCHTOWER also passed an actual isolated Anvil transaction/receipt collection check, a 10,000-transaction synthetic workload and independent operator use. All eleven earlier skill inventories are preserved byte for byte.
+
+## WATCHTOWER chain-wide transaction monitoring
+
+WATCHTOWER captures every RPC-reported included transaction from an explicit first block, including successful and reverted transactions, contract creation and unknown types. Fresh tail blocks can arrive while bounded workers recover older gaps. Concurrent receipt enrichment advances its own completeness cursor. Durable SQLite WAL storage, incremental progress, bounded queues, reorg invalidation, outbox retractions and restart recovery preserve the actual evidence state.
+
+Run capture and research workers as separate processes. All transactions receive cheap classifications; exact configured address/topic rules produce reviewable research dispatch records. No token filter limits intake. Specialized skill execution, internal-call tracing and FYNCH/Ape production adapters are not automatic. Existing FYNCH canonical ingestion ownership and Ape execution gates remain intact.
+
+```sh
+node skills/watchtower/scripts/watchtower.mjs demo --out /tmp/watchtower-new-demo
+node skills/watchtower/scripts/watchtower.mjs bench --out /tmp/watchtower-bench.json --blocks 100 --transactions 100
+```
+
+The source/operator instructions target a synced Robinhood Nitro node connected to the official sequencer feed, with independent RPC observations. WATCHTOWER reads executed full blocks; it does not itself decode or verify the feed. Source arrival and durable-capture percentiles use exact object/run/clock identity; live, recovered and replay observations remain separate.
+
+**Deployment status:** the service, skill and Linux templates are built and locally validated. The EVM check retained all five actual synthetic transactions and receipts across three blocks through a read-only proxy with zero collector writes. A 10,000-transaction synthetic workload completed durable capture and classification; its timings exclude network/Nitro and do not establish mainnet throughput. No working live mainnet source, deployed host, sustained capacity, full internal tracing or fastest-provider result is established. Storage is bounded and never silently pruned; production retention/export ownership still needs deployment integration.
+
+See [WATCHTOWER operations](skills/watchtower/references/operations.md) and [validation](skills/watchtower/references/validation.md) for exact scope and reproducible commands.
 
 ## PRESSURE supply and liquidity research
 

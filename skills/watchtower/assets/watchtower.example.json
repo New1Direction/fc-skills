@@ -1,0 +1,29 @@
+{
+  "chain_id": 4663,
+  "sources": [
+    {"name": "local-nitro", "http_env": "WATCHTOWER_PRIMARY_HTTP", "ws_env": "WATCHTOWER_PRIMARY_WS"},
+    {"name": "independent", "http_env": "WATCHTOWER_SECONDARY_HTTP"}
+  ],
+  "primary_source": "local-nitro",
+  "from_block": null,
+  "poll_ms": 250,
+  "request_timeout_ms": 5000,
+  "block_concurrency": 4,
+  "receipt_concurrency": 4,
+  "max_blocks_per_round": 32,
+  "reorg_depth": 64,
+  "max_response_bytes": 33554432,
+  "max_requests_per_second": 40,
+  "max_pending_receipt_blocks": 256,
+  "duration_seconds": 60,
+  "max_db_bytes": 21474836480,
+  "worker_policy": {
+    "version": "v1",
+    "max_queue": 2048,
+    "max_attempts": 3,
+    "lease_ms": 30000,
+    "timeout_ms": 10000,
+    "max_result_bytes": 4194304,
+    "rules": []
+  }
+}
