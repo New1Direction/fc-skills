@@ -1,0 +1,15 @@
+interface:
+  display_name: HOOK LAB
+  short_description: Qualify Robinhood V4 hook and execution adapters
+  default_prompt: Use $hook-lab to identify a Robinhood V4 hook deployment, validate
+    its adapter against wallet-specific fork execution, and explain its supported
+    scope.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,48 @@
+{
+  "schema_version": "hook-lab.family-candidate.v1",
+  "family": "pons-v2-meme-hook",
+  "chain_id": 4663,
+  "status": "SOURCE_DERIVED_UNVERIFIED_DEPLOYMENT",
+  "reviewed_on": "2026-09-08",
+  "candidate_deployment": {
+    "factory": "0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e",
+    "hook": "0xe5e702641ea86f4ae6cc3cdaed2b886f976be044",
+    "pool_manager": "0x8366a39cc670b4001a1121b8f6a443a643e40951"
+  },
+  "source": {
+    "repository": "https://github.com/ponsdotdev/ponsfamily",
+    "commit": "8b9bf371030279133017b5c1b713823f5889c5d2",
+    "hook": "https://github.com/ponsdotdev/ponsfamily/blob/8b9bf371030279133017b5c1b713823f5889c5d2/contractsV2/src/v2/hooks/PonsV2MemeHook.sol",
+    "interface": "https://github.com/ponsdotdev/ponsfamily/blob/8b9bf371030279133017b5c1b713823f5889c5d2/contractsV2/src/v2/interfaces/ILaunchpadV2.sol",
+    "factory": "https://github.com/ponsdotdev/ponsfamily/blob/8b9bf371030279133017b5c1b713823f5889c5d2/contractsV2/src/v2/PonsV2LaunchFactory.sol",
+    "deployment_documentation": "https://docs.ponsfamily.com/v2#contracts",
+    "first_party_source_license": "MIT SPDX headers; dependencies retain their own licenses"
+  },
+  "expected_hook_permissions": ["beforeInitialize", "afterSwap", "afterSwapReturnDelta"],
+  "expected_low_14_bits_hex": "0x2044",
+  "documented_core_fee": 0,
+  "source_behavior": {
+    "ordinary_swap_access": "No caller restriction in reviewed _afterSwap source",
+    "pool_initialization": "Factory only",
+    "fee_basis": "Absolute core delta of unspecified currency",
+    "rounding": "Floor hook fee and creator tax separately, then sum",
+    "fee_policy": "Per-pool launches(poolId) snapshot; not global policy",
+    "internal_sweep_swaps": "Trusted operator required; outside ordinary-swap adapter"
+  },
+  "verification": {
+    "independent_runtime_hashes": null,
+    "verified_block": null,
+    "verified_pool_id": null,
+    "retained_swap_transactions": [],
+    "wallet_route_simulation": "NOT_PERFORMED",
+    "activity": "NOT_ESTABLISHED",
+    "source_to_runtime_match": "NOT_ESTABLISHED"
+  },
+  "promotion_requirements": [
+    "Independently establish runtime correspondence for hook, PoolManager, factory and relevant dependencies at a fixed block",
+    "Corroborate token-specific factory record and PoolKey using retained Initialize and PoolRegistered receipt evidence",
+    "Retain real swap receipts and reconcile core deltas, HookFeeCollected events and wallet token balances",
+    "Simulate exact intended caller, router, calldata, value and amount at a fixed block without privileged impersonation",
+    "Invalidate support on changed code, implementation, registry or relevant configuration"
+  ]
+}

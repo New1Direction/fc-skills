@@ -1,8 +1,8 @@
 # MSK
 
-Nine crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
+Ten crypto research and live-data skills in the private `New1Direction/MSK` repository. Current development focuses on Robinhood Chain (4663); each existing skill retains its explicitly documented native venue support.
 
-Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast trades.
+Each skill includes its instructions, deterministic Python or Node.js helpers, references, examples and offline tests. The folders are independent: use one skill or compose their reports. This collection performs data collection, research, deployment planning and read-only simulations; it does not sign or broadcast live trades. HOOK LAB can execute simulations inside its own isolated local Anvil process.
 
 ## Included skills
 
@@ -17,6 +17,7 @@ Each skill includes its instructions, deterministic Python or Node.js helpers, r
 | [LP Edge](skills/lp-edge/SKILL.md) | Do fees compensate for inventory changes and costs versus holding? | Canonical V3 accounting, range scenarios and read-only wallet calls. |
 | [Undertow](skills/undertow/SKILL.md) | Is a Robinhood meme gaining against its stock quote, and where is observed capital rotating? | Chain4663 attribution, supplied attributed flows, bounded canonical V4 evidence, current stock-reference capture. |
 | [PULSE](skills/pulse/SKILL.md) | Which source delivers usable Robinhood data first, and how do we operate our own data path? | Multi-source WS/HTTP collection, RPC Race, provisional and reconciled V4 state, private Nitro planning and probes. |
+| [HOOK LAB](skills/hook-lab/SKILL.md) | What does this Robinhood V4 hook do, and what evidence supports this exact wallet call? | Exact deployment identity, Pons V2 source-derived fees, pinned calls/traces, isolated Anvil fork balances, evidence consistency and drift checks. |
 
 ## Use
 
@@ -24,6 +25,7 @@ Start with a skill's `SKILL.md`. Give an agent that folder and a concrete pool, 
 
 Example requests:
 
+- Use HOOK LAB to inspect a graduated Pons pool, model its hook charges and retain the evidence needed for an exact wallet route.
 - Use Autopsy to investigate this launch and distinguish observed transfers from wallet-control hypotheses.
 - Use Ignition to assess this retained candidate universe, then use Exit Doctor only for routes it supports.
 - Use LP Edge to compare this position with holding, including known costs and missing withdrawal evidence.
@@ -34,7 +36,7 @@ The installed ChatGPT originals remain separate from this export; changing this 
 
 ## Verify the package
 
-Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE requires Node.js24+ and uses built-in modules only; no npm dependencies are installed. Both runtimes are required for complete package verification. Run from the repository root:
+Python 3.12+ with the standard library and SQLite runs the research helpers. PULSE and HOOK LAB require Node.js24+ and use built-in modules for normal operation. HOOK LAB’s optional fork collector requires an Anvil binary; its optional actual-EVM smoke also requires solc. These dependencies are not bundled. Both runtimes are required for complete package verification. Run from the repository root:
 
 ```sh
 python3 scripts/check_package.py
@@ -43,7 +45,15 @@ python3 scripts/check_package.py --tests
 
 The first command checks every exported skill file against `manifest.json`. The second also runs each skill suite in a separate process, avoiding collisions between similarly named test modules. The manifest records file hashes, not provider authenticity or a digital signature. Intentional skill edits require a reviewed manifest update.
 
-The version0.3.0 export passes **574 tests across nine skill suites**, including150 PULSE tests and139 Undertow tests. PULSE tests include actual HTTP/WebSocket connections to local protocol servers, persistence/restart recovery, fork handling, exact V4 state and benchmark behavior. The eight previously exported skills are preserved byte for byte. The manifest verifies every exported skill file against its saved source version.
+The version 0.4.0 export passes **798 tests across ten skill suites**, including 224 HOOK LAB tests. HOOK LAB also passed an actual isolated Anvil/solc smoke with synthetic token/router contracts, balance reconciliation, revert and allowance cases, and zero source RPC writes. That smoke is distinct from the dependency-free tests and does not establish Pons or Nitro execution. The nine previously exported skills are preserved byte for byte; the manifest verifies all exported skill files.
+
+## HOOK LAB execution research
+
+HOOK LAB includes seven commands: deployment identity, Pons discovery, Pons fee arithmetic, exact read-only calls/traces, isolated Anvil forks, qualification consistency and identity comparison. It binds retained evidence to an exact chain/block/hash, PoolKey, code/configuration graph, wallet and calldata. The first family models Pons V2 hook fees with separate integer rounding. It is not a full V4 traversal quoter or production router calldata builder.
+
+The user-supplied awesome-uniswap-hooks catalog is incorporated as a pinned research index, with primary-source selection criteria. No catalog code or dependency tree is bundled. The Pons deployment remains a published candidate until build/runtime correspondence and an actual wallet route are independently established. A public Robinhood RPC probe timed out in the build environment.
+
+The retained Ape source rejects nonzero hooks in its vault. HOOK LAB exports reviewable evidence and does not change Ape/FYNCH production permissions. Successful local evidence consistency is not execution approval, a contract audit or a profitability claim. See HOOK LAB’s references and retained synthetic EVM evidence for precise coverage.
 
 ## PULSE live data runtime
 

@@ -1,7 +1,7 @@
 {
   "schema": "msk.package.v1",
   "name": "MSK",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [
     {
@@ -852,7 +852,175 @@
           "bytes": 6222
         }
       ]
+    },
+    {
+      "name": "hook-lab",
+      "path": "skills/hook-lab",
+      "tests": "scripts",
+      "test_runner": "node",
+      "files": [
+        {
+          "path": "skills/hook-lab/.gitignore",
+          "sha256": "368a7b721eab24e660a0f5fec675b6c2f5446bdfb5c8b40c8b3163a52a81d72f",
+          "bytes": 28
+        },
+        {
+          "path": "skills/hook-lab/SKILL.md",
+          "sha256": "6e2355a028f916a24944dbfb21516902e1a4b84eaf9a8ebed9af015e9a4129c5",
+          "bytes": 6914
+        },
+        {
+          "path": "skills/hook-lab/agents/openai.yaml",
+          "sha256": "4d674bc0723a1e70ba6c107e62e2ecb03ab0075408728782563c4133951effa4",
+          "bytes": 438
+        },
+        {
+          "path": "skills/hook-lab/assets/Smoke.sol",
+          "sha256": "9efb03b36acc8b129f605a62f20e9cb089235030033dc58f6c6006dd86a71614",
+          "bytes": 2389
+        },
+        {
+          "path": "skills/hook-lab/assets/evm-smoke.synthetic.json",
+          "sha256": "5bff13f6cf0ad91b396e1e2cd2e6e1b74575b0e4d628ee10eada4ed1de0f6ff1",
+          "bytes": 150300
+        },
+        {
+          "path": "skills/hook-lab/assets/icon.svg",
+          "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d",
+          "bytes": 1738
+        },
+        {
+          "path": "skills/hook-lab/assets/pons-fees.synthetic.json",
+          "sha256": "5fa6d2b3c14cfff4bb9e0abc839c1ef9ee46e09e3675f2f46175e62b2ee48403",
+          "bytes": 981
+        },
+        {
+          "path": "skills/hook-lab/assets/pons-v2-candidate.json",
+          "sha256": "671f476a484709c6570ccb8d790b7500366ee87be16b127af2e1aac071b17ab6",
+          "bytes": 2679
+        },
+        {
+          "path": "skills/hook-lab/references/fork.md",
+          "sha256": "fcf577d0b6d7d92250bfbdc9458a34f490321a8e1c406c89a5c05154fa558314",
+          "bytes": 4766
+        },
+        {
+          "path": "skills/hook-lab/references/hook-catalog.md",
+          "sha256": "87bebb70ddc2b40650ed4319a87d91bf06c76609f9cbf346ea02ebbcde38ce32",
+          "bytes": 2165
+        },
+        {
+          "path": "skills/hook-lab/references/identity.md",
+          "sha256": "a8a8d3c7bec4ff1fd82aa48df4fc726421fc4d956568750a2536c7e4ed2c1f09",
+          "bytes": 8486
+        },
+        {
+          "path": "skills/hook-lab/references/integration.md",
+          "sha256": "93f5d10e502226105417936865ca4fdff5eabd0c7d6beb4f8f15669ccfad0b6f",
+          "bytes": 2939
+        },
+        {
+          "path": "skills/hook-lab/references/pons-v2.md",
+          "sha256": "2c21f67f3f1e5eda7d4c56a9e4e966b9dfbb88741b0e4ab8197dcbbf781366da",
+          "bytes": 9794
+        },
+        {
+          "path": "skills/hook-lab/references/qualification.md",
+          "sha256": "3c1c0d06e03149f89af1b5788eeb46c3c77179823d3e8b8cf0a36302ff95f846",
+          "bytes": 8858
+        },
+        {
+          "path": "skills/hook-lab/references/simulation.md",
+          "sha256": "0ff1f5a8328d6e09e6ce6378bd7197b18710876b55f84f136d92f41d135f6ed9",
+          "bytes": 5803
+        },
+        {
+          "path": "skills/hook-lab/references/validation.md",
+          "sha256": "97d59594ed2b5ed71c034d0849bd5cdc7fb6b669e82a468346fdb1ea1edac084",
+          "bytes": 3624
+        },
+        {
+          "path": "skills/hook-lab/scripts/evm-smoke.mjs",
+          "sha256": "5f50e9922480a476a1033fbdf64a2633fa329257bae1bfc4ef112b34c8179003",
+          "bytes": 14504
+        },
+        {
+          "path": "skills/hook-lab/scripts/fork.mjs",
+          "sha256": "71fac3dfd014038285281089af5f771c7ed26c997fc7f3d787077c0c1c057c16",
+          "bytes": 26222
+        },
+        {
+          "path": "skills/hook-lab/scripts/hook-lab.mjs",
+          "sha256": "23afb2835223e90383e52c1e35b41b1d8903ed275a22aa042f800cbab0dd7cf0",
+          "bytes": 3418
+        },
+        {
+          "path": "skills/hook-lab/scripts/identity.mjs",
+          "sha256": "13c74c620f7ebc961fa9a721b9909f9aa126c20d5e501a07c65dc515cc2b902e",
+          "bytes": 19719
+        },
+        {
+          "path": "skills/hook-lab/scripts/keccak.mjs",
+          "sha256": "664e0bca8c9b47c1d84f4f0505bc71b7dab9403429abffe0e748fadf5cffe871",
+          "bytes": 1828
+        },
+        {
+          "path": "skills/hook-lab/scripts/pons.mjs",
+          "sha256": "d9b1a6db48ec9e8d9bfaad58016447b470121577530fded3802956afd1093178",
+          "bytes": 15273
+        },
+        {
+          "path": "skills/hook-lab/scripts/qualify.mjs",
+          "sha256": "1a9a9f6df13f39cb45cff4fbbf6f941ebdaa4595bb430af405225cf40c6fdbc2",
+          "bytes": 20168
+        },
+        {
+          "path": "skills/hook-lab/scripts/rpc.mjs",
+          "sha256": "ca4344c736fcb1121a1d7b8a6e5dcedfecba26aaa715eacbf85e649a7a48d2ed",
+          "bytes": 2744
+        },
+        {
+          "path": "skills/hook-lab/scripts/simulation.mjs",
+          "sha256": "c42bec7700df06cb9b7b49bf10b6efede4aa90c71757901bb4650a570bd6ad4b",
+          "bytes": 15440
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_cli.mjs",
+          "sha256": "53b4af922cfc98dfcd93cdb4bf74e6625f0a8cd560e1294ffc368ed2d586972a",
+          "bytes": 840
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_fork.mjs",
+          "sha256": "6b58e4b7e536232521b3b6d118f2c56ec819ad6f0889e8678a15a2deacdf0fa9",
+          "bytes": 11891
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_identity.mjs",
+          "sha256": "a01208feec00a90d851aa5a5c3995a8425ec4acf7e259e188c33cf8ecb4f0c4d",
+          "bytes": 19804
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_pons.mjs",
+          "sha256": "a03d8a02f7c9ca3740cea811448c32d5cc0b5c654d4a3a9274b9a193fccd1860",
+          "bytes": 13593
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_qualify.mjs",
+          "sha256": "12f7326f6a6cc7cccbc5feaa71670b8623d784ab1c5fcb9bcfb01c11d9f54408",
+          "bytes": 16166
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_rpc.mjs",
+          "sha256": "91c3d26c31a99e1b2fb85c144d2f4012d1fa9fc9f47aed28a4686ac76f3decc8",
+          "bytes": 1865
+        },
+        {
+          "path": "skills/hook-lab/scripts/test_simulation.mjs",
+          "sha256": "4bbd57cdcc4269697694441ba81904d95068e6ee0b5e17a3f6e8ee3810b76728",
+          "bytes": 13970
+        }
+      ]
     }
   ],
-  "updated_at": "2026-09-08T07:08:52.059304+00:00"
+  "updated_at": "2026-09-08T14:29:11.656524+00:00"
 }

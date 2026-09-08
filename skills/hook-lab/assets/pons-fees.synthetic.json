@@ -1,0 +1,29 @@
+{
+  "evidence_mode": "synthetic",
+  "pool_key": {
+    "currency0": "0x1111111111111111111111111111111111111111",
+    "currency1": "0x2222222222222222222222222222222222222222",
+    "fee": 0,
+    "tickSpacing": 200,
+    "hooks": "0xe5e702641ea86f4ae6cc3cdaed2b886f976be044"
+  },
+  "launch": {
+    "registered": true,
+    "memecoinIsCurrency0": true,
+    "memecoin": "0x1111111111111111111111111111111111111111",
+    "quoteToken": "0x2222222222222222222222222222222222222222",
+    "creator": "0x3333333333333333333333333333333333333333",
+    "buybackCreatorRecipient": "0x3333333333333333333333333333333333333333",
+    "protocolFeeRecipient": "0x3333333333333333333333333333333333333333",
+    "creatorTaxBps": 50,
+    "protocolFeeShareBps": 3000,
+    "buybackBurnBps": 5000,
+    "hookFeeBps": 100,
+    "maxInternalPriceImpactBps": 300,
+    "buybackEnabled": true
+  },
+  "amount_specified": "-1000000",
+  "zero_for_one": true,
+  "core_delta0": "-1000000",
+  "core_delta1": "1999999"
+}
