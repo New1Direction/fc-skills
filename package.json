@@ -1,5 +1,5 @@
 {
-  "name": "msk",
+  "name": "fc-skills",
   "version": "0.8.0",
   "private": true,
   "workspaces": [
@@ -18,6 +18,7 @@
     "test:operator": "node --test operator/test_*.mjs"
   },
   "bin": {
+    "fc-skills": "scripts/msk.mjs",
     "msk": "scripts/msk.mjs"
   }
 }

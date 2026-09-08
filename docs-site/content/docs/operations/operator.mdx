@@ -1,15 +1,15 @@
 ---
-title: Run MSK Operator
+title: Run fc-skills Operator
 description: Supervise Robinhood Chain capture, durable workers and exact-pool research from one command.
 ---
 
-MSK Operator connects WATCHTOWER capture and workers to a PULSE pool-research consumer. It runs three separate processes, retains their evidence and progress in one SQLite database, and provides commands for health, reports, recovery and verified exports.
+fc-skills Operator connects WATCHTOWER capture and workers to a PULSE pool-research consumer. It runs three separate processes, retains their evidence and progress in one SQLite database, and provides commands for health, reports, recovery and verified exports.
 
-**A live 24-hour acceptance run has not yet been established.** The local demonstration uses synthetic RPC evidence. Installing MSK does not provision a host or start continuous monitoring.
+**A live 24-hour acceptance run has not yet been established.** The local demonstration uses synthetic RPC evidence. Installing fc-skills does not provision a host or start continuous monitoring.
 
 ## Start with the local demonstration
 
-Run from the MSK repository with Node.js 24 or newer. Choose a destination that does not already exist:
+Run from the fc-skills repository with Node.js 24 or newer. Choose a destination that does not already exist:
 
 ```bash
 node scripts/msk.mjs demo --out ../msk-operator-demo

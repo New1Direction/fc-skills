@@ -1,4 +1,4 @@
-name: Validate MSK
+name: Validate fc-skills
 
 on:
   push:

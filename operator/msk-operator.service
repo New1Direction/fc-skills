@@ -1,5 +1,5 @@
 [Unit]
-Description=MSK Robinhood Chain capture and research
+Description=fc-skills Robinhood Chain capture and research
 After=network-online.target
 Wants=network-online.target
 StartLimitIntervalSec=300

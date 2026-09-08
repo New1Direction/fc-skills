@@ -4,7 +4,7 @@ import { Provider } from '@/components/provider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: { default: 'MSK — Onchain research docs', template: '%s | MSK' },
+  title: { default: 'fc-skills — Onchain research docs', template: '%s | fc-skills' },
   description: 'The field manual for 16 crypto research, Robinhood Chain data, and execution-simulation skills.',
   robots: { index: false, follow: false },
 };

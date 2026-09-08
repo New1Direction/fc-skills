@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { atomicJSON, errorCode, fail, integer } from '../operator/common.mjs';
 
-const HELP = `MSK Operator — Robinhood Chain capture and retained pool research
+const HELP = `fc-skills Operator — Robinhood Chain capture and retained pool research
 
   init         --workspace NEW_DIR --from-block N|latest [--registry JSON] [--http-env NAME] [--max-db-bytes N]
   doctor       --workspace DIR [--out JSON]

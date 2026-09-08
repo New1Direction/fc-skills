@@ -1,4 +1,4 @@
-# MSK
+# fc-skills
 
 **16 skills for onchain research, Robinhood Chain data, and wallet-call simulation.**
 
@@ -10,7 +10,7 @@ The repository is private. Browse the documentation source here, or run the comp
 
 ## Run the Operator
 
-**MSK Operator** connects WATCHTOWER capture and durable workers to actual PULSE V4 pool analysis. It adds one foreground supervisor, health and report commands, reorg-aware acknowledgements, verified exports, restoration, and capacity expansion. It needs only Node.js 24+; no npm install is required for the runtime.
+**fc-skills Operator** connects WATCHTOWER capture and durable workers to actual PULSE V4 pool analysis. It adds one foreground supervisor, health and report commands, reorg-aware acknowledgements, verified exports, restoration, and capacity expansion. It needs only Node.js 24+; no npm install is required for the runtime.
 
 Try the complete synthetic capture → research → reorg → export demonstration:
 
@@ -26,8 +26,8 @@ Use the [Operator guide](docs-site/content/docs/operations/operator.mdx) for rea
 Requires Python 3.12+ and Node.js 24+. Clone with an authenticated GitHub account that has access:
 
 ```sh
-git clone https://github.com/New1Direction/MSK.git
-cd MSK
+git clone https://github.com/New1Direction/MSK.git fc-skills
+cd fc-skills
 python3 scripts/check_package.py
 ```
 
@@ -68,7 +68,7 @@ To use a skill with an agent, open its `SKILL.md` and provide the complete folde
 - **FYNCH research:** CATALYST + PRESSURE + Undertow + Night Desk → exact-asset application evidence → Agent Arena performance accounting.
 - **Arbitrage Ape research:** PULSE + WATCHTOWER → HOOK LAB deployment evidence → CIRCUIT route construction and fork measurement.
 
-The [JSON handoff](references/research-integration.md) composes CATALYST and Night Desk evidence. MSK Operator also connects WATCHTOWER dispatches to retained PULSE single-block pool reports. FYNCH/Ape production application connections remain separate integrations.
+The [JSON handoff](references/research-integration.md) composes CATALYST and Night Desk evidence. fc-skills Operator also connects WATCHTOWER dispatches to retained PULSE single-block pool reports. FYNCH/Ape production application connections remain separate integrations.
 
 ## Build the Fumadocs site
 

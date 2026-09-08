@@ -1,6 +1,6 @@
 {
   "schema": "msk.package.v1",
-  "name": "MSK",
+  "name": "fc-skills",
   "version": "0.8.0",
   "created_at": "2026-09-08T05:32:30.283100+00:00",
   "skills": [

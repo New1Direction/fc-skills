@@ -9,7 +9,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
   if (!page) notFound();
   const MDX = page.data.body;
   return <DocsPage toc={page.data.toc} full={page.data.full}>
-    <div className="msk-page-label">MSK / DOCUMENTATION</div>
+    <div className="msk-page-label">fc-skills / DOCUMENTATION</div>
     <DocsTitle>{page.data.title}</DocsTitle>
     <DocsDescription>{page.data.description}</DocsDescription>
     <DocsBody><MDX components={getMDXComponents()} /></DocsBody>

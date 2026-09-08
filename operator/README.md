@@ -1,6 +1,6 @@
-# MSK Operator v1
+# fc-skills Operator v1
 
-Run Robinhood Chain capture, durable research workers, and PULSE exact-pool analysis through one command. This is a repository integration alongside the 16 exported MSK skills.
+Run Robinhood Chain capture, durable research workers, and PULSE exact-pool analysis through one command. This is a repository integration alongside the 16 exported fc-skills skills.
 
 Requires Node.js 24+ on a persistent host. The runtime uses Node built-ins and bundled skill helpers; npm dependencies are only needed for the Fumadocs site.
 
